@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://macacodes.github.io/sitemap-index.xml

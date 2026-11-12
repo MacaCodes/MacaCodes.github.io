@@ -1,0 +1,250 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import photo from '../assets/macauley.jpg';
+import { site, stages, projects, skills, journey, qualifications } from '../content/site';
+
+const stageName = (id: string) => stages.find((s) => s.id === id)?.name ?? id;
+const coveredText = (ids: string[]) => {
+  const names = ids.map((id) => stageName(id).toLowerCase());
+  return names.length > 1
+    ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
+    : names[0];
+};
+const [integration, ...otherProjects] = projects;
+---
+
+<Base>
+  <section class="wrap hero">
+    <h1>
+      I’m Macauley, a Power Platform developer in Manchester. I build Canvas apps, flows and
+      Dataverse systems, and I stay with them through release and support.
+    </h1>
+    <p class="intro">
+      Much of my two years at CRM Knowledge has gone into one contact-centre CRM, with 230+ users
+      and nine million Dataverse records. <a href="#work">See how the work runs</a>, or find me on{' '}
+      <a href={site.linkedin} rel="noopener me">LinkedIn</a>.
+    </p>
+
+    <nav class="lifecycle" aria-label="Delivery stages">
+      <ol>
+        {
+          stages.map((s) => (
+            <li>
+              <a href={`#${s.id}`}>
+                <span class="stage-name">{s.name}</span>
+                <span class="stage-summary">{s.summary}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+  </section>
+
+  <section class="section section-wash" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="work-h">Consultancy work, in the order it happens</h2>
+        <p>
+          This is client work from CRM Knowledge, a Dynamics 365 and Power Platform consultancy.
+          The clients are confidential, so there are no names and no screenshots. Where a point is
+          about the contact-centre CRM, it says so.
+        </p>
+      </div>
+
+      <ol class="stages">
+        {
+          stages.map((s) => (
+            <li class="stage" id={s.id}>
+              <h3>{s.name}</h3>
+              <div class="stage-body">
+                <p class="lead">{s.lead}</p>
+                <ul class="plain-list">
+                  {s.points.map((p) => (
+                    <li>{p}</li>
+                  ))}
+                </ul>
+                <details>
+                  <summary>{s.detailTitle}</summary>
+                  <ul class="plain-list">
+                    {s.detail.map((d) => (
+                      <li>{d}</li>
+                    ))}
+                  </ul>
+                </details>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="projects-h">Four other pieces of work</h2>
+        <p>The bar under each one shows which of the six stages I covered.</p>
+      </div>
+
+      <div class="projects">
+        <article class="project project-wide">
+          <div>
+            <h3>{integration.title}</h3>
+            <p class="status">{integration.status}</p>
+            {integration.body.map((b) => <p class="body">{b}</p>)}
+            <p class="tech">{integration.tech}</p>
+            <div class="covered">
+              <div class="covered-bar" aria-hidden="true">
+                {
+                  stages.map((s) => (
+                    <span class={integration.covered.includes(s.id) ? `on-${s.id}` : ''} />
+                  ))
+                }
+              </div>
+              <p>I covered {coveredText(integration.covered)}.</p>
+            </div>
+          </div>
+          <figure>
+            <div class="diagram">
+              <div class="node">
+                <strong>Dataverse</strong>
+              </div>
+              <div class="node hub">
+                <strong>Azure Function Apps</strong>
+                <span>Validate, transform, synchronise</span>
+              </div>
+              <div class="stores">
+                <div class="node">
+                  <strong>SQL Server</strong>
+                  <span>Staging layer</span>
+                </div>
+                <div class="node">
+                  <strong>SQL Server</strong>
+                  <span>Second database</span>
+                </div>
+              </div>
+            </div>
+            <figcaption class="diagram-caption">
+              Three connected data stores. The Function Apps sit between them, so nothing is
+              written across without being checked first.
+            </figcaption>
+          </figure>
+        </article>
+
+        {
+          otherProjects.map((p) => (
+            <article class="project">
+              <h3>{p.title}</h3>
+              <p class="status">{p.status}</p>
+              {p.body.map((b) => (
+                <p class="body">{b}</p>
+              ))}
+              <p class="tech">{p.tech}</p>
+              <div class="covered">
+                <div class="covered-bar" aria-hidden="true">
+                  {stages.map((s) => (
+                    <span class={p.covered.includes(s.id) ? `on-${s.id}` : ''} />
+                  ))}
+                </div>
+                <p>I covered {coveredText(p.covered)}.</p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-wash" id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="skills-h">What I work with</h2>
+      </div>
+      <dl class="skills">
+        {
+          skills.map((s) => (
+            <div>
+              <dt>{s.group}</dt>
+              <dd>{s.items}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="background" aria-labelledby="background-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="background-h">I spent six years in recruitment before I wrote any of this</h2>
+      </div>
+
+      <div class="about">
+        <Image
+          src={photo}
+          alt="Macauley, smiling, in a white shirt"
+          widths={[208, 416]}
+          sizes="(max-width: 42rem) 9rem, 13rem"
+          loading="lazy"
+        />
+        <div>
+          <p class="lead">
+            That time is why the discovery end of a project comes easily. I spent years asking
+            hiring managers what they needed until the real requirement showed up, then explaining
+            it to someone else.
+          </p>
+          <p>
+            One of those jobs was recruiting and onboarding 180 contact-centre staff for Interactive
+            Investor, which contributed to a reported 25% reduction in agency spend. A few years
+            later I was building the software a contact centre works in. It helps to have met the
+            people who use it.
+          </p>
+        </div>
+      </div>
+
+      <ol class="journey">
+        {
+          journey.map((j) => (
+            <li>
+              <p class="when">{j.when}</p>
+              <div>
+                <h3>{j.what}</h3>
+                <p>{j.body}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+
+      <div class="sub">
+        <h2 id="qualifications">Qualifications and current study</h2>
+        <p>
+          I’m working towards the Microsoft Power Platform Developer Associate certification. Outside
+          client work I go to Power Platform community events and keep up with what is changing in
+          agents and AI tooling.
+        </p>
+        <ul class="quals">
+          {
+            qualifications.map((q) => (
+              <li>
+                <span>{q.name}</span>
+                <span class="note">{q.note}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section closing" aria-label="Get in touch">
+    <div class="wrap">
+      <p>
+        If you’re hiring for Power Platform work, permanent or contract,{' '}
+        <a href={site.linkedin} rel="noopener me">message me on LinkedIn</a>.
+      </p>
+    </div>
+  </section>
+</Base>
