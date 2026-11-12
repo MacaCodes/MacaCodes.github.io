@@ -1,0 +1,29 @@
+{
+  "name": "macacodes-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "lint": "eslint .",
+    "test": "node scripts/check-dist.mjs",
+    "og": "node scripts/make-og.mjs",
+    "validate": "npm run check && npm run lint && npm run build && npm run test"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/archivo": "^5.3.0",
+    "astro": "^7.4.11"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "@typescript-eslint/parser": "^8.72.2",
+    "eslint": "^10.14.0",
+    "eslint-plugin-astro": "^3.2.1",
+    "sharp": "^0.35.5",
+    "typescript": "^5.9.3"
+  }
+}
