@@ -75,7 +75,7 @@ export const stages: Stage[] = [
     name: 'Build',
     summary: 'Apps, automation, AI, integrations',
     lead:
-      'I build Canvas and model-driven apps, custom pages, Code Apps, Power Pages prototypes and Copilot agents, with Power Automate, Azure Functions and APIs behind them.',
+      'I build Canvas and model-driven apps, automation, integrations and Copilot agents, using custom pages, Power Automate, Azure Functions and APIs where they fit.',
     points: [
       'Contact search against a nine-million-row table took about two minutes. I got it under five seconds, a reduction of over 95%.',
       'Across clients I have built more than 40 Power Automate cloud flows, along with Azure Function Apps and API integrations.',
@@ -92,7 +92,7 @@ export const stages: Stage[] = [
     id: 'test',
     name: 'Test',
     summary: 'UAT, regression, risk review',
-    lead: 'I trace the parts that can change data, build risk-based UAT and fix what the evidence shows.',
+    lead: 'I combine technical review with risk-based UAT, regression testing and fixes driven by evidence.',
     points: [
       'That review became a prioritised risk register. I delivered the fixes and wrote targeted UAT scenarios for each.',
       'I design the UAT approach for a release and present progress and demonstrations to stakeholders.',
@@ -106,7 +106,7 @@ export const stages: Stage[] = [
     id: 'release',
     name: 'Release',
     summary: 'ALM, deployments, handover',
-    lead: 'I move managed solutions through Dev, UAT and Production with environment-specific configuration.',
+    lead: 'I plan releases and move managed solutions through Dev, UAT and Production, with environment-specific configuration and clear handover.',
     points: [
       'Every release goes out as a managed solution, with connection references and environment variables set per environment.',
       'I set up and project-manage the Azure DevOps projects around the work, using Boards, epics and user stories.',
@@ -306,7 +306,8 @@ export const journey: { when: string; what: string; body: string }[] = [
   {
     when: 'September 2024 to now',
     what: 'Power Platform Developer, Microsoft consultancy',
-    body: 'Client work from pre-sales demonstrations through to production support.',
+    body:
+      'Client-facing Power Platform and Dynamics 365 work, from pre-sales and requirements through to release and production support. I design and build apps, automation, integrations and Copilot agents, and coordinate delivery through Azure DevOps and our internal Dynamics 365 system.',
   },
 ];
 
