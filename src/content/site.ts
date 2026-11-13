@@ -168,7 +168,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     role:
       'I built the C# Azure Function as an hourly, one-way synchronisation so the scanner remained independent of Dataverse availability. It reads new MySQL records without changing the source, validates and transforms them, and uses alternate-key upserts to prevent duplicates.',
     change:
-      'Warehouse scans now reach Dataverse without manual re-entry, where they can update operational records and trigger Power Automate processes.',
+      'About 1,000 warehouse scan records now reach Dataverse each day through the hourly sync, replacing separate imports and giving around 20 users up-to-date operational data.',
     status: 'In production.',
     tech: 'AWS-hosted MySQL, Azure Functions, C#/.NET, Dataverse, Power Automate',
     visual: 'integration',
@@ -181,7 +181,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     role:
       'I designed and released Copilot Studio agents for time tracking and case management in Teams. They retrieve relevant Dataverse records, ask for missing information and help users select the right subscription. A deterministic agent flow writes only after the user reviews the required fields.',
     change:
-      'People can complete time-tracking and case-management tasks through Teams instead of a long manual data-entry process, while retaining control over every write.',
+      'Time-tracking and case-management entries now take around 20 seconds instead of three minutes. The production agents have handled hundreds of requests while retaining user confirmation before every write.',
     status: 'In production. I continue to support the agents.',
     tech: 'Copilot Studio, Dataverse MCP, Power Automate agent flows, custom tools, Microsoft Teams',
     visual: 'copilot',
