@@ -221,7 +221,7 @@ export const deliveredSystems: DeliveredSystem[] = [
   {
     title: 'Dynamics 365 lead generation and campaign automation',
     body:
-      'I connected job-board APIs to Dynamics 365 leads and ClickDimensions campaigns, supported by a SharePoint go-to-market process I designed and mapped. A person reviewed everything before sending.',
+      'I connected job-board APIs to Dynamics 365 leads and ClickDimensions campaigns, supported by a SharePoint go-to-market process I designed and mapped. A person reviews everything before sending as part of the human-in-the-loop design.',
     result: 'In use. Around 250 qualified leads over nine months.',
     tech: 'Dynamics 365, ClickDimensions, SharePoint, job-board APIs, human review',
   },
