@@ -113,6 +113,6 @@ and documentation.
 ### Portrait
 
 The hero portrait is an original transparent line drawing (`src/assets/macauley-drawing.svg`),
-inlined so it takes the ink colour in both themes. Its friendly eyes, smile and collared shirt keep
-the character approachable without becoming cartoonish. Personal photographs are not stored in
-the public repository.
+inlined so it takes the ink colour in both themes. Its natural oval eyes, restrained toothy smile
+and collared shirt keep the character approachable without becoming cartoonish. Personal
+photographs are not stored in the public repository.

@@ -14,13 +14,11 @@
   <!-- hair: a messy quiff, close to the head -->
   <path d="M75 126c-9-12-7-28 3-35-2-14 15-22 26-16 8-12 30-12 38-2 14-6 28 6 24 20 10 8 6 24-1 31-5-12-15-18-27-15-10-7-26-5-34 2-10-5-22 3-29 15z"/>
   <path d="M96 88c5-5 12-5 16 0M128 84c5-5 13-4 16 2" stroke-width="3.5"/>
-  <!-- soft brows and slightly larger, friendlier eyes -->
+  <!-- soft brows and natural oval eyes -->
   <path d="M94 130c5-3 12-3 17 0M129 130c5-3 12-3 17 0" stroke-width="3.5"/>
-  <ellipse cx="104" cy="147" rx="7" ry="7.8" stroke-width="3.5"/>
-  <ellipse cx="137" cy="147" rx="7" ry="7.8" stroke-width="3.5"/>
-  <circle cx="104" cy="148" r="2.8" fill="currentColor" stroke="none"/>
-  <circle cx="137" cy="148" r="2.8" fill="currentColor" stroke="none"/>
-  <!-- warmer smile and small cheek marks -->
-  <path d="M102 168c9 15 28 16 38 0"/>
-  <path d="M91 163c3 2 5 2 8 0M142 163c3 2 5 2 8 0" stroke-width="3"/>
+  <ellipse cx="104" cy="147" rx="4.8" ry="5.8" fill="currentColor" stroke="none"/>
+  <ellipse cx="137" cy="147" rx="4.8" ry="5.8" fill="currentColor" stroke="none"/>
+  <!-- restrained closed toothy smile -->
+  <path d="M103 169c9 7 26 7 35 0-1 11-8 17-17 17-9 0-16-6-18-17z" fill="var(--paper)" stroke-width="4"/>
+  <path d="M106 176c8 3 21 3 29 0" stroke-width="2.5"/>
 </svg>
