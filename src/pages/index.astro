@@ -77,23 +77,30 @@ import {
                     <dd>{study.context}</dd>
                   </div>
                   <div>
-                    <dt>My role</dt>
-                    <dd>{study.role}</dd>
-                  </div>
-                  <div>
                     <dt>What changed</dt>
                     <dd>{study.change}</dd>
                   </div>
-                  <div>
-                    <dt>Status</dt>
-                    <dd>{study.status}</dd>
-                  </div>
-                  <div>
-                    <dt>Built with</dt>
-                    <dd>{study.tech}</dd>
-                  </div>
                 </dl>
-                {study.visual && <ArchitectureDiagram type={study.visual} />}
+                <details class="case-details">
+                  <summary>Role, build and architecture</summary>
+                  <div class="case-details-body">
+                    <dl class="formula case-formula">
+                      <div>
+                        <dt>My role</dt>
+                        <dd>{study.role}</dd>
+                      </div>
+                      <div>
+                        <dt>Status</dt>
+                        <dd>{study.status}</dd>
+                      </div>
+                      <div>
+                        <dt>Built with</dt>
+                        <dd>{study.tech}</dd>
+                      </div>
+                    </dl>
+                    {study.visual && <ArchitectureDiagram type={study.visual} />}
+                  </div>
+                </details>
               </div>
             </article>
           ))

@@ -609,6 +609,14 @@ details .plain-list {
   border-top: 0;
 }
 
+.case-details {
+  margin-top: 1.25rem;
+}
+
+.case-details-body {
+  padding-block: 1rem 1.25rem;
+}
+
 .architecture {
   margin-top: 1.35rem;
   padding-top: 1.1rem;
