@@ -54,8 +54,9 @@ Sentence case everywhere. Line height 1.6 for body, 1.15 for headings.
 
 - **Lifecycle line**: 3px, horizontal in the hero (also the stage navigation), vertical beside the walk-through.
 - **Stage**: name on the left, lead sentence, short list, one `<details>` for technical depth.
-- **Project**: title, status sentence, paragraph, technologies, six-segment bar showing stages covered, with the same information in words.
-- **Diagram**: HTML boxes with 1px ink borders, so it reflows on small screens. Only for real architecture.
+- **Evidence strip**: four verified figures directly beneath the hero, separated with rules rather than cards.
+- **Case study**: title followed by Context, My role, What changed, Status and Built with. The three strongest case studies appear before the delivery process.
+- **Delivered system**: concise title, delivery summary, status or outcome and technologies. No stage-coverage bars.
 - **Links**: ink, underlined, thicker underline on hover. No buttons.
 - **Focus**: 2px `--stage-start` outline, 3px offset.
 - **Illustration**: one line-drawn plant, on the 404 page only.
@@ -88,15 +89,17 @@ saved in `localStorage`. Dark tokens:
 ### Icons
 
 Fluent UI System Icons (Microsoft, MIT licence), 24px regular, inlined at build time by
-`src/components/Icon.astro`. Used only for the six skill groups, the diagram nodes and the
-theme toggle. No Microsoft product logos: their terms limit those to diagrams, training
+`src/components/Icon.astro`. Used only for the six skill groups and the theme toggle. No
+Microsoft product logos: their terms limit those to diagrams, training
 and documentation.
 
 ### Text density
 
 - Each stage shows one sentence. Everything else sits behind its disclosure.
-- Projects follow one formula: Need, What I did, Result, Built with. Leave Result out
-  when there is no known outcome.
+- The page is evidence-led: three featured case studies first, then supporting systems, then
+  the delivery lifecycle. Outcomes distinguish production work from work still in testing.
+- UX/UI, governance and enablement sit together under "Beyond the build" so those strengths
+  support the engineering story without taking over the site.
 - The background section is three short facts and a timeline, not paragraphs.
 
 ### Data visuals
@@ -106,7 +109,7 @@ and documentation.
 
 ### Other
 
-- The photo is in colour, beside the hero.
+- The transparent line-drawn portrait sits beside the hero and follows the active theme.
 - A sticky stage bar inside the walk-through highlights the stage being read.
 - Header reads "Macauley – Power Platform Developer".
 

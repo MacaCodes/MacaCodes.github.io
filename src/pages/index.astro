@@ -2,16 +2,17 @@
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import drawing from '../assets/macauley-drawing.svg?raw';
-import { site, stages, projects, skills, journey, qualifications } from '../content/site';
-
-const stageName = (id: string) => stages.find((s) => s.id === id)?.name ?? id;
-const coveredText = (ids: string[]) => {
-  const names = ids.map((id) => stageName(id).toLowerCase());
-  return names.length > 1
-    ? `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`
-    : names[0];
-};
-const [integration, ...otherProjects] = projects;
+import {
+  site,
+  stages,
+  proof,
+  featuredCaseStudies,
+  deliveredSystems,
+  practices,
+  skills,
+  journey,
+  qualifications,
+} from '../content/site';
 ---
 
 <Base>
@@ -32,6 +33,17 @@ const [integration, ...otherProjects] = projects;
       </div>
     </div>
 
+    <dl class="proof" aria-label="Selected delivery evidence">
+      {
+        proof.map((item) => (
+          <div>
+            <dt>{item.value}</dt>
+            <dd>{item.label}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
     <nav class="lifecycle" aria-label="Delivery stages">
       <ol>
         {
@@ -51,10 +63,74 @@ const [integration, ...otherProjects] = projects;
   <section class="section section-wash" id="work" aria-labelledby="work-h">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="work-h">Consultancy work, in the order it happens</h2>
+        <h2 id="work-h">Selected Power Platform work</h2>
         <p>
-          Confidential consultancy work. There are no client names or screenshots.
+          Three examples of the business problem, my role and what changed. Client names and
+          identifying screenshots stay confidential.
         </p>
+      </div>
+
+      <div class="case-studies">
+        {
+          featuredCaseStudies.map((study) => (
+            <article class="case-study">
+              <h3>{study.title}</h3>
+              <dl class="formula case-formula">
+                <div>
+                  <dt>Context</dt>
+                  <dd>{study.context}</dd>
+                </div>
+                <div>
+                  <dt>My role</dt>
+                  <dd>{study.role}</dd>
+                </div>
+                <div>
+                  <dt>What changed</dt>
+                  <dd>{study.change}</dd>
+                </div>
+                <div>
+                  <dt>Status</dt>
+                  <dd>{study.status}</dd>
+                </div>
+                <div>
+                  <dt>Built with</dt>
+                  <dd>{study.tech}</dd>
+                </div>
+              </dl>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="projects-h">More systems I’ve delivered</h2>
+        <p>Production integrations, automation and model-driven work across the wider platform.</p>
+      </div>
+
+      <div class="systems">
+        {
+          deliveredSystems.map((system) => (
+            <article class="system">
+              <h3>{system.title}</h3>
+              <p>{system.body}</p>
+              <p class="status">{system.result}</p>
+              <p class="tech">{system.tech}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-wash" id="process" aria-labelledby="process-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="process-h">How I take work from idea to live service</h2>
+        <p>Practical delivery from the first requirement through to production support.</p>
       </div>
     </div>
 
@@ -81,43 +157,39 @@ const [integration, ...otherProjects] = projects;
               <div class="stage-body">
                 <p class="lead">{s.lead}</p>
 
-                {
-                  s.id === 'build' && (
-                    <figure class="compare">
-                      <figcaption>Contact search on a nine-million-row table</figcaption>
-                      <div class="compare-row">
-                        <span class="compare-label">Before</span>
-                        <span class="compare-track">
-                          <span class="compare-bar compare-before" />
-                        </span>
-                        <span class="compare-value">about 2 minutes</span>
-                      </div>
-                      <div class="compare-row">
-                        <span class="compare-label">After</span>
-                        <span class="compare-track">
-                          <span class="compare-bar compare-after" />
-                        </span>
-                        <span class="compare-value">under 5 seconds</span>
-                      </div>
-                    </figure>
-                  )
-                }
+                {s.id === 'build' && (
+                  <figure class="compare">
+                    <figcaption>Contact search on a nine-million-row table</figcaption>
+                    <div class="compare-row">
+                      <span class="compare-label">Before</span>
+                      <span class="compare-track">
+                        <span class="compare-bar compare-before" />
+                      </span>
+                      <span class="compare-value">about 2 minutes</span>
+                    </div>
+                    <div class="compare-row">
+                      <span class="compare-label">After</span>
+                      <span class="compare-track">
+                        <span class="compare-bar compare-after" />
+                      </span>
+                      <span class="compare-value">under 5 seconds</span>
+                    </div>
+                  </figure>
+                )}
 
-                {
-                  s.id === 'release' && (
-                    <figure class="pipeline">
-                      <ol>
-                        <li>Dev</li>
-                        <li>UAT</li>
-                        <li>Production</li>
-                      </ol>
-                      <figcaption>
-                        One managed solution moves through all three. Connection references and
-                        environment variables are set per environment.
-                      </figcaption>
-                    </figure>
-                  )
-                }
+                {s.id === 'release' && (
+                  <figure class="pipeline">
+                    <ol>
+                      <li>Dev</li>
+                      <li>UAT</li>
+                      <li>Production</li>
+                    </ol>
+                    <figcaption>
+                      One managed solution moves through all three. Connection references and
+                      environment variables are set per environment.
+                    </figcaption>
+                  </figure>
+                )}
 
                 <details>
                   <summary>{s.detailTitle}</summary>
@@ -135,118 +207,7 @@ const [integration, ...otherProjects] = projects;
     </div>
   </section>
 
-  <section class="section" id="projects" aria-labelledby="projects-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="projects-h">Four other pieces of work</h2>
-        <p>The bar under each one shows which of the six stages I covered.</p>
-      </div>
-
-      <div class="projects">
-        <article class="project project-wide">
-          <div>
-            <h3>{integration.title}</h3>
-            <dl class="formula">
-              <div>
-                <dt>Need</dt>
-                <dd>{integration.need}</dd>
-              </div>
-              <div>
-                <dt>What I did</dt>
-                <dd>{integration.did}</dd>
-              </div>
-              {integration.result && (
-                <div>
-                  <dt>Result</dt>
-                  <dd>{integration.result}</dd>
-                </div>
-              )}
-              <div>
-                <dt>Built with</dt>
-                <dd>{integration.tech}</dd>
-              </div>
-            </dl>
-            <div class="covered">
-              <div class="covered-bar" aria-hidden="true">
-                {
-                  stages.map((s) => (
-                    <span class={integration.covered.includes(s.id) ? `on-${s.id}` : ''} />
-                  ))
-                }
-              </div>
-              <p>I covered {coveredText(integration.covered)}.</p>
-            </div>
-          </div>
-          <figure>
-            <div class="diagram">
-              <div class="node">
-                <Icon name="database" />
-                <strong>Dataverse</strong>
-              </div>
-              <div class="node hub">
-                <Icon name="flow" />
-                <strong>Azure Function Apps</strong>
-                <span>Validate, transform, synchronise</span>
-              </div>
-              <div class="stores">
-                <div class="node">
-                  <Icon name="database" />
-                  <strong>SQL Server</strong>
-                  <span>Staging layer</span>
-                </div>
-                <div class="node">
-                  <Icon name="database" />
-                  <strong>SQL Server</strong>
-                  <span>Second database</span>
-                </div>
-              </div>
-            </div>
-            <figcaption class="diagram-caption">
-              Three connected data stores, with the Function Apps between them.
-            </figcaption>
-          </figure>
-        </article>
-
-        {
-          otherProjects.map((p) => (
-            <article class="project">
-              <h3>{p.title}</h3>
-              <dl class="formula">
-                <div>
-                  <dt>Need</dt>
-                  <dd>{p.need}</dd>
-                </div>
-                <div>
-                  <dt>What I did</dt>
-                  <dd>{p.did}</dd>
-                </div>
-                {p.result && (
-                  <div>
-                    <dt>Result</dt>
-                    <dd>{p.result}</dd>
-                  </div>
-                )}
-                <div>
-                  <dt>Built with</dt>
-                  <dd>{p.tech}</dd>
-                </div>
-              </dl>
-              <div class="covered">
-                <div class="covered-bar" aria-hidden="true">
-                  {stages.map((s) => (
-                    <span class={p.covered.includes(s.id) ? `on-${s.id}` : ''} />
-                  ))}
-                </div>
-                <p>I covered {coveredText(p.covered)}.</p>
-              </div>
-            </article>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-wash" id="skills" aria-labelledby="skills-h">
+  <section class="section" id="skills" aria-labelledby="skills-h">
     <div class="wrap">
       <div class="section-head">
         <h2 id="skills-h">What I work with</h2>
@@ -264,6 +225,25 @@ const [integration, ...otherProjects] = projects;
           ))
         }
       </dl>
+    </div>
+  </section>
+
+  <section class="section section-wash" id="practice" aria-labelledby="practice-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="practice-h">Beyond the build</h2>
+        <p>Good systems also need clear experiences, sensible guardrails and confident users.</p>
+      </div>
+      <div class="practices">
+        {
+          practices.map((practice) => (
+            <article>
+              <h3>{practice.title}</h3>
+              <p>{practice.body}</p>
+            </article>
+          ))
+        }
+      </div>
     </div>
   </section>
 

@@ -320,6 +320,38 @@ img {
   text-underline-offset: 0.2em;
 }
 
+/* A compact evidence layer before the longer case studies. */
+.proof {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.proof div {
+  padding: 1.1rem clamp(0.75rem, 2vw, 1.5rem) 1.2rem 0;
+}
+
+.proof div + div {
+  padding-left: clamp(0.75rem, 2vw, 1.5rem);
+  border-left: 1px solid var(--rule);
+}
+
+.proof dt {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  font-stretch: 108%;
+  line-height: 1.1;
+}
+
+.proof dd {
+  margin-top: 0.35rem;
+  color: var(--ink-soft);
+  font-size: var(--text-s);
+  line-height: 1.4;
+}
+
 /* Sections */
 .section {
   padding-block: var(--section);
@@ -450,133 +482,77 @@ details .plain-list {
   color: var(--ink-soft);
 }
 
-/* Other work */
-.projects {
+/* Evidence-led work */
+.case-studies {
   margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.case-study {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(3rem, 6vw, 4.5rem) clamp(2rem, 6vw, 5rem);
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: 1.5rem clamp(2rem, 6vw, 5rem);
+  padding-block: clamp(2rem, 5vw, 3rem);
+  border-top: 1px solid var(--ink);
 }
 
-.project-wide {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-  gap: 2rem clamp(2rem, 6vw, 5rem);
-  align-items: start;
+.case-study:first-child {
+  padding-top: 1.5rem;
 }
 
-.project .status {
-  margin-top: 0.5rem;
-  font-size: var(--text-s);
-  font-weight: 600;
+.case-study h3 {
+  max-width: 12em;
 }
 
-.project .body {
-  margin-top: 0.9rem;
+.formula.case-formula {
+  margin-top: 0;
   max-width: var(--measure);
 }
 
-.project .tech {
+.case-formula div:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.systems {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(3rem, 6vw, 4.5rem) clamp(2rem, 6vw, 5rem);
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.system {
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+
+.system > p {
   margin-top: 0.9rem;
-  font-size: var(--text-s);
-  color: var(--ink-soft);
 }
 
-.covered {
-  margin-top: 1.25rem;
-  font-size: var(--text-s);
-}
-
-.covered-bar {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 3px;
-  max-width: 15rem;
-  margin-bottom: 0.4rem;
-}
-
-.covered-bar span {
-  height: var(--line-w);
-  background: var(--rule);
-}
-
-.covered-bar .on-discover {
-  background: var(--stage-start);
-}
-.covered-bar .on-design {
-  background: var(--stage-2);
-}
-.covered-bar .on-build {
-  background: var(--stage-3);
-}
-.covered-bar .on-test {
-  background: var(--stage-mid);
-}
-.covered-bar .on-release {
-  background: var(--stage-5);
-}
-.covered-bar .on-support {
-  background: var(--stage-end);
-}
-
-/* Integration diagram, built in HTML so it reflows on small screens */
-.diagram {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr);
-  align-items: center;
-  font-size: var(--text-s);
-  line-height: 1.35;
-}
-
-.diagram .node {
-  border: 1px solid var(--ink);
-  padding: 0.8rem 0.9rem;
-  background: var(--paper);
-}
-
-.diagram .node strong {
-  display: block;
+.system .status {
   font-weight: 600;
 }
 
-.diagram .node span {
-  color: var(--ink-soft);
-}
-
-.diagram .hub {
-  position: relative;
-  margin-inline: 1.5rem;
-  border-width: 2px;
-}
-
-.diagram .hub::before,
-.diagram .hub::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 1.5rem;
-  height: 1px;
-  background: var(--ink);
-}
-
-.diagram .hub::before {
-  right: 100%;
-}
-
-.diagram .hub::after {
-  left: 100%;
-}
-
-.diagram .stores {
-  display: grid;
-  gap: 0.75rem;
-}
-
-.diagram-caption {
-  margin-top: 0.9rem;
+.system .tech {
   font-size: var(--text-s);
   color: var(--ink-soft);
+}
+
+/* UX/UI, governance and enablement */
+.practices {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem clamp(1.5rem, 4vw, 3rem);
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.practices article {
+  padding-top: 1rem;
+  border-top: 1px solid var(--ink);
+}
+
+.practices p {
+  margin-top: 0.8rem;
 }
 
 /* Skills */
@@ -762,10 +738,6 @@ details .plain-list {
     border-top-color: var(--stage-end);
   }
 
-  .project-wide {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .skills {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -777,6 +749,7 @@ details .plain-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .case-study,
   .stage,
   .journey li,
   .about,
@@ -784,37 +757,20 @@ details .plain-list {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .projects {
+  .proof,
+  .systems,
+  .practices {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .proof div + div {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--rule);
   }
 
   .skills div {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .diagram {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .diagram .hub {
-    margin: 1.25rem 0;
-  }
-
-  .diagram .hub::before,
-  .diagram .hub::after {
-    left: 50%;
-    width: 1px;
-    height: 1.25rem;
-  }
-
-  .diagram .hub::before {
-    top: auto;
-    bottom: 100%;
-    right: auto;
-  }
-
-  .diagram .hub::after {
-    top: 100%;
   }
 
   .about img,
@@ -1074,12 +1030,6 @@ details .plain-list {
   color: var(--ink-soft);
 }
 
-.diagram .node .icon {
-  display: block;
-  margin-bottom: 0.35rem;
-  color: var(--ink-soft);
-}
-
 .skills dt {
   display: flex;
   gap: 0.6rem;
@@ -1175,7 +1125,7 @@ details .plain-list {
   }
 }
 
-/* Project formula: need, what I did, result, built with */
+/* Case-study formula: context, role, change, status, built with */
 .formula {
   margin-top: 1rem;
   max-width: var(--measure);

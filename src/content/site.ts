@@ -121,53 +121,111 @@ export const stages: Stage[] = [
   },
 ];
 
-// Each project follows the same formula: need, what I did, result, built with.
-// Leave `result` out when the CV gives no outcome. Do not invent one.
-export interface Project {
-  id: string;
+export const proof = [
+  { value: '230+', label: 'production users' },
+  { value: '9m', label: 'Dataverse records' },
+  { value: '40+', label: 'cloud flows built' },
+  { value: '~250', label: 'qualified leads in nine months' },
+];
+
+export interface CaseStudy {
   title: string;
-  need: string;
-  did: string;
-  result?: string;
+  context: string;
+  role: string;
+  change: string;
+  status: string;
   tech: string;
-  covered: StageId[];
 }
 
-export const projects: Project[] = [
+export const featuredCaseStudies: CaseStudy[] = [
   {
-    id: 'sql-integration',
+    title: 'A contact-centre CRM built for scale',
+    context:
+      'A production CRM used by more than 230 people had to remain fast, secure and dependable across nine million Dataverse records.',
+    role:
+      'As primary developer, I wrote about 90% of the Canvas app and made the technical decisions on structure, data, security, integrations, performance and deployment.',
+    change:
+      'Contact search fell from about two minutes to under five seconds. I also traced more than 70 data-changing formulas, turned the findings into a risk register and fixes, and managed releases across Dev, UAT and Production.',
+    status: 'In production. I continue to support it.',
+    tech: 'Canvas apps, Dataverse, Power Fx, Power Automate, Power Platform Pipelines, Azure DevOps',
+  },
+  {
+    title: 'Production Copilot agents with controlled actions',
+    context:
+      'Long, manual data-entry tasks were creating friction for people trying to keep business data up to date.',
+    role:
+      'I designed, built and released Copilot Studio agents in Teams, using grounded retrieval, explicit confirmation, human review and deterministic transactions for writes.',
+    change:
+      'People can now complete the work through a Copilot chat in Teams instead of a time-consuming manual process, making data entry easier while keeping actions controlled.',
+    status: 'In production. I continue to support the agents.',
+    tech: 'Copilot Studio, Dataverse MCP, Power Automate agent flows, custom tools, Microsoft Teams',
+  },
+  {
+    title: 'Lead generation with human review',
+    context:
+      'A consultancy needed a more systematic way to find relevant opportunities without removing judgement from outreach.',
+    role:
+      'I built an internal tool around job-board APIs and automated the processing and campaign preparation, with a person reviewing before anything is sent.',
+    change:
+      'It generated approximately 250 qualified leads over nine months and fed opportunities into active sequencing.',
+    status: 'In use.',
+    tech: 'Job-board APIs, workflow automation, human-in-the-loop review',
+  },
+];
+
+export interface DeliveredSystem {
+  title: string;
+  body: string;
+  result: string;
+  tech: string;
+}
+
+export const deliveredSystems: DeliveredSystem[] = [
+  {
     title: 'Dataverse and SQL Server integration',
-    need: 'Dataverse and two SQL Server databases had to stay in step.',
-    did: 'Designed and built the integration, with one database as a dedicated staging layer. Azure Function Apps automate validation, transformation and synchronisation.',
-    tech: 'Dataverse, SQL Server, Azure Function Apps, C#/.NET',
-    covered: ['design', 'build'],
+    body:
+      'Designed and built an integration across Dataverse and two SQL Server databases, with a dedicated staging layer and Azure Functions handling validation, transformation and synchronisation.',
+    result: 'In production. It saves time and keeps one source of truth across the connected systems.',
+    tech: 'Dataverse, SQL Server, Azure Functions, C#/.NET',
   },
   {
-    id: 'copilot-agents',
-    title: 'Copilot Studio agents',
-    need: 'Agents that can act on business data without being left to guess.',
-    did: 'Designed, built and released them with grounded retrieval, confirmation before any action, a person in the loop, and deterministic transactions for writes.',
-    result: 'In production. I still support them.',
-    tech: 'Copilot Studio, Dataverse MCP, Power Automate agent flows, custom tools',
-    covered: ['design', 'build', 'release', 'support'],
+    title: 'Two government API integrations',
+    body:
+      'Integrated two published APIs into Power Automate and Canvas apps, then managed a version migration across endpoints, mappings, validation, error handling and dependent logic.',
+    result: 'In production and still maintained.',
+    tech: 'Power Automate, Canvas apps, REST APIs',
   },
   {
-    id: 'government-apis',
-    title: 'Two government APIs',
-    need: 'Two government APIs had to work from Power Automate and Canvas apps, then move to a newer API version.',
-    did: 'Integrated both from the published documentation, and managed the version change across endpoints, mappings, validation, error handling and dependent logic.',
-    result: 'In production. I still maintain them.',
-    tech: 'Power Automate, Canvas apps, REST APIs, try/catch/finally error handling',
-    covered: ['build', 'support'],
+    title: 'WordPress order automation',
+    body:
+      'Building a reusable parent-and-child flow pattern to replace spreadsheet processing across 25 order types and their custom fields.',
+    result: 'In testing.',
+    tech: 'WordPress, Power Automate, reusable cloud flows',
   },
   {
-    id: 'lead-generation',
-    title: 'Lead-generation tool',
-    need: 'An internal business development tool for a consultancy.',
-    did: 'Built it on job board APIs, with a largely automated outbound campaign process. A person reviews before anything is sent.',
-    result: 'In use and generating leads.',
-    tech: 'Job board APIs, automation with human-in-the-loop review',
-    covered: ['build'],
+    title: 'Model-driven apps and operational data',
+    body:
+      'Delivered custom pages, command bars, JavaScript web resources and dashboards, alongside high-volume SQL and FetchXML work and a legacy Dynamics 365 audit.',
+    result: 'Used across live delivery, reporting and modernisation work.',
+    tech: 'Model-driven apps, Dynamics 365, JavaScript, Power BI, SQL, FetchXML',
+  },
+];
+
+export const practices = [
+  {
+    title: 'UX/UI people want to use',
+    body:
+      'I use wireframes, reusable components, responsive design, accessibility checks, usability feedback and before-and-after redesigns. The aim is simple: make the solution easy to understand and good enough that people want to use it.',
+  },
+  {
+    title: 'Governance that supports delivery',
+    body:
+      'I contribute to standards covering environment and solution reviews, ALM, naming, deployment, reusable components, audit and recovery, backups, deletion policies, GDPR and least-privilege access.',
+  },
+  {
+    title: 'Enablement beyond handover',
+    body:
+      'I have run five client discovery workshops, coached an apprentice for more than six months, and produced solution designs, review checklists, release notes, training and handover documentation.',
   },
 ];
 
