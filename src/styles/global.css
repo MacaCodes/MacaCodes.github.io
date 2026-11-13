@@ -1081,6 +1081,42 @@ details .plain-list {
     content: '\2193';
   }
 
+  .architecture--diagram .architecture-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+
+  .architecture--diagram .architecture-row li + li::before {
+    content: '\2192';
+    right: calc(100% + 0.1rem);
+    bottom: auto;
+  }
+
+  .architecture--crm .architecture-row:first-of-type li + li::before {
+    content: '\2194';
+  }
+
+  .architecture--crm .architecture-row:last-of-type li:nth-child(2)::before {
+    content: '\2190';
+  }
+
+  .architecture--crm .architecture-row:last-of-type li:nth-child(3)::before {
+    content: '\2192';
+  }
+
+  .architecture--diagram .architecture-route {
+    display: block;
+    height: 3rem;
+  }
+
+  .architecture--diagram .architecture-route svg {
+    display: block;
+  }
+
+  .architecture--diagram .architecture-route::after {
+    content: none;
+  }
+
   .skills div {
     grid-template-columns: minmax(0, 1fr);
   }
