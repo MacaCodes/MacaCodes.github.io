@@ -121,13 +121,6 @@ export const stages: Stage[] = [
   },
 ];
 
-export const proof = [
-  { value: '230+', label: 'production users' },
-  { value: '9m', label: 'Dataverse records' },
-  { value: '40+', label: 'cloud flows built' },
-  { value: '~250', label: 'qualified leads in nine months' },
-];
-
 export interface CaseStudy {
   title: string;
   context: string;

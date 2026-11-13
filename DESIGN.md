@@ -46,7 +46,7 @@ Sentence case everywhere. Line height 1.6 for body, 1.15 for headings.
 ## Layout and spacing
 
 - Page width 70rem, gutter `clamp(1.25rem, 5vw, 3rem)`.
-- Section padding `clamp(4.5rem, 10vw, 8rem)`.
+- Section padding `clamp(3.75rem, 8vw, 6rem)` for a compact but unhurried rhythm.
 - Breakpoints: 60rem (tablet), 42rem (phone). Multi-column grids collapse to one column on phones.
 - The hero line is six columns on desktop, three on tablet, two on phone.
 
@@ -54,7 +54,6 @@ Sentence case everywhere. Line height 1.6 for body, 1.15 for headings.
 
 - **Lifecycle line**: 3px, horizontal in the hero (also the stage navigation), vertical beside the walk-through.
 - **Stage**: name on the left, lead sentence, short list, one `<details>` for technical depth.
-- **Evidence strip**: four verified figures directly beneath the hero, separated with rules rather than cards.
 - **Case study**: title followed by Context, My role, What changed, Status and Built with. The three strongest case studies appear before the delivery process.
 - **Delivered system**: concise title, delivery summary, status or outcome and technologies. No stage-coverage bars.
 - **Links**: ink, underlined, thicker underline on hover. No buttons.

@@ -5,7 +5,6 @@ import drawing from '../assets/macauley-drawing.svg?raw';
 import {
   site,
   stages,
-  proof,
   featuredCaseStudies,
   deliveredSystems,
   practices,
@@ -32,17 +31,6 @@ import {
         <Fragment set:html={drawing} />
       </div>
     </div>
-
-    <dl class="proof" aria-label="Selected delivery evidence">
-      {
-        proof.map((item) => (
-          <div>
-            <dt>{item.value}</dt>
-            <dd>{item.label}</dd>
-          </div>
-        ))
-      }
-    </dl>
 
     <nav class="lifecycle" aria-label="Delivery stages">
       <ol>
