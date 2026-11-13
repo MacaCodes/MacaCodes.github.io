@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import ArchitectureDiagram from '../components/ArchitectureDiagram.astro';
 import drawing from '../assets/macauley-drawing.svg?raw';
 import {
   site,
@@ -95,19 +96,7 @@ import {
                     <dd>{study.tech}</dd>
                   </div>
                 </dl>
-                {
-                  study.visual === 'integration' && (
-                    <figure class="architecture">
-                      <ol aria-label="Integration architecture">
-                        <li>Warehouse scanner</li>
-                        <li>MySQL</li>
-                        <li>Azure Function</li>
-                        <li>Dataverse</li>
-                      </ol>
-                      <figcaption>Hourly, one-way synchronisation into Dataverse</figcaption>
-                    </figure>
-                  )
-                }
+                {study.visual && <ArchitectureDiagram type={study.visual} />}
               </div>
             </article>
           ))

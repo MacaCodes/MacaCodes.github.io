@@ -143,7 +143,7 @@ export interface CaseStudy {
   change: string;
   status: string;
   tech: string;
-  visual?: 'integration';
+  visual?: 'crm' | 'integration' | 'copilot';
 }
 
 export const featuredCaseStudies: CaseStudy[] = [
@@ -158,6 +158,7 @@ export const featuredCaseStudies: CaseStudy[] = [
       'Contact search fell from about two minutes to under five seconds. I also traced more than 70 data-changing formulas, turned the findings into a risk register and fixes, and managed releases across Dev, UAT and Production.',
     status: 'In production. I continue to support it.',
     tech: 'Canvas and model-driven apps, Dataverse, Power Fx, Power Automate, Power Platform Pipelines, Azure DevOps',
+    visual: 'crm',
   },
   {
     icon: 'database',
@@ -183,6 +184,7 @@ export const featuredCaseStudies: CaseStudy[] = [
       'People can now complete the work through a Copilot chat in Teams instead of a time-consuming manual process. Data entry is easier and each action is still controlled.',
     status: 'In production. I continue to support the agents.',
     tech: 'Copilot Studio, Dataverse MCP, Power Automate agent flows, custom tools, Microsoft Teams',
+    visual: 'copilot',
   },
 ];
 

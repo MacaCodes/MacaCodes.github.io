@@ -1,0 +1,68 @@
+---
+type DiagramType = 'crm' | 'integration' | 'copilot';
+
+interface Props {
+  type: DiagramType;
+}
+
+const { type } = Astro.props;
+---
+
+{
+  type === 'crm' && (
+    <figure class="architecture architecture--diagram architecture--crm">
+      <ol class="architecture-row" aria-label="Shared CRM architecture">
+        <li>Canvas app</li>
+        <li>Dataverse</li>
+        <li>Model-driven CRM</li>
+      </ol>
+      <span class="architecture-drop" aria-hidden="true">↓</span>
+      <ol class="architecture-row" aria-label="Automation, integrations and reporting">
+        <li>Integrations</li>
+        <li>Power Automate</li>
+        <li>Reporting</li>
+      </ol>
+      <figcaption>Security roles and managed releases across the solution</figcaption>
+    </figure>
+  )
+}
+
+{
+  type === 'integration' && (
+    <figure class="architecture">
+      <ol aria-label="Integration architecture">
+        <li>Warehouse scanner</li>
+        <li>MySQL</li>
+        <li>Azure Function</li>
+        <li>Dataverse</li>
+      </ol>
+      <figcaption>Hourly, one-way synchronisation into Dataverse</figcaption>
+    </figure>
+  )
+}
+
+{
+  type === 'copilot' && (
+    <figure class="architecture architecture--diagram architecture--copilot">
+      <span class="architecture-layer">Conversation</span>
+      <ol class="architecture-row" aria-label="Conversational layer">
+        <li>Teams request</li>
+        <li>Copilot agent</li>
+        <li>Review and confirm</li>
+      </ol>
+      <span class="architecture-route" aria-hidden="true">
+        <svg viewBox="0 0 1000 60" preserveAspectRatio="none">
+          <path d="M833 0 V30 H167 V54" vector-effect="non-scaling-stroke" />
+          <path d="M159 45 L167 58 L175 45 Z" />
+        </svg>
+      </span>
+      <span class="architecture-layer">Controlled write</span>
+      <ol class="architecture-row" aria-label="Controlled transaction layer">
+        <li>Agent flow</li>
+        <li>Validate and map</li>
+        <li>Dataverse</li>
+      </ol>
+      <figcaption>Human confirmation before the controlled Dataverse write</figcaption>
+    </figure>
+  )
+}

@@ -580,6 +580,74 @@ details .plain-list {
   font-size: var(--text-s);
 }
 
+.architecture--diagram .architecture-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.architecture--diagram .architecture-row li:nth-child(3) {
+  border-top-color: var(--stage-end);
+}
+
+.architecture--diagram .architecture-row + .architecture-row {
+  margin-top: 0;
+}
+
+.architecture-drop {
+  display: grid;
+  height: 2.75rem;
+  place-items: center;
+  color: var(--ink-soft);
+}
+
+.architecture--crm .architecture-row:first-of-type li + li::before {
+  content: '\2194';
+}
+
+.architecture--crm .architecture-row:last-of-type li:nth-child(2)::before {
+  content: '\2190';
+}
+
+.architecture--crm .architecture-row:last-of-type li:nth-child(3)::before {
+  content: '\2192';
+}
+
+.architecture-layer {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.architecture-route {
+  display: block;
+  height: 3.75rem;
+  color: var(--ink-soft);
+}
+
+.architecture-route svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.architecture-route path:first-child {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1px;
+}
+
+.architecture-route path:last-child {
+  fill: currentColor;
+}
+
+.architecture--copilot .architecture-route + .architecture-layer {
+  margin-top: -0.2rem;
+}
+
 .systems {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -941,6 +1009,26 @@ details .plain-list {
     content: '\2193';
     right: auto;
     bottom: calc(100% + 0.15rem);
+  }
+
+  .architecture--crm .architecture-row:first-of-type li + li::before,
+  .architecture--crm .architecture-row:last-of-type li + li::before,
+  .architecture--copilot .architecture-row li + li::before {
+    content: '\2193';
+  }
+
+  .architecture-route {
+    display: grid;
+    height: 2.25rem;
+    place-items: center;
+  }
+
+  .architecture-route svg {
+    display: none;
+  }
+
+  .architecture-route::after {
+    content: '\2193';
   }
 
   .skills div {
