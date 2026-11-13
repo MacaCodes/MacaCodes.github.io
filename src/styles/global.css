@@ -24,7 +24,7 @@
   --gutter: clamp(1.25rem, 5vw, 3rem);
   --page: 70rem;
   --measure: 38rem;
-  --section: clamp(2.75rem, 6vw, 4.25rem);
+  --section: clamp(2.5rem, 5.5vw, 3.875rem);
   --line-w: 3px;
   color-scheme: light;
 }
@@ -272,7 +272,7 @@ img {
 
 /* Hero */
 .hero {
-  padding-block: clamp(3rem, 9vw, 6.5rem) clamp(3rem, 7vw, 5rem);
+  padding-block: clamp(3rem, 9vw, 6.5rem) clamp(2.75rem, 6.5vw, 4.625rem);
 }
 
 .hero h1 {

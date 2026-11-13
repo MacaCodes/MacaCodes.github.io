@@ -46,7 +46,7 @@ Sentence case everywhere. Line height 1.6 for body, 1.15 for headings.
 ## Layout and spacing
 
 - Page width 70rem, gutter `clamp(1.25rem, 5vw, 3rem)`.
-- Section padding `clamp(2.75rem, 6vw, 4.25rem)` for a compact but unhurried rhythm.
+- Section padding `clamp(2.5rem, 5.5vw, 3.875rem)` for a compact but unhurried rhythm.
 - Breakpoints: 60rem (tablet), 42rem (phone). Multi-column grids collapse to one column on phones.
 - The hero line keeps all six clickable stages visible across breakpoints, alternating labels above
   and below the line to stay compact.
