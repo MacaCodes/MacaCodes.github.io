@@ -289,14 +289,10 @@ export const skills: { group: string; icon: IconName; items: string }[] = [
 
 export const journey: { when: string; what: string; body: string }[] = [
   {
-    when: 'Earlier career',
-    what: 'Recruitment, talent and commercial roles',
-    body: 'Technology recruitment, internal talent acquisition, executive search and sales across consulting, financial services and retail.',
-  },
-  {
-    when: 'Early 2024',
-    what: 'Full Stack Web Development bootcamp, The Growth Company',
-    body: 'MERN stack, January to April. Followed by a Level 4 Software Developer qualification with BPP.',
+    when: 'September 2024 to now',
+    what: 'Power Platform Developer, Microsoft consultancy',
+    body:
+      'Client-facing Power Platform and Dynamics 365 work, from pre-sales and requirements through to release and production support. I design and build apps, automation, integrations and Copilot agents, and coordinate delivery through Azure DevOps and our internal Dynamics 365 system.',
   },
   {
     when: 'Mid 2024',
@@ -304,15 +300,19 @@ export const journey: { when: string; what: string; body: string }[] = [
     body: 'Migrated data from a legacy applicant tracking system to a new Dynamics 365 CRM.',
   },
   {
-    when: 'September 2024 to now',
-    what: 'Power Platform Developer, Microsoft consultancy',
-    body:
-      'Client-facing Power Platform and Dynamics 365 work, from pre-sales and requirements through to release and production support. I design and build apps, automation, integrations and Copilot agents, and coordinate delivery through Azure DevOps and our internal Dynamics 365 system.',
+    when: 'Early 2024',
+    what: 'Full Stack Web Development bootcamp, The Growth Company',
+    body: 'MERN stack, January to April. Followed by a Level 4 Software Developer qualification with BPP.',
+  },
+  {
+    when: 'Earlier career',
+    what: 'Recruitment, talent and commercial roles',
+    body: 'Technology recruitment, internal talent acquisition, executive search and sales across consulting, financial services and retail.',
   },
 ];
 
 export const qualifications: { name: string; note: string }[] = [
-  { name: 'Microsoft Power Platform Developer Associate', note: 'In progress' },
+  { name: 'Microsoft Power Platform Developer Associate (AB-400)', note: 'In progress' },
   { name: 'Level 4 Software Developer, BPP', note: '2024 to 2025, Merit' },
   { name: 'Full Stack Web Development (MERN) bootcamp, The Growth Company', note: '2024' },
   { name: 'BA Social Sciences (Politics), University of Manchester', note: '2:1' },
