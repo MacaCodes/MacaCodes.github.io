@@ -1,8 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
-import photo from '../assets/macauley.jpg';
+import drawing from '../assets/macauley-drawing.svg?raw';
 import { site, stages, projects, skills, journey, qualifications } from '../content/site';
 
 const stageName = (id: string) => stages.find((s) => s.id === id)?.name ?? id;
@@ -30,14 +29,9 @@ const [integration, ...otherProjects] = projects;
           <a href={site.linkedin} rel="noopener me">LinkedIn</a>.
         </p>
       </div>
-      <Image
-        class="portrait"
-        src={photo}
-        alt="Macauley smiling, with Manchester rooftops behind him"
-        widths={[240, 480]}
-        sizes="(max-width: 42rem) 7rem, 15rem"
-        loading="eager"
-      />
+      <div class="portrait portrait-drawing" role="img" aria-label="A line drawing of Macauley, smiling">
+        <Fragment set:html={drawing} />
+      </div>
     </div>
 
     <nav class="lifecycle" aria-label="Delivery stages">

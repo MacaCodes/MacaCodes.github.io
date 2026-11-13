@@ -1133,3 +1133,15 @@ details .plain-list {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Hero portrait as a line drawing; it takes the ink colour, so it follows the theme. */
+.portrait-drawing {
+  background: var(--wash);
+  color: var(--ink);
+}
+
+.portrait-drawing svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}

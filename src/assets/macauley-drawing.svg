@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="22 52 196 245" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- shoulders and crew neck -->
+  <path d="M30 300C34 256 64 238 101 228M139 228c37 10 67 28 71 72"/>
+  <path d="M101 228c10 14 28 14 38 0"/>
+  <!-- neck -->
+  <path d="M101 200v28M139 200v28"/>
+  <!-- ears -->
+  <path d="M78 138c-13-5-13 22 3 22M162 138c13-5 13 22-3 22"/>
+  <!-- face -->
+  <path d="M77 118c-2 30 1 54 17 71 15 15 37 15 52 0 16-17 19-41 17-71"/>
+  <!-- hair: a messy quiff, close to the head -->
+  <path d="M75 126c-9-12-7-28 3-35-2-14 15-22 26-16 8-12 30-12 38-2 14-6 28 6 24 20 10 8 6 24-1 31-5-12-15-18-27-15-10-7-26-5-34 2-10-5-22 3-29 15z"/>
+  <path d="M96 88c5-5 12-5 16 0M128 84c5-5 13-4 16 2" stroke-width="3.5"/>
+  <!-- brows and eyes -->
+  <path d="M94 130h17M129 130h17" stroke-width="3.5"/>
+  <circle cx="104" cy="147" r="5.6" fill="currentColor" stroke="none"/>
+  <circle cx="137" cy="147" r="5.6" fill="currentColor" stroke="none"/>
+  <!-- smile -->
+  <path d="M105 171c9 9 22 9 31-2"/>
+</svg>

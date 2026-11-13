@@ -106,3 +106,8 @@ and documentation.
 - The photo is in colour, beside the hero.
 - A sticky stage bar inside the walk-through highlights the stage being read.
 - Header reads "Macauley – Power Platform Developer".
+
+### Portrait
+
+The hero portrait is an original line drawing (`src/assets/macauley-drawing.svg`), inlined so it
+takes the ink colour in both themes. The photo `src/assets/macauley.jpg` is kept in the repo but not shown.
