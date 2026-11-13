@@ -122,86 +122,92 @@ export const stages: Stage[] = [
   },
 ];
 
+// Each project follows the same formula: need, what I did, result, built with.
+// Leave `result` out when the CV gives no outcome. Do not invent one.
 export interface Project {
   id: string;
   title: string;
-  status: string; // plain sentence: production, internal, etc.
-  body: string[];
-  covered: StageId[];
+  need: string;
+  did: string;
+  result?: string;
   tech: string;
+  covered: StageId[];
 }
 
 export const projects: Project[] = [
   {
     id: 'sql-integration',
     title: 'Dataverse and SQL Server integration',
-    status: 'Client work. I designed and built it.',
-    body: [
-      'An integration between Dataverse and two SQL Server databases, one of them a dedicated staging layer. Azure Function Apps automate validation, transformation and synchronisation across the three stores.',
-    ],
-    covered: ['design', 'build'],
+    need: 'Dataverse and two SQL Server databases had to stay in step.',
+    did: 'Designed and built the integration, with one database as a dedicated staging layer. Azure Function Apps automate validation, transformation and synchronisation.',
     tech: 'Dataverse, SQL Server, Azure Function Apps, C#/.NET',
+    covered: ['design', 'build'],
   },
   {
     id: 'copilot-agents',
     title: 'Copilot Studio agents',
-    status: 'In production. I designed, built and released them, and still support them.',
-    body: [
-      'The agents answer from grounded retrieval and ask for confirmation before they act. A person stays in the loop for anything that matters, and writes go through deterministic transactions instead of being left to the model.',
-    ],
-    covered: ['design', 'build', 'release', 'support'],
+    need: 'Agents that can act on business data without being left to guess.',
+    did: 'Designed, built and released them with grounded retrieval, confirmation before any action, a person in the loop, and deterministic transactions for writes.',
+    result: 'In production. I still support them.',
     tech: 'Copilot Studio, Dataverse MCP, Power Automate agent flows, custom tools',
+    covered: ['design', 'build', 'release', 'support'],
   },
   {
     id: 'government-apis',
     title: 'Two government APIs',
-    status: 'In production. I integrated them and still maintain them.',
-    body: [
-      'Both were integrated from the published documentation, through Power Automate and Canvas apps. When a newer API version arrived I managed the move across endpoints, mappings, validation, error handling and the logic that depended on them.',
-    ],
-    covered: ['build', 'support'],
+    need: 'Two government APIs had to work from Power Automate and Canvas apps, then move to a newer API version.',
+    did: 'Integrated both from the published documentation, and managed the version change across endpoints, mappings, validation, error handling and dependent logic.',
+    result: 'In production. I still maintain them.',
     tech: 'Power Automate, Canvas apps, REST APIs, try/catch/finally error handling',
+    covered: ['build', 'support'],
   },
   {
     id: 'lead-generation',
     title: 'Lead-generation tool',
-    status: 'Internal tool at CRM Knowledge. In use and generating leads.',
-    body: [
-      'A business development tool built on job board APIs, with a largely automated outbound campaign process around it. A person reviews before anything is sent.',
-    ],
-    covered: ['build'],
+    need: 'An internal business development tool for CRM Knowledge.',
+    did: 'Built it on job board APIs, with a largely automated outbound campaign process. A person reviews before anything is sent.',
+    result: 'In use and generating leads.',
     tech: 'Job board APIs, automation with human-in-the-loop review',
+    covered: ['build'],
   },
 ];
 
-export const skills: { group: string; items: string }[] = [
+export type IconName = 'apps' | 'flow' | 'database' | 'plug' | 'shield' | 'people';
+
+export const skills: { group: string; icon: IconName; items: string }[] = [
   {
     group: 'Apps',
+    icon: 'apps',
     items:
       'Canvas and model-driven apps, Power Fx, custom pages, Power Pages, Dynamics 365 CE, JavaScript form scripting, web resources and command bars.',
   },
   {
     group: 'Automation',
+    icon: 'flow',
     items:
       'Power Automate cloud flows, Azure Functions in C#/.NET, business rules and business process flows.',
   },
   {
     group: 'Data',
+    icon: 'database',
     items:
       'Dataverse data modelling, alternate keys and autonumbering, SQL Server, FetchXML, SQL 4 CDS, migration, bulk operations, capacity and retention management.',
   },
   {
     group: 'Integrations and AI',
+    icon: 'plug',
     items:
       'REST APIs, Dataverse Web API, OData, custom connectors, SharePoint, Xero, Copilot Studio, AI Builder, MCP and agent orchestration.',
   },
   {
     group: 'ALM and security',
+    icon: 'shield',
     items:
       'Managed solutions, Power Platform Pipelines, Azure DevOps, Power Platform CLI, Git, environment variables, connection references, security roles, owner teams and Entra ID group teams.',
   },
   {
     group: 'Delivery',
+    icon: 'people',
     items:
       'Requirements, solution design, UAT strategy, regression testing, release management, client demonstrations, production support and Agile delivery.',
   },
@@ -211,22 +217,22 @@ export const journey: { when: string; what: string; body: string }[] = [
   {
     when: '2016 to 2023',
     what: 'Recruitment, talent and commercial roles',
-    body: 'Six years of requirements gathering and stakeholder management across technology recruitment, internal talent acquisition, executive search and sales. Employers included Wiley Edge, Interactive Investor, The Chat Shop, Bó Lè Associates, Sopra Steria, Edison Pope, APS Group, Co-op and John Lewis, with clients such as Amazon, EY, Argos and Sainsbury’s. At Wiley Edge I supported the Greenhouse implementation, which helped raise application completion by 30%, and delivered cohorts of STEM graduates into roles at UBS, Morgan Stanley, NatWest Markets and JP Morgan.',
+    body: 'Technology recruitment, internal talent acquisition, executive search and sales. Employers included Wiley Edge, Interactive Investor, Sopra Steria, Co-op and John Lewis, with clients such as Amazon, EY, Argos and Sainsbury’s.',
   },
   {
     when: 'Early 2024',
     what: 'Full Stack Web Development bootcamp, The Growth Company',
-    body: 'A MERN stack bootcamp from January to April, followed by a Level 4 Software Developer qualification with BPP.',
+    body: 'MERN stack, January to April. Followed by a Level 4 Software Developer qualification with BPP.',
   },
   {
     when: 'Mid 2024',
     what: 'Data Specialist, The Talent Crowd',
-    body: 'Managed the data migration from a legacy applicant tracking system to a new Dynamics 365 CRM, including data mapping, transformation logic and a categories and skills taxonomy.',
+    body: 'Migrated data from a legacy applicant tracking system to a new Dynamics 365 CRM.',
   },
   {
     when: 'September 2024 to now',
     what: 'Power Platform Developer, CRM Knowledge',
-    body: 'A Dynamics 365 and Power Platform consultancy. I work directly with clients, from pre-sales demonstrations through to production support.',
+    body: 'Client work from pre-sales demonstrations through to production support.',
   },
 ];
 

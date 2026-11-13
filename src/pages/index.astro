@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
 import photo from '../assets/macauley.jpg';
 import { site, stages, projects, skills, journey, qualifications } from '../content/site';
 
@@ -16,15 +17,28 @@ const [integration, ...otherProjects] = projects;
 
 <Base>
   <section class="wrap hero">
-    <h1>
-      I’m Macauley, a Power Platform developer in Manchester. I build Canvas apps, flows and
-      Dataverse systems, and I stay with them through release and support.
-    </h1>
-    <p class="intro">
-      Much of my two years at CRM Knowledge has gone into one contact-centre CRM, with 230+ users
-      and nine million Dataverse records. <a href="#work">See how the work runs</a>, or find me on{' '}
-      <a href={site.linkedin} rel="noopener me">LinkedIn</a>.
-    </p>
+    <div class="hero-top">
+      <div>
+        <h1>
+          I’m Macauley, a Power Platform developer in Manchester. I build Canvas apps, flows and
+          Dataverse systems, and I stay with them through release and support.
+        </h1>
+        <p class="intro">
+          Much of my two years at CRM Knowledge has gone into one contact-centre CRM, with 230+
+          users and nine million Dataverse records. <a href="#work">See how the work runs</a>, or
+          find me on{' '}
+          <a href={site.linkedin} rel="noopener me">LinkedIn</a>.
+        </p>
+      </div>
+      <Image
+        class="portrait"
+        src={photo}
+        alt="Macauley, smiling, in a white shirt"
+        widths={[240, 480]}
+        sizes="(max-width: 42rem) 7rem, 15rem"
+        loading="eager"
+      />
+    </div>
 
     <nav class="lifecycle" aria-label="Delivery stages">
       <ol>
@@ -47,12 +61,27 @@ const [integration, ...otherProjects] = projects;
       <div class="section-head">
         <h2 id="work-h">Consultancy work, in the order it happens</h2>
         <p>
-          This is client work from CRM Knowledge, a Dynamics 365 and Power Platform consultancy.
-          The clients are confidential, so there are no names and no screenshots. Where a point is
-          about the contact-centre CRM, it says so.
+          Client work from CRM Knowledge. The clients are confidential, so there are no names or
+          screenshots.
         </p>
       </div>
+    </div>
 
+    <nav class="stagebar" aria-label="Stages in this section">
+      <ol class="wrap">
+        {
+          stages.map((s) => (
+            <li>
+              <a href={`#${s.id}`} data-stage={s.id}>
+                {s.name}
+              </a>
+            </li>
+          ))
+        }
+      </ol>
+    </nav>
+
+    <div class="wrap">
       <ol class="stages">
         {
           stages.map((s) => (
@@ -60,16 +89,50 @@ const [integration, ...otherProjects] = projects;
               <h3>{s.name}</h3>
               <div class="stage-body">
                 <p class="lead">{s.lead}</p>
-                <ul class="plain-list">
-                  {s.points.map((p) => (
-                    <li>{p}</li>
-                  ))}
-                </ul>
+
+                {
+                  s.id === 'build' && (
+                    <figure class="compare">
+                      <figcaption>Contact search on a nine-million-row table</figcaption>
+                      <div class="compare-row">
+                        <span class="compare-label">Before</span>
+                        <span class="compare-track">
+                          <span class="compare-bar compare-before" />
+                        </span>
+                        <span class="compare-value">about 2 minutes</span>
+                      </div>
+                      <div class="compare-row">
+                        <span class="compare-label">After</span>
+                        <span class="compare-track">
+                          <span class="compare-bar compare-after" />
+                        </span>
+                        <span class="compare-value">under 5 seconds</span>
+                      </div>
+                    </figure>
+                  )
+                }
+
+                {
+                  s.id === 'release' && (
+                    <figure class="pipeline">
+                      <ol>
+                        <li>Dev</li>
+                        <li>UAT</li>
+                        <li>Production</li>
+                      </ol>
+                      <figcaption>
+                        One managed solution moves through all three. Connection references and
+                        environment variables are set per environment.
+                      </figcaption>
+                    </figure>
+                  )
+                }
+
                 <details>
                   <summary>{s.detailTitle}</summary>
                   <ul class="plain-list">
-                    {s.detail.map((d) => (
-                      <li>{d}</li>
+                    {[...s.points, ...s.detail].map((p) => (
+                      <li>{p}</li>
                     ))}
                   </ul>
                 </details>
@@ -92,9 +155,26 @@ const [integration, ...otherProjects] = projects;
         <article class="project project-wide">
           <div>
             <h3>{integration.title}</h3>
-            <p class="status">{integration.status}</p>
-            {integration.body.map((b) => <p class="body">{b}</p>)}
-            <p class="tech">{integration.tech}</p>
+            <dl class="formula">
+              <div>
+                <dt>Need</dt>
+                <dd>{integration.need}</dd>
+              </div>
+              <div>
+                <dt>What I did</dt>
+                <dd>{integration.did}</dd>
+              </div>
+              {integration.result && (
+                <div>
+                  <dt>Result</dt>
+                  <dd>{integration.result}</dd>
+                </div>
+              )}
+              <div>
+                <dt>Built with</dt>
+                <dd>{integration.tech}</dd>
+              </div>
+            </dl>
             <div class="covered">
               <div class="covered-bar" aria-hidden="true">
                 {
@@ -109,26 +189,29 @@ const [integration, ...otherProjects] = projects;
           <figure>
             <div class="diagram">
               <div class="node">
+                <Icon name="database" />
                 <strong>Dataverse</strong>
               </div>
               <div class="node hub">
+                <Icon name="flow" />
                 <strong>Azure Function Apps</strong>
                 <span>Validate, transform, synchronise</span>
               </div>
               <div class="stores">
                 <div class="node">
+                  <Icon name="database" />
                   <strong>SQL Server</strong>
                   <span>Staging layer</span>
                 </div>
                 <div class="node">
+                  <Icon name="database" />
                   <strong>SQL Server</strong>
                   <span>Second database</span>
                 </div>
               </div>
             </div>
             <figcaption class="diagram-caption">
-              Three connected data stores. The Function Apps sit between them, so nothing is
-              written across without being checked first.
+              Three connected data stores, with the Function Apps between them.
             </figcaption>
           </figure>
         </article>
@@ -137,11 +220,26 @@ const [integration, ...otherProjects] = projects;
           otherProjects.map((p) => (
             <article class="project">
               <h3>{p.title}</h3>
-              <p class="status">{p.status}</p>
-              {p.body.map((b) => (
-                <p class="body">{b}</p>
-              ))}
-              <p class="tech">{p.tech}</p>
+              <dl class="formula">
+                <div>
+                  <dt>Need</dt>
+                  <dd>{p.need}</dd>
+                </div>
+                <div>
+                  <dt>What I did</dt>
+                  <dd>{p.did}</dd>
+                </div>
+                {p.result && (
+                  <div>
+                    <dt>Result</dt>
+                    <dd>{p.result}</dd>
+                  </div>
+                )}
+                <div>
+                  <dt>Built with</dt>
+                  <dd>{p.tech}</dd>
+                </div>
+              </dl>
               <div class="covered">
                 <div class="covered-bar" aria-hidden="true">
                   {stages.map((s) => (
@@ -166,7 +264,10 @@ const [integration, ...otherProjects] = projects;
         {
           skills.map((s) => (
             <div>
-              <dt>{s.group}</dt>
+              <dt>
+                <Icon name={s.icon} />
+                {s.group}
+              </dt>
               <dd>{s.items}</dd>
             </div>
           ))
@@ -178,31 +279,24 @@ const [integration, ...otherProjects] = projects;
   <section class="section" id="background" aria-labelledby="background-h">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="background-h">I spent six years in recruitment before I wrote any of this</h2>
+        <h2 id="background-h">Six years in recruitment came first</h2>
+        <p>It taught me to keep asking until the real requirement shows up.</p>
       </div>
 
-      <div class="about">
-        <Image
-          src={photo}
-          alt="Macauley, smiling, in a white shirt"
-          widths={[208, 416]}
-          sizes="(max-width: 42rem) 9rem, 13rem"
-          loading="lazy"
-        />
-        <div>
-          <p class="lead">
-            That time is why the discovery end of a project comes easily. I spent years asking
-            hiring managers what they needed until the real requirement showed up, then explaining
-            it to someone else.
-          </p>
-          <p>
-            One of those jobs was recruiting and onboarding 180 contact-centre staff for Interactive
-            Investor, which contributed to a reported 25% reduction in agency spend. A few years
-            later I was building the software a contact centre works in. It helps to have met the
-            people who use it.
-          </p>
-        </div>
-      </div>
+      <ul class="facts">
+        <li>
+          I hired and onboarded 180 contact-centre staff for Interactive Investor. Later I built
+          the software a contact centre works in.
+        </li>
+        <li>
+          At Wiley Edge I supported the Greenhouse rollout, which helped raise application
+          completion by 30%.
+        </li>
+        <li>
+          I placed cohorts of STEM graduates into roles at UBS, Morgan Stanley, NatWest Markets and
+          JP Morgan.
+        </li>
+      </ul>
 
       <ol class="journey">
         {
@@ -220,11 +314,6 @@ const [integration, ...otherProjects] = projects;
 
       <div class="sub">
         <h2 id="qualifications">Qualifications and current study</h2>
-        <p>
-          I’m working towards the Microsoft Power Platform Developer Associate certification. Outside
-          client work I go to Power Platform community events and keep up with what is changing in
-          agents and AI tooling.
-        </p>
         <ul class="quals">
           {
             qualifications.map((q) => (
@@ -248,3 +337,24 @@ const [integration, ...otherProjects] = projects;
     </div>
   </section>
 </Base>
+
+<script>
+  // Highlights the stage being read in the sticky stage bar.
+  const links = new Map(
+    [...document.querySelectorAll<HTMLAnchorElement>('.stagebar a')].map((a) => [
+      a.dataset.stage,
+      a,
+    ]),
+  );
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        links.forEach((a) => a.removeAttribute('aria-current'));
+        links.get(entry.target.id)?.setAttribute('aria-current', 'true');
+      }
+    },
+    { rootMargin: '-25% 0px -65% 0px' },
+  );
+  document.querySelectorAll('.stage').forEach((el) => observer.observe(el));
+</script>

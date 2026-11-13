@@ -1,0 +1,26 @@
+---
+// Fluent UI System Icons (Microsoft, MIT licence), inlined at build time.
+import apps from '@fluentui/svg-icons/icons/apps_24_regular.svg?raw';
+import flow from '@fluentui/svg-icons/icons/flow_24_regular.svg?raw';
+import database from '@fluentui/svg-icons/icons/database_24_regular.svg?raw';
+import plug from '@fluentui/svg-icons/icons/plug_connected_24_regular.svg?raw';
+import shield from '@fluentui/svg-icons/icons/shield_lock_24_regular.svg?raw';
+import people from '@fluentui/svg-icons/icons/people_team_24_regular.svg?raw';
+import moon from '@fluentui/svg-icons/icons/weather_moon_24_regular.svg?raw';
+import sun from '@fluentui/svg-icons/icons/weather_sunny_24_regular.svg?raw';
+
+const icons = { apps, flow, database, plug, shield, people, moon, sun };
+
+interface Props {
+  name: keyof typeof icons;
+  class?: string;
+}
+
+const { name, class: className = '' } = Astro.props;
+const svg = icons[name].replace(
+  '<svg ',
+  `<svg class="icon ${className}" fill="currentColor" aria-hidden="true" focusable="false" `,
+);
+---
+
+<Fragment set:html={svg} />

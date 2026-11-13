@@ -15,7 +15,7 @@ npm run dev
 ## Change the content
 
 All copy is in [`src/content/site.ts`](src/content/site.ts): the stages, projects, skills,
-journey and qualifications. The hero sentence and section headings are in
+journey and qualifications. Projects use a fixed formula (need, what I did, result, built with). The hero sentence and section headings are in
 [`src/pages/index.astro`](src/pages/index.astro). The photo is `src/assets/macauley.jpg`.
 
 Visual rules are in [`DESIGN.md`](DESIGN.md); tokens are at the top of

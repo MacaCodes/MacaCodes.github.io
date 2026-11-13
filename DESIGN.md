@@ -65,3 +65,44 @@ Sentence case everywhere. Line height 1.6 for body, 1.15 for headings.
 One effect: the vertical line draws in as the walk-through scrolls past (CSS scroll-driven
 animation, no JavaScript). It is skipped when the browser lacks support or when
 `prefers-reduced-motion: reduce` is set; the line is then simply shown in full.
+
+## Second pass (approved changes)
+
+### Dark mode
+
+Follows the system setting by default. The header toggle overrides it and the choice is
+saved in `localStorage`. Dark tokens:
+
+| Token        | Hex       |
+| ------------ | --------- |
+| `--paper`    | `#0F1F1B` |
+| `--wash`     | `#162B26` |
+| `--ink`      | `#E8EFEC` |
+| `--ink-soft` | `#A9BBB5` |
+| `--rule`     | `#2C433D` |
+| Stage line   | `#7C96FF` to `#3CC1CB` to `#5CCB8F` |
+
+### Icons
+
+Fluent UI System Icons (Microsoft, MIT licence), 24px regular, inlined at build time by
+`src/components/Icon.astro`. Used only for the six skill groups, the diagram nodes and the
+theme toggle. No Microsoft product logos: their terms limit those to diagrams, training
+and documentation.
+
+### Text density
+
+- Each stage shows one sentence. Everything else sits behind its disclosure.
+- Projects follow one formula: Need, What I did, Result, Built with. Leave Result out
+  when there is no known outcome.
+- The background section is three short facts and a timeline, not paragraphs.
+
+### Data visuals
+
+- Search before and after: two bars drawn to scale (120 seconds against 5).
+- Dev, UAT, Production: three boxes in the stage colours.
+
+### Other
+
+- The photo is in colour, beside the hero.
+- A sticky stage bar inside the walk-through highlights the stage being read.
+- Header reads "Macauley – Power Platform Developer".

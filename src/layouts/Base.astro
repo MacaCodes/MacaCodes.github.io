@@ -2,6 +2,7 @@
 import '@fontsource-variable/archivo/wdth.css';
 import '../styles/global.css';
 import { site } from '../content/site';
+import Icon from '../components/Icon.astro';
 
 interface Props {
   title?: string;
@@ -24,7 +25,14 @@ const ogImage = new URL('/og.png', site.url).href;
     {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light dark" />
+    <script is:inline>
+      // Apply a saved theme before first paint. With nothing saved, the system setting applies.
+      try {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch {}
+    </script>
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={site.name} />
     <meta property="og:title" content={title} />
@@ -40,13 +48,22 @@ const ogImage = new URL('/og.png', site.url).href;
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="wrap top">
-      <a class="name" href="/">{site.name}</a>
+      <a class="name" href="/">{site.name} <span>– {site.role}</span></a>
       <nav aria-label="Main">
         <ul>
           <li><a href="/#work">Work</a></li>
           <li><a href="/#skills">Skills</a></li>
           <li><a href="/#background">Background</a></li>
           <li><a href={site.linkedin} rel="noopener me">LinkedIn</a></li>
+          <li>
+            <button class="theme-toggle" type="button" aria-pressed="false">
+              <Icon name="moon" class="when-light" />
+              <Icon name="sun" class="when-dark" />
+              <span class="when-light">Dark</span>
+              <span class="when-dark">Light</span>
+              <span class="sr-only">mode</span>
+            </button>
+          </li>
         </ul>
       </nav>
     </header>
@@ -56,5 +73,25 @@ const ogImage = new URL('/og.png', site.url).href;
     <footer class="wrap foot">
       <p>© 2026 {site.name}. Built with Astro and hosted on GitHub Pages. No cookies, no tracking.</p>
     </footer>
+    <script is:inline>
+      (() => {
+        const root = document.documentElement;
+        const button = document.querySelector('.theme-toggle');
+        const isDark = () =>
+          root.dataset.theme
+            ? root.dataset.theme === 'dark'
+            : matchMedia('(prefers-color-scheme: dark)').matches;
+        const sync = () => button.setAttribute('aria-pressed', String(isDark()));
+        sync();
+        button.addEventListener('click', () => {
+          const next = isDark() ? 'light' : 'dark';
+          root.dataset.theme = next;
+          try {
+            localStorage.setItem('theme', next);
+          } catch {}
+          sync();
+        });
+      })();
+    </script>
   </body>
 </html>
