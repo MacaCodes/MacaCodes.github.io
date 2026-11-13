@@ -40,13 +40,13 @@ import {
     </div>
 
     <nav class="lifecycle" aria-label="Delivery stages">
+      <p class="lifecycle-label">How I work</p>
       <ol>
         {
           stages.map((s) => (
             <li>
               <a href={`#${s.id}`}>
                 <span class="stage-name">{s.name}</span>
-                <span class="stage-summary">{s.summary}</span>
               </a>
             </li>
           ))
