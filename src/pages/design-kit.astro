@@ -1,0 +1,381 @@
+---
+import Base from '../layouts/Base.astro';
+import Icon from '../components/Icon.astro';
+
+const colours = [
+  { name: 'Paper', token: '--paper', value: '#FFFFFF', className: 'paper' },
+  { name: 'Wash', token: '--wash', value: '#EEF3F0', className: 'wash' },
+  { name: 'Ink', token: '--ink', value: '#0F2A24', className: 'ink' },
+  { name: 'Soft ink', token: '--ink-soft', value: '#4C5F59', className: 'ink-soft' },
+  { name: 'Rule', token: '--rule', value: '#D5DDD9', className: 'rule' },
+  { name: 'Discover', token: '--stage-start', value: '#2447D6', className: 'stage-start' },
+  { name: 'Build', token: '--stage-mid', value: '#0A8791', className: 'stage-mid' },
+  { name: 'Support', token: '--stage-end', value: '#1F7A4A', className: 'stage-end' },
+];
+
+const icons = [
+  ['apps', 'Apps'],
+  ['flow', 'Automation'],
+  ['database', 'Data'],
+  ['bot', 'AI agents'],
+  ['design', 'Design'],
+  ['shield', 'Governance'],
+] as const;
+---
+
+<Base
+  title="Portfolio design kit | Macauley"
+  description="A private working reference for the visual system used across Macauley’s portfolio."
+  noindex
+>
+  <section class="section kit-hero">
+    <div class="wrap">
+      <p class="eyebrow">Portfolio reference</p>
+      <h1>Design kit</h1>
+      <p class="kit-intro">
+        The visual rules behind the portfolio: restrained colour, clear hierarchy and one lifecycle
+        line that carries the story from idea to live service.
+      </p>
+      <div class="kit-line" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section class="section section-wash" aria-labelledby="principles-h">
+    <div class="wrap kit-grid">
+      <div>
+        <h2 id="principles-h">Principles</h2>
+      </div>
+      <ol class="principles">
+        <li><strong>One bold element.</strong> Colour belongs to the delivery lifecycle.</li>
+        <li><strong>Evidence before decoration.</strong> Structure comes from rules and spacing.</li>
+        <li><strong>Plain English.</strong> Specific, first-person and free from marketing filler.</li>
+        <li><strong>Useful on every screen.</strong> Responsive, accessible and readable in either theme.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="colour-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="colour-h">Colour</h2>
+        <p>The theme toggle shows the corresponding dark palette.</p>
+      </div>
+      <ul class="swatches">
+        {
+          colours.map((colour) => (
+            <li>
+              <span class={`swatch ${colour.className}`} aria-hidden="true"></span>
+              <strong>{colour.name}</strong>
+              <span>{colour.token}</span>
+              <span>{colour.value}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-wash" aria-labelledby="type-h">
+    <div class="wrap kit-grid">
+      <div>
+        <h2 id="type-h">Typography</h2>
+        <p class="kit-note">Archivo Variable, self-hosted. Sentence case throughout.</p>
+      </div>
+      <div class="type-specimens">
+        <div><span>Hero · 500</span><p class="hero-type">Apps people want to use.</p></div>
+        <div><span>Section · 600</span><h2>Selected Power Platform work</h2></div>
+        <div><span>Heading · 600</span><h3>Model-driven CRM</h3></div>
+        <div><span>Body · 400</span><p>Clear interfaces, dependable data and maintainable delivery.</p></div>
+        <div><span>Supporting · 400</span><p class="supporting">Technical detail stays legible without competing with the main point.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="journey-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="journey-h">Lifecycle</h2>
+        <p>The line is the main visual signature and always carries meaning.</p>
+      </div>
+      <div class="lifecycle-sample" aria-label="Discover, Design, Build, Test, Release and Support">
+        {['Discover', 'Design', 'Build', 'Test', 'Release', 'Support'].map((stage) => <span>{stage}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-wash" aria-labelledby="components-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="components-h">Components</h2>
+      </div>
+      <div class="component-grid">
+        <article>
+          <h3>Fluent icons</h3>
+          <ul class="icon-list">
+            {icons.map(([name, label]) => <li><Icon name={name} /><span>{label}</span></li>)}
+          </ul>
+        </article>
+        <article>
+          <h3>Links and focus</h3>
+          <p><a href="#components-h">Internal link</a></p>
+          <p><a class="external-link" href="https://github.com/MacaCodes" target="_blank" rel="noopener">External link <Icon name="externalLink" /></a></p>
+        </article>
+        <article>
+          <h3>Disclosure</h3>
+          <details>
+            <summary>Technical detail</summary>
+            <p>Extra evidence appears on request without making the first scan heavier.</p>
+          </details>
+        </article>
+        <article>
+          <h3>Architecture</h3>
+          <div class="mini-diagram" aria-label="App connects to Dataverse, which connects to automation">
+            <span>App</span><b aria-hidden="true">↔</b><span>Dataverse</span><b aria-hidden="true">→</b><span>Flow</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="spacing-h">
+    <div class="wrap kit-grid">
+      <div>
+        <h2 id="spacing-h">Layout and spacing</h2>
+      </div>
+      <dl class="token-list">
+        <div><dt>Page width</dt><dd>70rem</dd></div>
+        <div><dt>Reading measure</dt><dd>38rem</dd></div>
+        <div><dt>Gutter</dt><dd>1.25rem to 3rem</dd></div>
+        <div><dt>Section space</dt><dd>2.5rem to 3.875rem</dd></div>
+        <div><dt>Breakpoints</dt><dd>60rem and 42rem</dd></div>
+      </dl>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .kit-hero h1 {
+    margin-top: 0.3rem;
+    max-width: 12em;
+    font-size: var(--text-xxl);
+    font-weight: 500;
+  }
+
+  .eyebrow {
+    color: var(--ink-soft);
+    font-size: var(--text-s);
+  }
+
+  .kit-intro {
+    max-width: var(--measure);
+    margin-top: 1.25rem;
+    font-size: var(--text-l);
+    line-height: 1.45;
+  }
+
+  .kit-line {
+    height: var(--line-w);
+    margin-top: clamp(2.5rem, 7vw, 4.5rem);
+    background: var(--line-x);
+  }
+
+  .kit-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+    gap: 2rem clamp(2rem, 6vw, 5rem);
+  }
+
+  .kit-note {
+    margin-top: 0.8rem;
+    color: var(--ink-soft);
+    font-size: var(--text-s);
+  }
+
+  .principles {
+    max-width: var(--measure);
+    border-top: 1px solid var(--ink);
+  }
+
+  .principles li {
+    padding-block: 0.9rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: clamp(2rem, 5vw, 3rem);
+  }
+
+  .swatches li {
+    display: grid;
+    gap: 0.15rem;
+    font-size: var(--text-s);
+  }
+
+  .swatches li > span:not(.swatch) {
+    color: var(--ink-soft);
+  }
+
+  .swatch {
+    display: block;
+    height: 4.5rem;
+    margin-bottom: 0.6rem;
+    border: 1px solid var(--rule);
+  }
+
+  .paper { background: var(--paper); }
+  .wash { background: var(--wash); }
+  .ink { background: var(--ink); }
+  .ink-soft { background: var(--ink-soft); }
+  .rule { background: var(--rule); }
+  .stage-start { background: var(--stage-start); }
+  .stage-mid { background: var(--stage-mid); }
+  .stage-end { background: var(--stage-end); }
+
+  .type-specimens {
+    border-top: 1px solid var(--ink);
+  }
+
+  .type-specimens > div {
+    display: grid;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: baseline;
+    padding-block: 1.15rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .type-specimens span {
+    color: var(--ink-soft);
+    font-size: var(--text-s);
+  }
+
+  .hero-type {
+    font-size: var(--text-xxl);
+    font-stretch: 108%;
+    font-weight: 500;
+    line-height: 1.15;
+  }
+
+  .supporting {
+    color: var(--ink-soft);
+    font-size: var(--text-s);
+  }
+
+  .lifecycle-sample {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin-top: clamp(2.5rem, 6vw, 4rem);
+    padding-top: 1.1rem;
+    border-top: var(--line-w) solid transparent;
+    border-image: var(--line-x) 1;
+  }
+
+  .lifecycle-sample span {
+    font-size: var(--text-s);
+    font-weight: 600;
+  }
+
+  .lifecycle-sample span:not(:first-child):not(:last-child) { text-align: center; }
+  .lifecycle-sample span:last-child { text-align: right; }
+
+  .component-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem clamp(2rem, 6vw, 5rem);
+    margin-top: clamp(2rem, 5vw, 3rem);
+  }
+
+  .component-grid article {
+    padding-top: 1rem;
+    border-top: 1px solid var(--ink);
+  }
+
+  .component-grid article > p {
+    margin-top: 0.8rem;
+  }
+
+  .icon-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.25rem;
+  }
+
+  .icon-list li {
+    display: grid;
+    gap: 0.35rem;
+    color: var(--ink-soft);
+    font-size: var(--text-s);
+  }
+
+  .icon-list :global(.icon) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  details p {
+    padding-bottom: 1rem;
+    color: var(--ink-soft);
+    font-size: var(--text-s);
+  }
+
+  .mini-diagram {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 0.4rem;
+    align-items: center;
+    margin-top: 1.25rem;
+  }
+
+  .mini-diagram span {
+    padding: 0.8rem 0.35rem;
+    border: 1px solid var(--ink-soft);
+    border-top: var(--line-w) solid var(--stage-start);
+    font-size: var(--text-s);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .mini-diagram span:nth-of-type(2) { border-top-color: var(--stage-mid); }
+  .mini-diagram span:nth-of-type(3) { border-top-color: var(--stage-end); }
+  .mini-diagram b { color: var(--ink-soft); font-weight: 400; }
+
+  .token-list {
+    border-top: 1px solid var(--ink);
+  }
+
+  .token-list div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    padding-block: 0.9rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .token-list dt { font-weight: 600; }
+  .token-list dd { color: var(--ink-soft); }
+
+  @media (max-width: 60rem) {
+    .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 42rem) {
+    .kit-grid,
+    .component-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .type-specimens > div {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.35rem;
+    }
+
+    .swatches { gap: 1.25rem 1rem; }
+    .lifecycle-sample { overflow-x: auto; }
+    .lifecycle-sample span { min-width: 4.5rem; }
+    .icon-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+</style>
