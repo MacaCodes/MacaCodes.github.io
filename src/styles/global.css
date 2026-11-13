@@ -24,7 +24,7 @@
   --gutter: clamp(1.25rem, 5vw, 3rem);
   --page: 70rem;
   --measure: 38rem;
-  --section: clamp(3rem, 6.5vw, 4.5rem);
+  --section: clamp(2.75rem, 6vw, 4.25rem);
   --line-w: 3px;
   color-scheme: light;
 }

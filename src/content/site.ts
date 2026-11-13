@@ -42,7 +42,7 @@ export const stages: Stage[] = [
     id: 'discover',
     name: 'Discover',
     summary: 'Requirements, process mapping, prototypes',
-    lead: 'I start with how people do the job now, then turn the gaps into clear requirements and prototypes.',
+    lead: 'I start with how people work today, then explore better approaches and new platform capabilities before turning the gaps into clear requirements and prototypes.',
     points: [
       'I build demos for prospective clients using their own scenarios, so they can click through something real.',
       'For a Dynamics 365 rebuild I audited the legacy environment to decide what to keep, redesign, migrate or retire.',
@@ -179,7 +179,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     context:
       'Long, manual data-entry tasks were creating friction for people trying to keep business data up to date.',
     role:
-      'I designed and released Copilot Studio agents for time tracking and case management in Teams. The agents retrieve relevant Dataverse records, ask for missing information, and help the user select the right subscription and complete the required fields. The user reviews everything before a deterministic agent flow writes to Dataverse.',
+      'I designed and released Copilot Studio agents for time tracking and case management in Teams. They retrieve relevant Dataverse records, ask for missing information and help users select the right subscription. A deterministic agent flow writes only after the user reviews the required fields.',
     change:
       'People can complete time-tracking and case-management tasks through Teams instead of a long manual data-entry process, while retaining control over every write.',
     status: 'In production. I continue to support the agents.',
