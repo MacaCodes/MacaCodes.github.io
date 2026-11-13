@@ -4,6 +4,7 @@ import '../styles/global.css';
 import { site } from '../content/site';
 import Icon from '../components/Icon.astro';
 import drawing from '../assets/macauley-drawing.svg?raw';
+import packageMetadata from '../../package.json';
 
 interface Props {
   title?: string;
@@ -53,7 +54,7 @@ const ogImage = new URL('/og.png', site.url).href;
         <a class="name" href="/">
           <span class="header-portrait" aria-hidden="true"><Fragment set:html={drawing} /></span>
           <span class="brand-name">{site.name}</span>
-          <span class="brand-role">– {site.role}</span>
+          <span class="brand-role">, {site.role}</span>
         </a>
         <nav aria-label="Main">
           <ul>
@@ -78,7 +79,10 @@ const ogImage = new URL('/og.png', site.url).href;
       <slot />
     </main>
     <footer class="wrap foot">
-      <p>© 2026 {site.name}. Built with Astro and hosted on GitHub Pages. No cookies, no tracking.</p>
+      <p>
+        © 2026 {site.name}. Version {packageMetadata.version}. Built with Astro and hosted on GitHub
+        Pages. No cookies, no tracking.
+      </p>
     </footer>
     <script is:inline>
       (() => {

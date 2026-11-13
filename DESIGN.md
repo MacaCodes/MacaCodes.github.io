@@ -97,7 +97,7 @@ and documentation.
 - Each stage shows one sentence. Everything else sits behind its disclosure.
 - The page is evidence-led: three featured case studies first, then supporting systems, then
   the delivery lifecycle. Outcomes distinguish production work from work still in testing.
-- UX/UI, governance and enablement sit together under "Beyond the build" so those strengths
+- UX/UI, governance and enablement sit together under "The work around the build" so those strengths
   support the engineering story without taking over the site.
 - The background section is three short facts and a timeline, not paragraphs.
 
@@ -110,7 +110,7 @@ and documentation.
 
 - The transparent line-drawn portrait sits beside the hero and follows the active theme.
 - A sticky stage bar inside the walk-through highlights the stage being read.
-- Header reads "Macauley – Power Platform Developer".
+- Header reads "Macauley, Power Platform Developer".
 
 ### Portrait
 

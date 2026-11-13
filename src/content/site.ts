@@ -9,7 +9,7 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/Macauley-Gibson',
   title: 'Macauley | Power Platform, automation and AI',
   description:
-    'Power Platform developer combining automation, data, AI and thoughtful UX/UI to deliver secure systems from discovery through to production support.',
+    'Power Platform developer building practical systems with automation, data, AI and careful UX/UI, from discovery through to production support.',
 };
 
 export type StageId = 'discover' | 'design' | 'build' | 'test' | 'release' | 'support';
@@ -29,9 +29,9 @@ export const stages: Stage[] = [
     id: 'discover',
     name: 'Discover',
     summary: 'Requirements, pre-sales demos',
-    lead: 'Before anything gets built I want to see how the work is done today, and who has to live with the result.',
+    lead: 'I start by understanding how people do the job now and what gets in their way.',
     points: [
-      'I build and present demonstrations for prospective clients, turning their scenario into a working prototype they can click through.',
+      'I build demos for prospective clients using their own scenarios, so they can click through something real.',
       'For a Dynamics 365 rebuild I audited the legacy environment to decide what to keep, redesign, migrate or retire.',
       'On smaller Canvas apps I take the requirements myself, from the first conversation to user handover.',
     ],
@@ -65,7 +65,7 @@ export const stages: Stage[] = [
     points: [
       'Contact search against a nine-million-row table took about two minutes. I got it under five seconds, a reduction of over 95%.',
       'Across clients I have built more than 40 Power Automate cloud flows, along with Azure Function Apps and API integrations.',
-      'On the model-driven side I build custom pages, and I recovered and packaged command-bar functionality that had been left in unmanaged layers.',
+      'I also build model-driven custom pages. On one project I recovered and packaged command-bar work that had been left in unmanaged layers.',
     ],
     detailTitle: 'How the search was fixed',
     detail: [
@@ -78,7 +78,7 @@ export const stages: Stage[] = [
     id: 'test',
     name: 'Test',
     summary: '70+ formulas traced, UAT plan',
-    lead: 'Before one launch I traced more than 70 formulas in a multi-screen Canvas app, every one that saved, deleted, called a flow or changed a collection.',
+    lead: 'Before one launch I traced every formula in a multi-screen Canvas app that saved, deleted, called a flow or changed a collection. There were more than 70.',
     points: [
       'That review became a prioritised risk register. I delivered the fixes and wrote targeted UAT scenarios for each.',
       'I design the UAT approach for a release and present progress and demonstrations to stakeholders.',
@@ -108,7 +108,7 @@ export const stages: Stage[] = [
     id: 'support',
     name: 'Support',
     summary: 'Urgent fixes, capacity clean-up',
-    lead: 'I stay on after go-live. When something breaks in production I am often responding to an urgent case in under ten minutes.',
+    lead: 'I stay involved after go-live. If something breaks in production, I am often responding to the urgent case in under ten minutes.',
     points: [
       'I diagnose faults across Canvas apps, Dataverse, Power Automate and integrations.',
       'I led one client’s capacity remediation after about 60 GB of growth across database, file and audit storage.',
@@ -143,24 +143,24 @@ export const featuredCaseStudies: CaseStudy[] = [
     tech: 'Canvas apps, Dataverse, Power Fx, Power Automate, Power Platform Pipelines, Azure DevOps',
   },
   {
-    title: 'Production Copilot agents with controlled actions',
+    title: 'Copilot agents for data entry in Teams',
     context:
       'Long, manual data-entry tasks were creating friction for people trying to keep business data up to date.',
     role:
       'I designed, built and released Copilot Studio agents in Teams, using grounded retrieval, explicit confirmation, human review and deterministic transactions for writes.',
     change:
-      'People can now complete the work through a Copilot chat in Teams instead of a time-consuming manual process, making data entry easier while keeping actions controlled.',
+      'People can now complete the work through a Copilot chat in Teams instead of a time-consuming manual process. Data entry is easier and each action is still controlled.',
     status: 'In production. I continue to support the agents.',
     tech: 'Copilot Studio, Dataverse MCP, Power Automate agent flows, custom tools, Microsoft Teams',
   },
   {
     title: 'Lead generation with human review',
     context:
-      'A consultancy needed a more systematic way to find relevant opportunities without removing judgement from outreach.',
+      'A consultancy needed a reliable way to find relevant opportunities while keeping a person in control of outreach.',
     role:
       'I built an internal tool around job-board APIs and automated the processing and campaign preparation, with a person reviewing before anything is sent.',
     change:
-      'It generated approximately 250 qualified leads over nine months and fed opportunities into active sequencing.',
+      'It produced around 250 qualified leads over nine months and fed them into active sequencing.',
     status: 'In use.',
     tech: 'Job-board APIs, workflow automation, human-in-the-loop review',
   },
@@ -177,28 +177,28 @@ export const deliveredSystems: DeliveredSystem[] = [
   {
     title: 'Dataverse and SQL Server integration',
     body:
-      'Designed and built an integration across Dataverse and two SQL Server databases, with a dedicated staging layer and Azure Functions handling validation, transformation and synchronisation.',
+      'I designed and built an integration across Dataverse and two SQL Server databases. It uses a dedicated staging layer, with Azure Functions validating, transforming and synchronising the data.',
     result: 'In production. It saves time and keeps one source of truth across the connected systems.',
     tech: 'Dataverse, SQL Server, Azure Functions, C#/.NET',
   },
   {
     title: 'Two government API integrations',
     body:
-      'Integrated two published APIs into Power Automate and Canvas apps, then managed a version migration across endpoints, mappings, validation, error handling and dependent logic.',
+      'I integrated two published APIs into Power Automate and Canvas apps. I later moved both to a newer API version, updating the endpoints, mappings, validation, error handling and dependent logic.',
     result: 'In production and still maintained.',
     tech: 'Power Automate, Canvas apps, REST APIs',
   },
   {
     title: 'WordPress order automation',
     body:
-      'Building a reusable parent-and-child flow pattern to replace spreadsheet processing across 25 order types and their custom fields.',
+      'I am building a reusable parent-and-child flow pattern to replace spreadsheet processing across 25 order types and their custom fields.',
     result: 'In testing.',
     tech: 'WordPress, Power Automate, reusable cloud flows',
   },
   {
     title: 'Model-driven apps and operational data',
     body:
-      'Delivered custom pages, command bars, JavaScript web resources and dashboards, alongside high-volume SQL and FetchXML work and a legacy Dynamics 365 audit.',
+      'I have built custom pages, command bars, JavaScript web resources and dashboards. My wider data work includes high-volume SQL and FetchXML queries and a legacy Dynamics 365 audit.',
     result: 'Used across live delivery, reporting and modernisation work.',
     tech: 'Model-driven apps, Dynamics 365, JavaScript, Power BI, SQL, FetchXML',
   },
@@ -206,17 +206,17 @@ export const deliveredSystems: DeliveredSystem[] = [
 
 export const practices = [
   {
-    title: 'UX/UI people want to use',
+    title: 'How I approach UX/UI',
     body:
       'I use wireframes, reusable components, responsive design, accessibility checks, usability feedback and before-and-after redesigns. The aim is simple: make the solution easy to understand and good enough that people want to use it.',
   },
   {
-    title: 'Governance that supports delivery',
+    title: 'Governance and standards',
     body:
-      'I contribute to standards covering environment and solution reviews, ALM, naming, deployment, reusable components, audit and recovery, backups, deletion policies, GDPR and least-privilege access.',
+      'I help maintain practical standards for environment and solution reviews. They cover ALM, naming, deployment, reusable components, backups, data retention, GDPR and least-privilege access.',
   },
   {
-    title: 'Enablement beyond handover',
+    title: 'Workshops and handover',
     body:
       'I have run five client discovery workshops, coached an apprentice for more than six months, and produced solution designs, review checklists, release notes, training and handover documentation.',
   },
