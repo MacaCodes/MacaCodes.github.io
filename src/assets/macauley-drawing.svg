@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="22 52 196 245" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
   <!-- shoulders and collared shirt -->
-  <path d="M30 300C34 258 63 240 100 230l20 17 20-17c37 10 66 28 70 70"/>
-  <path d="M100 230l-10 14 18 12 12-9M140 230l10 14-18 12-12-9" stroke-width="4"/>
-  <path d="M120 247v50" stroke-width="4"/>
+  <path d="M30 300C34 258 63 240 100 226l20 17 20-17c37 10 66 32 70 74"/>
+  <path d="M100 226l-10 14 18 12 12-9M140 226l10 14-18 12-12-9" stroke-width="4"/>
+  <path d="M120 243v54" stroke-width="4"/>
   <circle cx="120" cy="268" r="2.4" fill="currentColor" stroke="none"/>
   <circle cx="120" cy="284" r="2.4" fill="currentColor" stroke="none"/>
   <!-- neck -->
-  <path d="M101 200v28M139 200v28"/>
+  <path d="M101 200v26M139 200v26"/>
   <!-- ears -->
   <path d="M78 138c-13-5-13 22 3 22M162 138c13-5 13 22-3 22"/>
   <!-- face -->
@@ -14,11 +14,11 @@
   <!-- hair: a messy quiff, close to the head -->
   <path d="M75 126c-9-12-7-28 3-35-2-14 15-22 26-16 8-12 30-12 38-2 14-6 28 6 24 20 10 8 6 24-1 31-5-12-15-18-27-15-10-7-26-5-34 2-10-5-22 3-29 15z"/>
   <path d="M96 88c5-5 12-5 16 0M128 84c5-5 13-4 16 2" stroke-width="3.5"/>
-  <!-- soft brows and natural oval eyes -->
+  <!-- soft brows and round eyes -->
   <path d="M94 130c5-3 12-3 17 0M129 130c5-3 12-3 17 0" stroke-width="3.5"/>
-  <ellipse cx="104" cy="147" rx="4.8" ry="5.8" fill="currentColor" stroke="none"/>
-  <ellipse cx="137" cy="147" rx="4.8" ry="5.8" fill="currentColor" stroke="none"/>
-  <!-- restrained closed toothy smile -->
-  <path d="M103 169c9 7 26 7 35 0-1 11-8 17-17 17-9 0-16-6-18-17z" fill="var(--paper)" stroke-width="4"/>
-  <path d="M106 176c8 3 21 3 29 0" stroke-width="2.5"/>
+  <circle cx="104" cy="147" r="4.2" fill="currentColor" stroke="none"/>
+  <circle cx="137" cy="147" r="4.2" fill="currentColor" stroke="none"/>
+  <!-- subtle toothy smile -->
+  <path d="M104 170c9 5 24 5 33 0-2 8-8 13-16.5 13S106 178 104 170z" fill="var(--paper)" stroke-width="4"/>
+  <path d="M106 176.5c8 2.5 21 2.5 29 0" stroke-width="2.5"/>
 </svg>
