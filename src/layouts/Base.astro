@@ -47,25 +47,27 @@ const ogImage = new URL('/og.png', site.url).href;
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
-    <header class="wrap top">
-      <a class="name" href="/">{site.name} <span>– {site.role}</span></a>
-      <nav aria-label="Main">
-        <ul>
-          <li><a href="/#work">Work</a></li>
-          <li><a href="/#skills">Skills</a></li>
-          <li><a href="/#background">Background</a></li>
-          <li><a href={site.linkedin} rel="noopener me">LinkedIn</a></li>
-          <li>
-            <button class="theme-toggle" type="button" aria-pressed="false">
-              <Icon name="moon" class="when-light" />
-              <Icon name="sun" class="when-dark" />
-              <span class="when-light">Dark</span>
-              <span class="when-dark">Light</span>
-              <span class="sr-only">mode</span>
-            </button>
-          </li>
-        </ul>
-      </nav>
+    <header class="site-header">
+      <div class="wrap top">
+        <a class="name" href="/">{site.name} <span>– {site.role}</span></a>
+        <nav aria-label="Main">
+          <ul>
+            <li><a href="/#work">Work</a></li>
+            <li><a href="/#skills">Skills</a></li>
+            <li><a href="/#background">Background</a></li>
+            <li><a href={site.linkedin} rel="noopener me">LinkedIn</a></li>
+            <li>
+              <button class="theme-toggle" type="button" aria-label="Switch colour theme">
+                <Icon name="moon" class="when-light" />
+                <Icon name="sun" class="when-dark" />
+                <span class="when-light">Dark</span>
+                <span class="when-dark">Light</span>
+                <span class="sr-only">mode</span>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main id="main">
       <slot />
@@ -81,7 +83,10 @@ const ogImage = new URL('/og.png', site.url).href;
           root.dataset.theme
             ? root.dataset.theme === 'dark'
             : matchMedia('(prefers-color-scheme: dark)').matches;
-        const sync = () => button.setAttribute('aria-pressed', String(isDark()));
+        const sync = () => {
+          const next = isDark() ? 'light' : 'dark';
+          button.setAttribute('aria-label', `Switch to ${next} mode`);
+        };
         sync();
         button.addEventListener('click', () => {
           const next = isDark() ? 'light' : 'dark';
@@ -91,6 +96,12 @@ const ogImage = new URL('/og.png', site.url).href;
           } catch {}
           sync();
         });
+
+        const header = document.querySelector('.site-header');
+        const syncHeaderHeight = () =>
+          root.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`);
+        syncHeaderHeight();
+        new ResizeObserver(syncHeaderHeight).observe(header);
       })();
     </script>
   </body>

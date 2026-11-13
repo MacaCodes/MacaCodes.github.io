@@ -9,7 +9,7 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/Macauley-Gibson',
   title: 'Macauley | Power Platform, automation and AI',
   description:
-    'Power Platform developer working across automation, Dataverse, integrations and Copilot Studio, from requirements through to production support.',
+    'Power Platform developer combining automation, data, AI and thoughtful UX/UI to deliver secure systems from discovery through to production support.',
 };
 
 export type StageId = 'discover' | 'design' | 'build' | 'test' | 'release' | 'support';
