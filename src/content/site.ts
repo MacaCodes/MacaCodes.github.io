@@ -153,11 +153,11 @@ export const featuredCaseStudies: CaseStudy[] = [
     context:
       'A production CRM used by more than 230 people had to remain fast, secure and dependable across nine million Dataverse records.',
     role:
-      'As primary developer, I wrote about 90% of the Canvas app and made the technical decisions on structure, data, security, integrations, performance and deployment.',
+      'As primary developer, I wrote about 90% of the Canvas app and owned the wider Dataverse solution. That included the model-driven CRM, tables, case processes, reporting, year-end data reports, security, integrations and deployments.',
     change:
       'Contact search fell from about two minutes to under five seconds. I also traced more than 70 data-changing formulas, turned the findings into a risk register and fixes, and managed releases across Dev, UAT and Production.',
     status: 'In production. I continue to support it.',
-    tech: 'Canvas apps, Dataverse, Power Fx, Power Automate, Power Platform Pipelines, Azure DevOps',
+    tech: 'Canvas and model-driven apps, Dataverse, Power Fx, Power Automate, Power Platform Pipelines, Azure DevOps',
   },
   {
     icon: 'database',
@@ -195,11 +195,11 @@ export interface DeliveredSystem {
 
 export const deliveredSystems: DeliveredSystem[] = [
   {
-    title: 'Simplifying a legacy model-driven CRM',
+    title: 'CRM rebuilds and migrations',
     body:
-      'I audited an existing Dynamics 365 solution, then redesigned the Dataverse model and model-driven app. I simplified the relationships, forms, views, navigation, security roles, business process flows and automation, and removed duplicate or obsolete parts.',
-    result: 'In production. Around 35% of the audited legacy components were retired, making the solution easier to understand and maintain.',
-    tech: 'Model-driven apps, Dynamics 365, Dataverse, Power Automate, JavaScript',
+      'Across several Dynamics 365 and Dataverse CRM rebuilds, I have inventoried legacy solutions, planned migrations, produced field mappings, imported data, configured Outlook mailboxes, designed security roles and prepared release plans.',
+    result: 'In one production rebuild, I simplified the data model, forms, views, navigation and automation, retiring around 35% of the audited legacy components.',
+    tech: 'Model-driven apps, Dynamics 365, Dataverse, data migration, security, Power Automate',
   },
   {
     title: 'Two government API integrations',

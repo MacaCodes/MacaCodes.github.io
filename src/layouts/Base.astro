@@ -61,7 +61,11 @@ const ogImage = new URL('/og.png', site.url).href;
             <li><a href="/#work">Work</a></li>
             <li><a href="/#skills">Skills</a></li>
             <li><a href="/#background">Background</a></li>
-            <li><a href={site.linkedin} rel="noopener me">LinkedIn</a></li>
+            <li>
+              <a class="external-link" href={site.linkedin} rel="noopener me">
+                LinkedIn <Icon name="externalLink" />
+              </a>
+            </li>
             <li>
               <button class="theme-toggle" type="button" aria-label="Switch colour theme">
                 <Icon name="moon" class="when-light" />

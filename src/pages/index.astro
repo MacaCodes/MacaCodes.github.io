@@ -28,7 +28,9 @@ import {
           <span class="availability">{site.location}. {site.workPreference}</span>
           <span class="hero-links">
             <a href="#work">See the work</a>, or find me on{' '}
-            <a href={site.linkedin} rel="noopener me">LinkedIn</a>.
+            <a class="external-link" href={site.linkedin} rel="noopener me">
+              LinkedIn <Icon name="externalLink" />
+            </a>.
           </span>
         </p>
       </div>
@@ -146,12 +148,18 @@ import {
       <div class="systems">
         {
           deliveredSystems.map((system) => (
-            <article class="system">
-              <h3>{system.title}</h3>
-              <p>{system.body}</p>
-              <p class="status">{system.result}</p>
-              <p class="tech">{system.tech}</p>
-            </article>
+            <details class="system">
+              <summary>
+                <span>
+                  <span class="system-heading">{system.title}</span>
+                  <span class="system-status">{system.result}</span>
+                </span>
+              </summary>
+              <div class="system-body">
+                <p>{system.body}</p>
+                <p class="tech">{system.tech}</p>
+              </div>
+            </details>
           ))
         }
       </div>
@@ -224,33 +232,38 @@ import {
         </li>
       </ul>
 
-      <ol class="journey">
-        {
-          journey.map((j) => (
-            <li>
-              <p class="when">{j.when}</p>
-              <div>
-                <h3>{j.what}</h3>
-                <p>{j.body}</p>
-              </div>
-            </li>
-          ))
-        }
-      </ol>
-
-      <div class="sub">
-        <h2 id="qualifications">Qualifications and current study</h2>
-        <ul class="quals">
+      <details class="background-details">
+        <summary>Earlier career and qualifications</summary>
+        <div class="background-details-body">
+          <ol class="journey">
           {
-            qualifications.map((q) => (
+              journey.map((j) => (
               <li>
-                <span>{q.name}</span>
-                <span class="note">{q.note}</span>
+                  <p class="when">{j.when}</p>
+                  <div>
+                    <h3>{j.what}</h3>
+                    <p>{j.body}</p>
+                  </div>
               </li>
             ))
           }
-        </ul>
-      </div>
+          </ol>
+
+          <div class="sub">
+            <h2 id="qualifications">Qualifications and current study</h2>
+            <ul class="quals">
+              {
+                qualifications.map((q) => (
+                  <li>
+                    <span>{q.name}</span>
+                    <span class="note">{q.note}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </details>
     </div>
   </section>
 
@@ -258,7 +271,9 @@ import {
     <div class="wrap">
       <p>
         If you’re hiring for Power Platform work, permanent or contract,{' '}
-        <a href={site.linkedin} rel="noopener me">message me on LinkedIn</a>.
+        <a class="external-link" href={site.linkedin} rel="noopener me">
+          message me on LinkedIn <Icon name="externalLink" />
+        </a>.
       </p>
     </div>
   </section>

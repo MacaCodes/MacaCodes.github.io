@@ -135,6 +135,18 @@ a:hover {
   text-decoration-thickness: 2px;
 }
 
+.external-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25em;
+}
+
+.external-link .icon {
+  width: 0.82em;
+  height: 0.82em;
+  align-self: center;
+}
+
 :focus-visible {
   outline: 2px solid var(--stage-start);
   outline-offset: 3px;
@@ -247,6 +259,10 @@ img {
 .top ul a {
   text-decoration: none;
   color: var(--ink-soft);
+}
+
+.top .external-link {
+  display: inline-flex;
 }
 
 .top ul a:hover {
@@ -566,8 +582,9 @@ details .plain-list {
 .systems {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(3rem, 6vw, 4.5rem) clamp(2rem, 6vw, 5rem);
+  gap: 0 clamp(2rem, 6vw, 5rem);
   margin-top: clamp(2.5rem, 6vw, 4rem);
+  align-items: start;
 }
 
 /* A compact delivery overview. The detailed evidence lives in the case studies above. */
@@ -611,21 +628,45 @@ details .plain-list {
 }
 
 .system {
-  padding-top: 1rem;
+  margin-top: 0;
   border-top: 1px solid var(--ink);
+  border-bottom: 0;
 }
 
-.system > p {
-  margin-top: 0.9rem;
+.system > summary {
+  align-items: flex-start;
+  padding-block: 1.1rem;
 }
 
-.system .status {
+.system-heading {
+  display: block;
+  font-size: var(--text-l);
   font-weight: 600;
+  font-stretch: 108%;
+  line-height: 1.15;
 }
 
-.system .tech {
-  font-size: var(--text-s);
+.system-status {
+  display: block;
+  margin-top: 0.55rem;
   color: var(--ink-soft);
+  font-size: var(--text-s);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.system[open] > summary {
+  border-bottom: 1px solid var(--rule);
+}
+
+.system-body {
+  padding-block: 1rem 1.35rem;
+}
+
+.system-body .tech {
+  margin-top: 0.85rem;
+  color: var(--ink-soft);
+  font-size: var(--text-s);
 }
 
 /* UX/UI, governance and enablement */
@@ -761,6 +802,27 @@ details .plain-list {
 .sub > p {
   margin-top: 1rem;
   max-width: var(--measure);
+}
+
+.background-details {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+.background-details > summary {
+  padding-block: 1rem;
+  font-size: var(--text-l);
+}
+
+.background-details-body {
+  padding-bottom: 1.5rem;
+}
+
+.background-details .journey {
+  margin-top: 1rem;
+}
+
+.background-details .sub {
+  margin-top: clamp(2.5rem, 6vw, 4rem);
 }
 
 /* Closing */
