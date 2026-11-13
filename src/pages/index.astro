@@ -63,7 +63,10 @@ import {
         {
           featuredCaseStudies.map((study) => (
             <article class="case-study">
-              <h3>{study.title}</h3>
+              <div class="case-title">
+                <Icon name={study.icon} />
+                <h3>{study.title}</h3>
+              </div>
               <dl class="formula case-formula">
                 <div>
                   <dt>Context</dt>
@@ -230,7 +233,10 @@ import {
         {
           practices.map((practice) => (
             <article>
-              <h3>{practice.title}</h3>
+              <h3>
+                <Icon name={practice.icon} />
+                {practice.title}
+              </h3>
               <p>{practice.body}</p>
             </article>
           ))

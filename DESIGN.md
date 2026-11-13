@@ -88,7 +88,8 @@ saved in `localStorage`. Dark tokens:
 ### Icons
 
 Fluent UI System Icons (Microsoft, MIT licence), 24px regular, inlined at build time by
-`src/components/Icon.astro`. Used only for the six skill groups and the theme toggle. No
+`src/components/Icon.astro`. Used for the featured case studies, the three supporting practice
+areas, the six skill groups and the theme toggle. No
 Microsoft product logos: their terms limit those to diagrams, training
 and documentation.
 
@@ -109,8 +110,10 @@ and documentation.
 ### Other
 
 - The transparent line-drawn portrait sits beside the hero and follows the active theme.
+- The favicon is a compact custom M with the lifecycle line. It stays legible at small sizes and
+  uses the dark theme colours for consistent contrast.
 - A sticky stage bar inside the walk-through highlights the stage being read.
-- Header reads "Macauley, Power Platform Developer".
+- Header reads "Macauley - Power Platform Developer" and stays on one line.
 
 ### Portrait
 

@@ -13,6 +13,18 @@ export const site = {
 };
 
 export type StageId = 'discover' | 'design' | 'build' | 'test' | 'release' | 'support';
+export type IconName =
+  | 'apps'
+  | 'flow'
+  | 'database'
+  | 'plug'
+  | 'shield'
+  | 'people'
+  | 'peopleChat'
+  | 'bot'
+  | 'target'
+  | 'design'
+  | 'windowDatabase';
 
 export interface Stage {
   id: StageId;
@@ -122,6 +134,7 @@ export const stages: Stage[] = [
 ];
 
 export interface CaseStudy {
+  icon: IconName;
   title: string;
   context: string;
   role: string;
@@ -132,6 +145,7 @@ export interface CaseStudy {
 
 export const featuredCaseStudies: CaseStudy[] = [
   {
+    icon: 'windowDatabase',
     title: 'A contact-centre CRM built for scale',
     context:
       'A production CRM used by more than 230 people had to remain fast, secure and dependable across nine million Dataverse records.',
@@ -143,6 +157,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     tech: 'Canvas apps, Dataverse, Power Fx, Power Automate, Power Platform Pipelines, Azure DevOps',
   },
   {
+    icon: 'bot',
     title: 'Copilot agents for data entry in Teams',
     context:
       'Long, manual data-entry tasks were creating friction for people trying to keep business data up to date.',
@@ -154,6 +169,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     tech: 'Copilot Studio, Dataverse MCP, Power Automate agent flows, custom tools, Microsoft Teams',
   },
   {
+    icon: 'target',
     title: 'Lead generation with human review',
     context:
       'A consultancy needed a reliable way to find relevant opportunities while keeping a person in control of outreach.',
@@ -206,23 +222,24 @@ export const deliveredSystems: DeliveredSystem[] = [
 
 export const practices = [
   {
+    icon: 'design' as IconName,
     title: 'How I approach UX/UI',
     body:
       'I use wireframes, reusable components, responsive design, accessibility checks, usability feedback and before-and-after redesigns. The aim is simple: make the solution easy to understand and good enough that people want to use it.',
   },
   {
+    icon: 'shield' as IconName,
     title: 'Governance and standards',
     body:
       'I help maintain practical standards for environment and solution reviews. They cover ALM, naming, deployment, reusable components, backups, data retention, GDPR and least-privilege access.',
   },
   {
+    icon: 'peopleChat' as IconName,
     title: 'Workshops and handover',
     body:
       'I have run five client discovery workshops, coached an apprentice for more than six months, and produced solution designs, review checklists, release notes, training and handover documentation.',
   },
 ];
-
-export type IconName = 'apps' | 'flow' | 'database' | 'plug' | 'shield' | 'people';
 
 export const skills: { group: string; icon: IconName; items: string }[] = [
   {
