@@ -1,12 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    :root {
+      --background: #eef3f0;
+      --mark: #0f2a24;
+      --start: #2447d6;
+      --middle: #0a8791;
+      --end: #1f7a4a;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0f1f1b;
+        --mark: #e8efec;
+        --start: #7c96ff;
+        --middle: #3cc1cb;
+        --end: #5ccb8f;
+      }
+    }
+  </style>
   <defs>
     <linearGradient id="line" x1="14" y1="0" x2="50" y2="0" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7C96FF"/>
-      <stop offset=".55" stop-color="#3CC1CB"/>
-      <stop offset="1" stop-color="#5CCB8F"/>
+      <stop stop-color="var(--start)"/>
+      <stop offset=".55" stop-color="var(--middle)"/>
+      <stop offset="1" stop-color="var(--end)"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#0F2A24"/>
-  <path d="M14 44V20l18 18 18-18v24" fill="none" stroke="#E8EFEC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect width="64" height="64" rx="14" fill="var(--background)"/>
+  <path d="M14 44V20l18 18 18-18v24" fill="none" stroke="var(--mark)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   <path d="M14 52h36" fill="none" stroke="url(#line)" stroke-width="4" stroke-linecap="round"/>
 </svg>
