@@ -192,8 +192,45 @@ img {
 }
 
 .top .name {
+  display: flex;
+  align-items: center;
   font-weight: 600;
   text-decoration: none;
+}
+
+.header-portrait {
+  width: 0;
+  height: 2.25rem;
+  margin-right: 0;
+  overflow: hidden;
+  flex: none;
+  color: var(--ink);
+  background: var(--wash);
+  border-radius: 3px;
+  opacity: 0;
+  transform: translateY(0.35rem) scale(0.85);
+  transition:
+    width 180ms ease,
+    margin-right 180ms ease,
+    opacity 140ms ease,
+    transform 180ms ease;
+}
+
+.site-header.portrait-docked .header-portrait {
+  width: 2.25rem;
+  margin-right: 0.6rem;
+  opacity: 1;
+  transform: none;
+}
+
+.header-portrait svg {
+  display: block;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.brand-role {
+  margin-left: 0.25rem;
 }
 
 .top ul {
@@ -811,6 +848,10 @@ details .plain-list {
   html {
     scroll-behavior: auto;
   }
+
+  .header-portrait {
+    transition: none;
+  }
 }
 
 @media print {
@@ -840,7 +881,7 @@ details .plain-list {
   flex: none;
 }
 
-.top .name span {
+.top .brand-role {
   font-weight: 400;
   color: var(--ink-soft);
 }

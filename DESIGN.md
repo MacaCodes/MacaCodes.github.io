@@ -61,6 +61,7 @@ Sentence case everywhere. Line height 1.6 for body, 1.15 for headings.
 - **Illustration**: one line-drawn plant, on the 404 page only.
 - **Navigation**: text labels remain icon-free for immediate recognition. The solid header stays
   visible on long pages; the lifecycle bar sits directly beneath it while the work section scrolls.
+  The hero portrait docks beside the name once its larger version leaves the viewport.
 
 ## Motion
 

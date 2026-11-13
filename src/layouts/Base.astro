@@ -3,6 +3,7 @@ import '@fontsource-variable/archivo/wdth.css';
 import '../styles/global.css';
 import { site } from '../content/site';
 import Icon from '../components/Icon.astro';
+import drawing from '../assets/macauley-drawing.svg?raw';
 
 interface Props {
   title?: string;
@@ -49,7 +50,11 @@ const ogImage = new URL('/og.png', site.url).href;
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap top">
-        <a class="name" href="/">{site.name} <span>– {site.role}</span></a>
+        <a class="name" href="/">
+          <span class="header-portrait" aria-hidden="true"><Fragment set:html={drawing} /></span>
+          <span class="brand-name">{site.name}</span>
+          <span class="brand-role">– {site.role}</span>
+        </a>
         <nav aria-label="Main">
           <ul>
             <li><a href="/#work">Work</a></li>
@@ -102,6 +107,13 @@ const ogImage = new URL('/og.png', site.url).href;
           root.style.setProperty('--header-height', `${header.getBoundingClientRect().height}px`);
         syncHeaderHeight();
         new ResizeObserver(syncHeaderHeight).observe(header);
+
+        const heroPortrait = document.querySelector('.portrait');
+        if (heroPortrait) {
+          new IntersectionObserver(([entry]) => {
+            header.classList.toggle('portrait-docked', !entry.isIntersecting);
+          }).observe(heroPortrait);
+        }
       })();
     </script>
   </body>
