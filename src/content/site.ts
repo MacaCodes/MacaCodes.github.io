@@ -155,7 +155,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     role:
       'As the primary developer, I built the Canvas app and owned the wider Dataverse solution. That included the model-driven CRM, tables, case processes, reporting, year-end data reports, security, integrations and deployments.',
     change:
-      'Contact search fell from about two minutes to under five seconds. I also traced more than 70 data-changing formulas, turned the findings into a risk register and fixes, and managed releases across Dev, UAT and Production.',
+      'Contact search fell from about two minutes to under five seconds. I kept it delegable with Filter, StartsWith and SortByColumns, then used DelayOutput and a minimum character threshold to avoid unnecessary Dataverse requests. I also traced more than 70 data-changing formulas, prioritised the risks and delivered the fixes.',
     status: 'In production. I continue to support it.',
     tech: 'Canvas and model-driven apps, Dataverse, Power Fx, Power Automate, Power Platform Pipelines, Azure DevOps',
     visual: 'crm',
@@ -166,7 +166,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     context:
       'A warehouse scanner already wrote daily scan data to a MySQL database. The existing process could not be changed or made dependent on Dataverse being available.',
     role:
-      'I built the C# Azure Function and Dataverse integration. It runs hourly, reads the source database without modifying it, validates and transforms new records, and uses alternate-key upserts to avoid duplicates.',
+      'I built the C# Azure Function as an hourly, one-way synchronisation so the scanner remained independent of Dataverse availability. It reads new MySQL records without changing the source, validates and transforms them, and uses alternate-key upserts to prevent duplicates.',
     change:
       'Warehouse scans now reach Dataverse without manual re-entry, where they can update operational records and trigger Power Automate processes.',
     status: 'In production.',
@@ -179,9 +179,9 @@ export const featuredCaseStudies: CaseStudy[] = [
     context:
       'Long, manual data-entry tasks were creating friction for people trying to keep business data up to date.',
     role:
-      'I designed, built and released Copilot Studio agents in Teams, using grounded retrieval, explicit confirmation, human review and deterministic transactions for writes.',
+      'I designed and released Copilot Studio agents for time tracking and case management in Teams. The agents retrieve relevant Dataverse records, ask for missing information, and help the user select the right subscription and complete the required fields. The user reviews everything before a deterministic agent flow writes to Dataverse.',
     change:
-      'People can now complete the work through a Copilot chat in Teams instead of a time-consuming manual process. Data entry is easier and each action is still controlled.',
+      'People can complete time-tracking and case-management tasks through Teams instead of a long manual data-entry process, while retaining control over every write.',
     status: 'In production. I continue to support the agents.',
     tech: 'Copilot Studio, Dataverse MCP, Power Automate agent flows, custom tools, Microsoft Teams',
     visual: 'copilot',
@@ -199,9 +199,10 @@ export const deliveredSystems: DeliveredSystem[] = [
   {
     title: 'CRM rebuilds and migrations',
     body:
-      'Across several Dynamics 365 and Dataverse CRM rebuilds, I have inventoried legacy solutions, planned migrations, produced field mappings, imported data, configured Outlook mailboxes, designed security roles and prepared release plans.',
-    result: 'In one production rebuild, I simplified the data model, forms, views, navigation and automation, retiring around 35% of the audited legacy components.',
-    tech: 'Model-driven apps, Dynamics 365, Dataverse, data migration, security, Power Automate',
+      'Across several Dynamics 365 and Dataverse CRM rebuilds, I have audited legacy solutions and redesigned model-driven forms, views and navigation. I have also planned data and Outlook mailbox migrations, mapped fields, configured security roles, and rebuilt automations and integrations.',
+    result:
+      'In one production rebuild, I retired around 35% of the audited legacy components. The redesign simplified both the user experience and ongoing maintenance.',
+    tech: 'Model-driven apps, Dynamics 365, Dataverse, data migration, security, Power Automate, integrations',
   },
   {
     title: 'Two government API integrations',
