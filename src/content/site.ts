@@ -219,11 +219,11 @@ export const deliveredSystems: DeliveredSystem[] = [
     tech: 'WordPress, Power Automate, reusable cloud flows',
   },
   {
-    title: 'Lead-generation workflow with human review',
+    title: 'Dynamics 365 lead generation and campaign automation',
     body:
-      'I built an internal tool around job-board APIs and automated the processing and campaign preparation, with a person reviewing before anything is sent.',
+      'I connected job-board APIs to Dynamics 365 leads and ClickDimensions campaigns, supported by a SharePoint go-to-market process I designed and mapped. A person reviewed everything before sending.',
     result: 'In use. Around 250 qualified leads over nine months.',
-    tech: 'Job-board APIs, workflow automation, human-in-the-loop review',
+    tech: 'Dynamics 365, ClickDimensions, SharePoint, job-board APIs, human review',
   },
 ];
 
