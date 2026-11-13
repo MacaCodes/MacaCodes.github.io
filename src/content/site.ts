@@ -42,7 +42,7 @@ export const stages: Stage[] = [
     id: 'discover',
     name: 'Discover',
     summary: 'Requirements, process mapping, prototypes',
-    lead: 'I start with how people work today, using process mapping and prototypes to shape clear requirements and explore better approaches and new platform capabilities.',
+    lead: 'I speak with stakeholders, map existing processes and build prototypes to make sure we’re solving the right problem.',
     points: [
       'I build demos for prospective clients using their own scenarios, so they can click through something real.',
       'For a Dynamics 365 rebuild I audited the legacy environment to decide what to keep, redesign, migrate or retire.',
@@ -92,7 +92,7 @@ export const stages: Stage[] = [
     id: 'test',
     name: 'Test',
     summary: 'UAT, regression, risk review',
-    lead: 'I combine technical review with risk-based UAT, regression testing and fixes driven by evidence.',
+    lead: 'I plan risk-based UAT and regression tests, then investigate and fix the issues they uncover.',
     points: [
       'That review became a prioritised risk register. I delivered the fixes and wrote targeted UAT scenarios for each.',
       'I design the UAT approach for a release and present progress and demonstrations to stakeholders.',
@@ -177,7 +177,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     icon: 'bot',
     title: 'Copilot agents for data entry in Teams',
     context:
-      'Long, manual data-entry tasks were creating friction for people trying to keep business data up to date.',
+      'Time tracking and case management involved repetitive manual data entry.',
     role:
       'I designed and released Copilot Studio agents for time tracking and case management in Teams. They retrieve relevant Dataverse records, ask for missing information and help users select the right subscription. A deterministic agent flow writes only after the user reviews the required fields.',
     change:
