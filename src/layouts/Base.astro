@@ -108,11 +108,16 @@ const ogImage = new URL('/og.png', site.url).href;
         syncHeaderHeight();
         new ResizeObserver(syncHeaderHeight).observe(header);
 
-        const heroPortrait = document.querySelector('.portrait');
-        if (heroPortrait) {
-          new IntersectionObserver(([entry]) => {
-            header.classList.toggle('portrait-docked', !entry.isIntersecting);
-          }).observe(heroPortrait);
+        const dockTrigger = document.querySelector('.hero .intro');
+        if (dockTrigger) {
+          const syncDockedPortrait = () => {
+            const triggerTop = dockTrigger.getBoundingClientRect().top;
+            const headerBottom = header.getBoundingClientRect().bottom;
+            header.classList.toggle('portrait-docked', triggerTop <= headerBottom);
+          };
+          syncDockedPortrait();
+          addEventListener('scroll', syncDockedPortrait, { passive: true });
+          addEventListener('resize', syncDockedPortrait);
         }
       })();
     </script>
