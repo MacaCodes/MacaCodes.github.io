@@ -278,6 +278,11 @@ img {
   color: var(--ink);
 }
 
+.hero-links {
+  display: block;
+  margin-top: 0.65rem;
+}
+
 /* The lifecycle line: the one bold element on the page */
 .lifecycle {
   margin-top: clamp(3rem, 7vw, 5rem);
