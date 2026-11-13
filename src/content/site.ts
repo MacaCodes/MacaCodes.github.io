@@ -201,28 +201,28 @@ export const deliveredSystems: DeliveredSystem[] = [
     body:
       'Across several Dynamics 365 and Dataverse CRM rebuilds, I have audited legacy solutions and redesigned model-driven forms, views and navigation. I have also planned data and Outlook mailbox migrations, mapped fields, configured security roles, and rebuilt automations and integrations.',
     result:
-      'In one production rebuild, I retired around 35% of the audited legacy components. The redesign simplified both the user experience and ongoing maintenance.',
+      'In production. Around 35% of audited legacy components retired. The redesign improved the user experience and simplified ongoing maintenance.',
     tech: 'Model-driven apps, Dynamics 365, Dataverse, data migration, security, Power Automate, integrations',
   },
   {
     title: 'Two government API integrations',
     body:
-      'I integrated two published APIs into Power Automate and Canvas apps. I later moved both to a newer API version, updating the endpoints, mappings, validation, error handling and dependent logic.',
-    result: 'In production and still maintained.',
+      'I integrated two public-data APIs through Power Automate and Canvas apps, writing the results to Dataverse so users can answer campaign queries without moving between systems. I later migrated both integrations to a newer API version, updating endpoints, mappings, validation, error handling and dependent logic.',
+    result: 'In production. Public data brought into Dataverse for faster campaign queries.',
     tech: 'Power Automate, Canvas apps, REST APIs',
   },
   {
-    title: 'WordPress order automation',
+    title: 'WordPress to Dynamics 365 order automation',
     body:
-      'I am building a reusable parent-and-child flow pattern to replace spreadsheet processing across 25 order types and their custom fields.',
-    result: 'In testing.',
+      'I am building a reusable parent-and-child flow pattern that brings WordPress orders into Dynamics 365, replacing spreadsheet processing across 25 order types and their custom fields.',
+    result: 'In testing. Replacing spreadsheet processing across 25 order types.',
     tech: 'WordPress, Power Automate, reusable cloud flows',
   },
   {
-    title: 'Lead generation with human review',
+    title: 'Lead-generation workflow with human review',
     body:
       'I built an internal tool around job-board APIs and automated the processing and campaign preparation, with a person reviewing before anything is sent.',
-    result: 'It produced around 250 qualified leads over nine months and fed them into active sequencing.',
+    result: 'In use. Around 250 qualified leads over nine months.',
     tech: 'Job-board APIs, workflow automation, human-in-the-loop review',
   },
 ];
@@ -232,7 +232,7 @@ export const practices = [
     icon: 'design' as IconName,
     title: 'How I approach UX/UI',
     body:
-      'I use wireframes, reusable components, responsive design, accessibility checks, usability feedback and before-and-after redesigns. The aim is simple: make the solution easy to understand and good enough that people want to use it.',
+      'I use wireframes, reusable components, responsive design, accessibility checks and usability feedback to make systems clearer and easier to adopt.',
   },
   {
     icon: 'shield' as IconName,
@@ -289,7 +289,7 @@ export const skills: { group: string; icon: IconName; items: string }[] = [
 
 export const journey: { when: string; what: string; body: string }[] = [
   {
-    when: '2016 to 2023',
+    when: 'Earlier career',
     what: 'Recruitment, talent and commercial roles',
     body: 'Technology recruitment, internal talent acquisition, executive search and sales across consulting, financial services and retail.',
   },
