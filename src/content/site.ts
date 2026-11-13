@@ -11,7 +11,6 @@ export const site = {
   description:
     'Power Platform developer in Manchester building production systems with Dataverse, automation, AI and thoughtful UX/UI.',
   location: 'Manchester, UK',
-  workPreference: 'Open to remote and hybrid roles.',
 };
 
 export type StageId = 'discover' | 'design' | 'build' | 'test' | 'release' | 'support';
@@ -75,7 +74,8 @@ export const stages: Stage[] = [
     id: 'build',
     name: 'Build',
     summary: 'Canvas app, flows, integrations',
-    lead: 'I work across Canvas and model-driven apps, automation, Azure Functions and APIs.',
+    lead:
+      'I build Canvas and model-driven apps, custom pages, Code Apps, Power Pages prototypes and Copilot agents, with Power Automate, Azure Functions and APIs behind them.',
     points: [
       'Contact search against a nine-million-row table took about two minutes. I got it under five seconds, a reduction of over 95%.',
       'Across clients I have built more than 40 Power Automate cloud flows, along with Azure Function Apps and API integrations.',
@@ -153,7 +153,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     context:
       'A production CRM used by more than 230 people had to remain fast, secure and dependable across nine million Dataverse records.',
     role:
-      'As primary developer, I wrote about 90% of the Canvas app and owned the wider Dataverse solution. That included the model-driven CRM, tables, case processes, reporting, year-end data reports, security, integrations and deployments.',
+      'As the primary developer, I built the Canvas app and owned the wider Dataverse solution. That included the model-driven CRM, tables, case processes, reporting, year-end data reports, security, integrations and deployments.',
     change:
       'Contact search fell from about two minutes to under five seconds. I also traced more than 70 data-changing formulas, turned the findings into a risk register and fixes, and managed releases across Dev, UAT and Production.',
     status: 'In production. I continue to support it.',
@@ -250,7 +250,7 @@ export const skills: { group: string; icon: IconName; items: string }[] = [
     group: 'Apps',
     icon: 'apps',
     items:
-      'Canvas and model-driven apps, Power Fx, custom pages, Power Pages, Dynamics 365 CE, JavaScript form scripting, web resources and command bars.',
+      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript form scripting, web resources and command bars.',
   },
   {
     group: 'Automation',
