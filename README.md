@@ -16,7 +16,8 @@ npm run dev
 
 All copy is in [`src/content/site.ts`](src/content/site.ts): the stages, projects, skills,
 journey and qualifications. Projects use a fixed formula (need, what I did, result, built with). The hero sentence and section headings are in
-[`src/pages/index.astro`](src/pages/index.astro). The photo is `src/assets/macauley.jpg`.
+[`src/pages/index.astro`](src/pages/index.astro). The hero illustration is
+`src/assets/macauley-drawing.svg`.
 
 Visual rules are in [`DESIGN.md`](DESIGN.md); tokens are at the top of
 [`src/styles/global.css`](src/styles/global.css).
@@ -38,5 +39,6 @@ If the hero wording changes, regenerate the social image with `npm run og`.
 ## Privacy rules for this repository
 
 - Never commit a CV, or any email address, phone number or home address.
-- Consultancy clients are not named.
+- Current and former employers and clients are not named in public copy.
+- Do not commit personal photographs.
 - No analytics, cookies or contact form.

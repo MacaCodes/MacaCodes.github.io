@@ -5,12 +5,11 @@
 export const site = {
   name: 'Macauley',
   role: 'Power Platform Developer',
-  location: 'Manchester, UK',
   url: 'https://macacodes.github.io',
   linkedin: 'https://www.linkedin.com/in/Macauley-Gibson',
-  title: 'Macauley, Power Platform developer in Manchester',
+  title: 'Macauley | Power Platform, automation and AI',
   description:
-    'Power Platform developer in Manchester. Canvas and model-driven apps, Power Automate, Dataverse, integrations and Copilot Studio agents, taken from requirements through to production support.',
+    'Power Platform developer working across automation, Dataverse, integrations and Copilot Studio, from requirements through to production support.',
 };
 
 export type StageId = 'discover' | 'design' | 'build' | 'test' | 'release' | 'support';
@@ -164,7 +163,7 @@ export const projects: Project[] = [
   {
     id: 'lead-generation',
     title: 'Lead-generation tool',
-    need: 'An internal business development tool for CRM Knowledge.',
+    need: 'An internal business development tool for a consultancy.',
     did: 'Built it on job board APIs, with a largely automated outbound campaign process. A person reviews before anything is sent.',
     result: 'In use and generating leads.',
     tech: 'Job board APIs, automation with human-in-the-loop review',
@@ -217,7 +216,7 @@ export const journey: { when: string; what: string; body: string }[] = [
   {
     when: '2016 to 2023',
     what: 'Recruitment, talent and commercial roles',
-    body: 'Technology recruitment, internal talent acquisition, executive search and sales. Employers included Wiley Edge, Interactive Investor, Sopra Steria, Co-op and John Lewis, with clients such as Amazon, EY, Argos and Sainsbury’s.',
+    body: 'Technology recruitment, internal talent acquisition, executive search and sales across consulting, financial services and retail.',
   },
   {
     when: 'Early 2024',
@@ -226,12 +225,12 @@ export const journey: { when: string; what: string; body: string }[] = [
   },
   {
     when: 'Mid 2024',
-    what: 'Data Specialist, The Talent Crowd',
+    what: 'Data Specialist, recruitment consultancy',
     body: 'Migrated data from a legacy applicant tracking system to a new Dynamics 365 CRM.',
   },
   {
     when: 'September 2024 to now',
-    what: 'Power Platform Developer, CRM Knowledge',
+    what: 'Power Platform Developer, Microsoft consultancy',
     body: 'Client work from pre-sales demonstrations through to production support.',
   },
 ];

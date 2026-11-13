@@ -26,6 +26,9 @@ const banned = [
   [/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/i, 'email address'],
   [/(\+44\s?7\d{3}|\b07\d{3})\s?\d{3}\s?\d{3}\b/, 'UK mobile number'],
   [/\bGibson\b(?!["'<\s]*$)/, 'surname'],
+  [/\bCRM Knowledge\b/i, 'current employer name'],
+  [/\b(?:Interactive Investor|Wiley Edge|The Talent Crowd|Sopra Steria)\b/i, 'former employer name'],
+  [/\b(?:Amazon|Argos|Sainsbury’s|Morgan Stanley|NatWest Markets|JP Morgan)\b/i, 'former client name'],
 ];
 for (const f of textFiles) {
   // The LinkedIn profile URL legitimately contains the surname; remove it before scanning.

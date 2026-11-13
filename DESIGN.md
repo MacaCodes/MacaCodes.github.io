@@ -110,4 +110,4 @@ and documentation.
 ### Portrait
 
 The hero portrait is an original line drawing (`src/assets/macauley-drawing.svg`), inlined so it
-takes the ink colour in both themes. The photo `src/assets/macauley.jpg` is kept in the repo but not shown.
+takes the ink colour in both themes. Personal photographs are not stored in the public repository.
