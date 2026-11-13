@@ -42,7 +42,7 @@ export const stages: Stage[] = [
     id: 'discover',
     name: 'Discover',
     summary: 'Requirements, process mapping, prototypes',
-    lead: 'I start with how people work today, then explore better approaches and new platform capabilities before turning the gaps into clear requirements and prototypes.',
+    lead: 'I start with how people work today, using process mapping and prototypes to shape clear requirements and explore better approaches and new platform capabilities.',
     points: [
       'I build demos for prospective clients using their own scenarios, so they can click through something real.',
       'For a Dynamics 365 rebuild I audited the legacy environment to decide what to keep, redesign, migrate or retire.',
@@ -58,7 +58,7 @@ export const stages: Stage[] = [
     id: 'design',
     name: 'Design',
     summary: 'UX/UI, data, security, architecture',
-    lead: 'I design the user experience, data model, security, app structure and integration approach before the build begins.',
+    lead: 'I design the UX/UI, data model, security, solution architecture and integration approach before the build begins.',
     points: [
       'I designed the security matrix for three user groups, built it in Dataverse, and project-managed its delivery with external teams.',
       'I designed a reference-allocation process so the same person keeps one reference across related records.',
@@ -75,7 +75,7 @@ export const stages: Stage[] = [
     name: 'Build',
     summary: 'Apps, automation, AI, integrations',
     lead:
-      'I build Canvas and model-driven apps, automation, integrations and Copilot agents, using custom pages, Power Automate, Azure Functions and APIs where they fit.',
+      'I build Canvas and model-driven apps, automation, integrations and AI agents in Copilot Studio, using custom pages, Power Automate, Azure Functions and APIs where they fit.',
     points: [
       'Contact search against a nine-million-row table took about two minutes. I got it under five seconds, a reduction of over 95%.',
       'Across clients I have built more than 40 Power Automate cloud flows, along with Azure Function Apps and API integrations.',
@@ -106,7 +106,7 @@ export const stages: Stage[] = [
     id: 'release',
     name: 'Release',
     summary: 'ALM, deployments, handover',
-    lead: 'I plan releases and move managed solutions through Dev, UAT and Production, with environment-specific configuration and clear handover.',
+    lead: 'I use ALM to plan deployments and move managed solutions through Dev, UAT and Production, with environment-specific configuration and clear handover.',
     points: [
       'Every release goes out as a managed solution, with connection references and environment variables set per environment.',
       'I set up and project-manage the Azure DevOps projects around the work, using Boards, epics and user stories.',
@@ -122,7 +122,7 @@ export const stages: Stage[] = [
     id: 'support',
     name: 'Support',
     summary: 'Production support, fixes, optimisation',
-    lead: 'I stay involved after go-live, diagnosing faults and handling performance, data and capacity issues.',
+    lead: 'I provide production support after go-live, diagnosing faults and handling fixes, performance optimisation, data and capacity issues.',
     points: [
       'I diagnose faults across Canvas apps, Dataverse, Power Automate and integrations.',
       'I led one client’s capacity remediation after about 60 GB of growth across database, file and audit storage.',
@@ -238,13 +238,13 @@ export const practices = [
     icon: 'shield' as IconName,
     title: 'Governance and standards',
     body:
-      'I help maintain practical standards for environment and solution reviews. They cover ALM, naming, deployment, reusable components, backups, data retention, GDPR and least-privilege access.',
+      'I help maintain practical standards for environments and solutions, covering ALM, naming, deployments, reusable components, backups, data retention, GDPR and least-privilege access.',
   },
   {
     icon: 'peopleChat' as IconName,
     title: 'Workshops and handover',
     body:
-      'I have run five client discovery workshops, coached an apprentice for more than six months, and produced solution designs, review checklists, release notes, training and handover documentation.',
+      'I run client discovery workshops and produce solution designs, review checklists, release notes, training and handover material. I also coached an apprentice for over six months.',
   },
 ];
 
