@@ -205,7 +205,6 @@ img {
   overflow: hidden;
   flex: none;
   color: var(--ink);
-  background: var(--wash);
   border-radius: 3px;
   opacity: 0;
   transform: translateY(0.35rem) scale(0.85);
@@ -1204,7 +1203,6 @@ details .plain-list {
 
 /* Hero portrait as a line drawing; it takes the ink colour, so it follows the theme. */
 .portrait-drawing {
-  background: var(--wash);
   color: var(--ink);
 }
 
