@@ -41,7 +41,7 @@ export const stages: Stage[] = [
   {
     id: 'discover',
     name: 'Discover',
-    summary: 'Requirements, pre-sales demos',
+    summary: 'Requirements, process mapping, prototypes',
     lead: 'I start with how people do the job now, then turn the gaps into clear requirements and prototypes.',
     points: [
       'I build demos for prospective clients using their own scenarios, so they can click through something real.',
@@ -57,8 +57,8 @@ export const stages: Stage[] = [
   {
     id: 'design',
     name: 'Design',
-    summary: 'Data model, security matrix',
-    lead: 'I design the data model, security, app structure and integration approach before the build begins.',
+    summary: 'UX/UI, data, security, architecture',
+    lead: 'I design the user experience, data model, security, app structure and integration approach before the build begins.',
     points: [
       'I designed the security matrix for three user groups, built it in Dataverse, and project-managed its delivery with external teams.',
       'I designed a reference-allocation process so the same person keeps one reference across related records.',
@@ -73,7 +73,7 @@ export const stages: Stage[] = [
   {
     id: 'build',
     name: 'Build',
-    summary: 'Canvas app, flows, integrations',
+    summary: 'Apps, automation, AI, integrations',
     lead:
       'I build Canvas and model-driven apps, custom pages, Code Apps, Power Pages prototypes and Copilot agents, with Power Automate, Azure Functions and APIs behind them.',
     points: [
@@ -91,7 +91,7 @@ export const stages: Stage[] = [
   {
     id: 'test',
     name: 'Test',
-    summary: '70+ formulas traced, UAT plan',
+    summary: 'UAT, regression, risk review',
     lead: 'I trace the parts that can change data, build risk-based UAT and fix what the evidence shows.',
     points: [
       'That review became a prioritised risk register. I delivered the fixes and wrote targeted UAT scenarios for each.',
@@ -105,7 +105,7 @@ export const stages: Stage[] = [
   {
     id: 'release',
     name: 'Release',
-    summary: 'Pipelines, Dev to UAT to Prod',
+    summary: 'ALM, deployments, handover',
     lead: 'I move managed solutions through Dev, UAT and Production with environment-specific configuration.',
     points: [
       'Every release goes out as a managed solution, with connection references and environment variables set per environment.',
@@ -121,7 +121,7 @@ export const stages: Stage[] = [
   {
     id: 'support',
     name: 'Support',
-    summary: 'Urgent fixes, capacity clean-up',
+    summary: 'Production support, fixes, optimisation',
     lead: 'I stay involved after go-live, diagnosing faults and handling performance, data and capacity issues.',
     points: [
       'I diagnose faults across Canvas apps, Dataverse, Power Automate and integrations.',
