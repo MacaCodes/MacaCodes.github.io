@@ -25,6 +25,7 @@ import {
           I build Power Platform systems that make day-to-day work easier. My work covers
           automation, data, AI and UX/UI, from the first requirements session through to production
           support.
+          <span class="availability">{site.location}. {site.workPreference}</span>
           <span class="hero-links">
             <a href="#work">See the work</a>, or find me on{' '}
             <a href={site.linkedin} rel="noopener me">LinkedIn</a>.
@@ -70,135 +71,47 @@ import {
                 <Icon name={study.icon} />
                 <h3>{study.title}</h3>
               </div>
-              <dl class="formula case-formula">
-                <div>
-                  <dt>Context</dt>
-                  <dd>{study.context}</dd>
-                </div>
-                <div>
-                  <dt>My role</dt>
-                  <dd>{study.role}</dd>
-                </div>
-                <div>
-                  <dt>What changed</dt>
-                  <dd>{study.change}</dd>
-                </div>
-                <div>
-                  <dt>Status</dt>
-                  <dd>{study.status}</dd>
-                </div>
-                <div>
-                  <dt>Built with</dt>
-                  <dd>{study.tech}</dd>
-                </div>
-              </dl>
-            </article>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="projects" aria-labelledby="projects-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="projects-h">More systems I’ve delivered</h2>
-        <p>Some of the other work I’ve built or supported across the platform.</p>
-      </div>
-
-      <div class="systems">
-        {
-          deliveredSystems.map((system) => (
-            <article class="system">
-              <h3>{system.title}</h3>
-              <p>{system.body}</p>
-              <p class="status">{system.result}</p>
-              <p class="tech">{system.tech}</p>
-            </article>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-wash" id="process" aria-labelledby="process-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="process-h">How I take work from idea to live service</h2>
-        <p>This is how I normally work, from the first conversation through to support after launch.</p>
-      </div>
-    </div>
-
-    <nav class="stagebar" aria-label="Stages in this section">
-      <ol class="wrap">
-        {
-          stages.map((s) => (
-            <li>
-              <a href={`#${s.id}`} data-stage={s.id}>
-                {s.name}
-              </a>
-            </li>
-          ))
-        }
-      </ol>
-    </nav>
-
-    <div class="wrap">
-      <ol class="stages">
-        {
-          stages.map((s) => (
-            <li class="stage" id={s.id}>
-              <h3>{s.name}</h3>
-              <div class="stage-body">
-                <p class="lead">{s.lead}</p>
-
-                {s.id === 'build' && (
-                  <figure class="compare">
-                    <figcaption>Contact search on a nine-million-row table</figcaption>
-                    <div class="compare-row">
-                      <span class="compare-label">Before</span>
-                      <span class="compare-track">
-                        <span class="compare-bar compare-before" />
-                      </span>
-                      <span class="compare-value">about 2 minutes</span>
-                    </div>
-                    <div class="compare-row">
-                      <span class="compare-label">After</span>
-                      <span class="compare-track">
-                        <span class="compare-bar compare-after" />
-                      </span>
-                      <span class="compare-value">under 5 seconds</span>
-                    </div>
-                  </figure>
-                )}
-
-                {s.id === 'release' && (
-                  <figure class="pipeline">
-                    <ol>
-                      <li>Dev</li>
-                      <li>UAT</li>
-                      <li>Production</li>
-                    </ol>
-                    <figcaption>
-                      One managed solution moves through all three. Connection references and
-                      environment variables are set per environment.
-                    </figcaption>
-                  </figure>
-                )}
-
-                <details>
-                  <summary>{s.detailTitle}</summary>
-                  <ul class="plain-list">
-                    {[...s.points, ...s.detail].map((p) => (
-                      <li>{p}</li>
-                    ))}
-                  </ul>
-                </details>
+              <div class="case-evidence">
+                <dl class="formula case-formula">
+                  <div>
+                    <dt>Context</dt>
+                    <dd>{study.context}</dd>
+                  </div>
+                  <div>
+                    <dt>My role</dt>
+                    <dd>{study.role}</dd>
+                  </div>
+                  <div>
+                    <dt>What changed</dt>
+                    <dd>{study.change}</dd>
+                  </div>
+                  <div>
+                    <dt>Status</dt>
+                    <dd>{study.status}</dd>
+                  </div>
+                  <div>
+                    <dt>Built with</dt>
+                    <dd>{study.tech}</dd>
+                  </div>
+                </dl>
+                {
+                  study.visual === 'integration' && (
+                    <figure class="architecture">
+                      <ol aria-label="Integration architecture">
+                        <li>Warehouse scanner</li>
+                        <li>MySQL</li>
+                        <li>Azure Function</li>
+                        <li>Dataverse</li>
+                      </ol>
+                      <figcaption>Hourly, one-way synchronisation into Dataverse</figcaption>
+                    </figure>
+                  )
+                }
               </div>
-            </li>
+            </article>
           ))
         }
-      </ol>
+      </div>
     </div>
   </section>
 
@@ -220,6 +133,47 @@ import {
           ))
         }
       </dl>
+    </div>
+  </section>
+
+  <section class="section section-wash" id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="projects-h">More systems I’ve delivered</h2>
+        <p>Some of the other work I’ve built or supported across the platform.</p>
+      </div>
+
+      <div class="systems">
+        {
+          deliveredSystems.map((system) => (
+            <article class="system">
+              <h3>{system.title}</h3>
+              <p>{system.body}</p>
+              <p class="status">{system.result}</p>
+              <p class="tech">{system.tech}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process" aria-labelledby="process-h">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="process-h">How I take work from idea to live service</h2>
+        <p>A short view of how I normally work, from the first conversation through to support after launch.</p>
+      </div>
+      <ol class="process-grid">
+        {
+          stages.map((s) => (
+            <li id={s.id}>
+              <h3>{s.name}</h3>
+              <p>{s.lead}</p>
+            </li>
+          ))
+        }
+      </ol>
     </div>
   </section>
 
@@ -309,24 +263,3 @@ import {
     </div>
   </section>
 </Base>
-
-<script>
-  // Highlights the stage being read in the sticky stage bar.
-  const links = new Map(
-    [...document.querySelectorAll<HTMLAnchorElement>('.stagebar a')].map((a) => [
-      a.dataset.stage,
-      a,
-    ]),
-  );
-  const observer = new IntersectionObserver(
-    (entries) => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
-        links.forEach((a) => a.removeAttribute('aria-current'));
-        links.get(entry.target.id)?.setAttribute('aria-current', 'true');
-      }
-    },
-    { rootMargin: '-25% 0px -65% 0px' },
-  );
-  document.querySelectorAll('.stage').forEach((el) => observer.observe(el));
-</script>

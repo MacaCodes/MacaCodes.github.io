@@ -7,9 +7,11 @@ export const site = {
   role: 'Power Platform Developer',
   url: 'https://macacodes.github.io',
   linkedin: 'https://www.linkedin.com/in/Macauley-Gibson',
-  title: 'Macauley | Power Platform, automation and AI',
+  title: 'Macauley | Power Platform Developer in Manchester',
   description:
-    'Power Platform developer building practical systems with automation, data, AI and careful UX/UI, from discovery through to production support.',
+    'Power Platform developer in Manchester building production systems with Dataverse, automation, AI and thoughtful UX/UI.',
+  location: 'Manchester, UK',
+  workPreference: 'Open to remote and hybrid roles.',
 };
 
 export type StageId = 'discover' | 'design' | 'build' | 'test' | 'release' | 'support';
@@ -41,7 +43,7 @@ export const stages: Stage[] = [
     id: 'discover',
     name: 'Discover',
     summary: 'Requirements, pre-sales demos',
-    lead: 'I start by understanding how people do the job now and what gets in their way.',
+    lead: 'I start with how people do the job now, then turn the gaps into clear requirements and prototypes.',
     points: [
       'I build demos for prospective clients using their own scenarios, so they can click through something real.',
       'For a Dynamics 365 rebuild I audited the legacy environment to decide what to keep, redesign, migrate or retire.',
@@ -57,7 +59,7 @@ export const stages: Stage[] = [
     id: 'design',
     name: 'Design',
     summary: 'Data model, security matrix',
-    lead: 'On the contact-centre CRM I made the technical decisions on app structure, data model, security, integrations, performance and deployment.',
+    lead: 'I design the data model, security, app structure and integration approach before the build begins.',
     points: [
       'I designed the security matrix for three user groups, built it in Dataverse, and project-managed its delivery with external teams.',
       'I designed a reference-allocation process so the same person keeps one reference across related records.',
@@ -73,7 +75,7 @@ export const stages: Stage[] = [
     id: 'build',
     name: 'Build',
     summary: 'Canvas app, flows, integrations',
-    lead: 'I wrote about 90% of the production Canvas app the contact centre works in. It has 230+ users and sits on nine million Dataverse records.',
+    lead: 'I work across Canvas and model-driven apps, automation, Azure Functions and APIs.',
     points: [
       'Contact search against a nine-million-row table took about two minutes. I got it under five seconds, a reduction of over 95%.',
       'Across clients I have built more than 40 Power Automate cloud flows, along with Azure Function Apps and API integrations.',
@@ -90,7 +92,7 @@ export const stages: Stage[] = [
     id: 'test',
     name: 'Test',
     summary: '70+ formulas traced, UAT plan',
-    lead: 'Before one launch I traced every formula in a multi-screen Canvas app that saved, deleted, called a flow or changed a collection. There were more than 70.',
+    lead: 'I trace the parts that can change data, build risk-based UAT and fix what the evidence shows.',
     points: [
       'That review became a prioritised risk register. I delivered the fixes and wrote targeted UAT scenarios for each.',
       'I design the UAT approach for a release and present progress and demonstrations to stakeholders.',
@@ -104,7 +106,7 @@ export const stages: Stage[] = [
     id: 'release',
     name: 'Release',
     summary: 'Pipelines, Dev to UAT to Prod',
-    lead: 'I configure and run deployments across Dev, UAT and Production.',
+    lead: 'I move managed solutions through Dev, UAT and Production with environment-specific configuration.',
     points: [
       'Every release goes out as a managed solution, with connection references and environment variables set per environment.',
       'I set up and project-manage the Azure DevOps projects around the work, using Boards, epics and user stories.',
@@ -120,7 +122,7 @@ export const stages: Stage[] = [
     id: 'support',
     name: 'Support',
     summary: 'Urgent fixes, capacity clean-up',
-    lead: 'I stay involved after go-live. If something breaks in production, I am often responding to the urgent case in under ten minutes.',
+    lead: 'I stay involved after go-live, diagnosing faults and handling performance, data and capacity issues.',
     points: [
       'I diagnose faults across Canvas apps, Dataverse, Power Automate and integrations.',
       'I led one client’s capacity remediation after about 60 GB of growth across database, file and audit storage.',
@@ -141,6 +143,7 @@ export interface CaseStudy {
   change: string;
   status: string;
   tech: string;
+  visual?: 'integration';
 }
 
 export const featuredCaseStudies: CaseStudy[] = [
@@ -157,6 +160,19 @@ export const featuredCaseStudies: CaseStudy[] = [
     tech: 'Canvas apps, Dataverse, Power Fx, Power Automate, Power Platform Pipelines, Azure DevOps',
   },
   {
+    icon: 'database',
+    title: 'Warehouse scanner integration with Dataverse',
+    context:
+      'A warehouse scanner already wrote daily scan data to a MySQL database. The existing process could not be changed or made dependent on Dataverse being available.',
+    role:
+      'I built the C# Azure Function and Dataverse integration. It runs hourly, reads the source database without modifying it, validates and transforms new records, and uses alternate-key upserts to avoid duplicates.',
+    change:
+      'Warehouse scans now reach Dataverse without manual re-entry, where they can update operational records and trigger Power Automate processes.',
+    status: 'In production.',
+    tech: 'AWS-hosted MySQL, Azure Functions, C#/.NET, Dataverse, Power Automate',
+    visual: 'integration',
+  },
+  {
     icon: 'bot',
     title: 'Copilot agents for data entry in Teams',
     context:
@@ -167,18 +183,6 @@ export const featuredCaseStudies: CaseStudy[] = [
       'People can now complete the work through a Copilot chat in Teams instead of a time-consuming manual process. Data entry is easier and each action is still controlled.',
     status: 'In production. I continue to support the agents.',
     tech: 'Copilot Studio, Dataverse MCP, Power Automate agent flows, custom tools, Microsoft Teams',
-  },
-  {
-    icon: 'target',
-    title: 'Lead generation with human review',
-    context:
-      'A consultancy needed a reliable way to find relevant opportunities while keeping a person in control of outreach.',
-    role:
-      'I built an internal tool around job-board APIs and automated the processing and campaign preparation, with a person reviewing before anything is sent.',
-    change:
-      'It produced around 250 qualified leads over nine months and fed them into active sequencing.',
-    status: 'In use.',
-    tech: 'Job-board APIs, workflow automation, human-in-the-loop review',
   },
 ];
 
@@ -191,11 +195,11 @@ export interface DeliveredSystem {
 
 export const deliveredSystems: DeliveredSystem[] = [
   {
-    title: 'Dataverse and SQL Server integration',
+    title: 'Simplifying a legacy model-driven CRM',
     body:
-      'I designed and built an integration across Dataverse and two SQL Server databases. It uses a dedicated staging layer, with Azure Functions validating, transforming and synchronising the data.',
-    result: 'In production. It saves time and keeps one source of truth across the connected systems.',
-    tech: 'Dataverse, SQL Server, Azure Functions, C#/.NET',
+      'I audited an existing Dynamics 365 solution, then redesigned the Dataverse model and model-driven app. I simplified the relationships, forms, views, navigation, security roles, business process flows and automation, and removed duplicate or obsolete parts.',
+    result: 'In production. Around 35% of the audited legacy components were retired, making the solution easier to understand and maintain.',
+    tech: 'Model-driven apps, Dynamics 365, Dataverse, Power Automate, JavaScript',
   },
   {
     title: 'Two government API integrations',
@@ -212,11 +216,11 @@ export const deliveredSystems: DeliveredSystem[] = [
     tech: 'WordPress, Power Automate, reusable cloud flows',
   },
   {
-    title: 'Model-driven apps and operational data',
+    title: 'Lead generation with human review',
     body:
-      'I have built custom pages, command bars, JavaScript web resources and dashboards. My wider data work includes high-volume SQL and FetchXML queries and a legacy Dynamics 365 audit.',
-    result: 'Used across live delivery, reporting and modernisation work.',
-    tech: 'Model-driven apps, Dynamics 365, JavaScript, Power BI, SQL, FetchXML',
+      'I built an internal tool around job-board APIs and automated the processing and campaign preparation, with a person reviewing before anything is sent.',
+    result: 'It produced around 250 qualified leads over nine months and fed them into active sequencing.',
+    tech: 'Job-board APIs, workflow automation, human-in-the-loop review',
   },
 ];
 
@@ -258,7 +262,7 @@ export const skills: { group: string; icon: IconName; items: string }[] = [
     group: 'Data',
     icon: 'database',
     items:
-      'Dataverse data modelling, alternate keys and autonumbering, SQL Server, FetchXML, SQL 4 CDS, migration, bulk operations, capacity and retention management.',
+      'Dataverse data modelling, alternate keys and autonumbering, SQL Server, MySQL, FetchXML, SQL 4 CDS, migration, bulk operations, capacity and retention management.',
   },
   {
     group: 'Integrations and AI',

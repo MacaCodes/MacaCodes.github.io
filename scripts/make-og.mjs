@@ -16,9 +16,9 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" f
   </linearGradient></defs>
   <rect width="1200" height="630" fill="#ffffff"/>
   <text x="80" y="170" font-size="76" font-weight="700" fill="#0f2a24">Macauley</text>
-  <text x="80" y="250" font-size="46" fill="#0f2a24">Power Platform solutions people can rely on</text>
-  <text x="80" y="318" font-size="32" fill="#4c5f59">Automation, data, AI and thoughtful UX/UI,</text>
-  <text x="80" y="362" font-size="32" fill="#4c5f59">from discovery through to production support.</text>
+  <text x="80" y="250" font-size="46" fill="#0f2a24">Power Platform Developer in Manchester</text>
+  <text x="80" y="318" font-size="32" fill="#4c5f59">Production systems built with Dataverse,</text>
+  <text x="80" y="362" font-size="32" fill="#4c5f59">automation, AI and thoughtful UX/UI.</text>
   <rect x="80" y="424" width="1040" height="6" fill="url(#g)"/>
   ${ticks}
 </svg>`;

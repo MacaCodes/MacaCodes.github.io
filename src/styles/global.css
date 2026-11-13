@@ -24,7 +24,7 @@
   --gutter: clamp(1.25rem, 5vw, 3rem);
   --page: 70rem;
   --measure: 38rem;
-  --section: clamp(3.75rem, 8vw, 6rem);
+  --section: clamp(3.25rem, 7vw, 5rem);
   --line-w: 3px;
   color-scheme: light;
 }
@@ -283,6 +283,12 @@ img {
   margin-top: 0.65rem;
 }
 
+.availability {
+  display: block;
+  margin-top: 0.65rem;
+  color: var(--ink);
+}
+
 /* The lifecycle line: the one bold element on the page */
 .lifecycle {
   margin-top: clamp(3rem, 7vw, 5rem);
@@ -496,9 +502,65 @@ details .plain-list {
   max-width: var(--measure);
 }
 
+.case-evidence {
+  max-width: var(--measure);
+}
+
 .case-formula div:first-child {
   padding-top: 0;
   border-top: 0;
+}
+
+.architecture {
+  margin-top: 1.35rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.architecture ol {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.architecture li {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 4rem;
+  padding: 0.65rem;
+  border: 1px solid var(--ink-soft);
+  border-top: var(--line-w) solid var(--stage-start);
+  font-size: var(--text-s);
+  font-weight: 600;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.architecture li:nth-child(2) {
+  border-top-color: var(--stage-3);
+}
+
+.architecture li:nth-child(3) {
+  border-top-color: var(--stage-mid);
+}
+
+.architecture li:nth-child(4) {
+  border-top-color: var(--stage-end);
+}
+
+.architecture li + li::before {
+  content: '\2192';
+  position: absolute;
+  right: calc(100% + 0.25rem);
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+
+.architecture figcaption {
+  margin-top: 0.65rem;
+  color: var(--ink-soft);
+  font-size: var(--text-s);
 }
 
 .systems {
@@ -506,6 +568,46 @@ details .plain-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(3rem, 6vw, 4.5rem) clamp(2rem, 6vw, 5rem);
   margin-top: clamp(2.5rem, 6vw, 4rem);
+}
+
+/* A compact delivery overview. The detailed evidence lives in the case studies above. */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem clamp(1.5rem, 4vw, 3rem);
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.process-grid li {
+  padding-top: 0.9rem;
+  border-top: var(--line-w) solid var(--stage-start);
+  scroll-margin-top: calc(var(--header-height, 0px) + 1.5rem);
+}
+
+.process-grid li:nth-child(2) {
+  border-top-color: var(--stage-2);
+}
+
+.process-grid li:nth-child(3) {
+  border-top-color: var(--stage-3);
+}
+
+.process-grid li:nth-child(4) {
+  border-top-color: var(--stage-mid);
+}
+
+.process-grid li:nth-child(5) {
+  border-top-color: var(--stage-5);
+}
+
+.process-grid li:nth-child(6) {
+  border-top-color: var(--stage-end);
+}
+
+.process-grid p {
+  margin-top: 0.65rem;
+  color: var(--ink-soft);
+  font-size: var(--text-s);
 }
 
 .system {
@@ -758,8 +860,24 @@ details .plain-list {
   }
 
   .systems,
-  .practices {
+  .practices,
+  .process-grid {
     grid-template-columns: minmax(0, 1fr);
+  }
+
+  .architecture ol {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .architecture li {
+    min-height: 0;
+  }
+
+  .architecture li + li::before {
+    content: '\2193';
+    right: auto;
+    bottom: calc(100% + 0.15rem);
   }
 
   .skills div {
@@ -1078,9 +1196,17 @@ details .plain-list {
   }
 
   .top ul {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.15rem 0.8rem;
+  }
+
+  .top ul li:last-child {
+    margin-left: auto;
+  }
+
+  .top ul a {
+    font-size: 0.84rem;
   }
 
   .theme-toggle span:not(.sr-only) {
