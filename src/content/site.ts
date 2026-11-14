@@ -59,7 +59,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     role:
       'As the primary developer, I built the Canvas app and owned the wider Dataverse solution. That included the model-driven CRM, tables, case processes, reporting, year-end data reports, security, integrations and deployments.',
     change:
-      'Contact search fell from about two minutes to under five seconds. I kept it delegable with Filter, StartsWith and SortByColumns, then used DelayOutput and a minimum character threshold to avoid unnecessary Dataverse requests. I also traced more than 70 data-changing formulas, prioritised the risks and delivered the fixes.',
+      'Contact search fell from about two minutes to under five seconds. With nine million records, loading more data into the app was not an option, so I kept the search delegable with Filter, StartsWith and SortByColumns. I then used DelayOutput and a minimum character threshold to avoid unnecessary Dataverse requests. I also traced more than 70 data-changing formulas, prioritised the risks and delivered the fixes.',
     status: 'In production. I continue to support it.',
     tech: 'Canvas and model-driven apps, Dataverse, Power Fx, Power Automate, Power Platform Pipelines, Azure DevOps',
     visual: 'crm',
@@ -83,7 +83,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     context:
       'Time tracking and case management involved repetitive manual data entry.',
     role:
-      'I designed and released Copilot Studio agents for time tracking and case management in Teams. They retrieve relevant Dataverse records, ask for missing information and help users select the right subscription. A deterministic agent flow writes only after the user reviews the required fields.',
+      'I designed and released Copilot Studio agents for time tracking and case management in Teams. I used the agent to retrieve Dataverse records, ask for missing information and help select the right subscription, but kept the write deterministic: it runs only after the user reviews the required fields.',
     change:
       'Time-tracking and case-management entries now take around 20 seconds instead of three minutes. The production agents have handled hundreds of requests while retaining user confirmation before every write.',
     status: 'In production. I continue to support the agents.',
@@ -132,10 +132,10 @@ export const deliveredSystems: DeliveredSystem[] = [
 ];
 
 export const productionEvidence = [
-  'Built more than 40 Power Automate cloud flows across client projects.',
-  'Led Dataverse capacity remediation after about 60 GB of database, file and audit growth.',
-  'Set up and managed Azure DevOps project structures for client delivery.',
-  'Designed and implemented a Dataverse security matrix for three user groups.',
+  'I’ve built more than 40 Power Automate cloud flows across client projects.',
+  'I led Dataverse capacity remediation after about 60 GB of database, file and audit growth.',
+  'I set up and managed Azure DevOps project structures for client delivery.',
+  'I designed and implemented a Dataverse security matrix for three user groups.',
 ];
 
 export const skills: { group: string; icon: IconName; items: string }[] = [
@@ -187,7 +187,8 @@ export const journey: { when: string; what: string; body: string }[] = [
   {
     when: 'Mid 2024',
     what: 'Data Specialist, recruitment consultancy',
-    body: 'Migrated data from a legacy applicant tracking system to a new Dynamics 365 CRM.',
+    body:
+      'Specialised in recruitment data and CRM transformation, including data cleansing, mapping and migration into Dynamics 365.',
   },
   {
     when: 'Early 2024',
