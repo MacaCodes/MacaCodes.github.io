@@ -143,7 +143,7 @@ export const skills: { group: string; icon: IconName; items: string }[] = [
     group: 'Apps',
     icon: 'apps',
     items:
-      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript, web resources and command bars.',
+      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript form scripting, web resources and command-bar customisation.',
   },
   {
     group: 'Automation',
@@ -167,13 +167,13 @@ export const skills: { group: string; icon: IconName; items: string }[] = [
     group: 'ALM, governance and security',
     icon: 'shield',
     items:
-      'Managed solutions, Power Platform Pipelines, Azure DevOps, Power Platform CLI, Git, environment variables, connection references, solution reviews, security roles, owner teams, Entra ID group teams and least-privilege access.',
+      'Managed solutions, Power Platform Pipelines, Azure DevOps, Power Platform CLI, Git, environment variables, connection references, solution reviews, environment backup and recovery, security roles, Entra ID group teams and least-privilege access.',
   },
   {
     group: 'UX/UI and delivery',
     icon: 'people',
     items:
-      'Prototyping, reusable components, responsive design, accessibility checks and usability feedback; discovery workshops, requirements, process mapping, risk-based UAT, release documentation, handover and production support.',
+      'Prototyping, reusable components, responsive design, accessibility checks and usability feedback; discovery workshops, process mapping, risk-based UAT, release documentation, handover and production support.',
   },
 ];
 
