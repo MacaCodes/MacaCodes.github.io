@@ -895,6 +895,12 @@ details .plain-list {
   color: var(--ink-soft);
 }
 
+.quals .detail {
+  flex-basis: 100%;
+  font-size: var(--text-s);
+  color: var(--ink-soft);
+}
+
 .sub {
   margin-top: clamp(3.5rem, 8vw, 5.5rem);
 }

@@ -197,19 +197,21 @@ export const journey: { when: string; what: string; body: string }[] = [
   },
 ];
 
-export const qualifications: { name: string; note: string }[] = [
+export const qualifications: { name: string; note: string; detail?: string }[] = [
   {
     name: 'Microsoft Power Platform Developer Associate (AB-400, previously PL-400)',
     note: 'In progress',
   },
   {
     name: 'Level 4 Software Developer, BPP',
-    note:
-      'Merit, 2024 to 2025. SDLC, Agile and Waterfall, SQL databases, object-oriented C# and cybersecurity essentials.',
+    note: 'Merit',
+    detail:
+      '2024 to 2025. SDLC, Agile and Waterfall, SQL databases, object-oriented C# and cybersecurity essentials.',
   },
   {
     name: 'Full Stack Web Development bootcamp, The Growth Company',
-    note: 'January to April 2024. MongoDB, Express, React and Node.js (MERN).',
+    note: 'January to April 2024',
+    detail: 'MongoDB, Express, React and Node.js (MERN).',
   },
   { name: 'BA Social Sciences (Politics), University of Manchester', note: '2:1' },
   {
