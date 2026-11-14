@@ -140,10 +140,10 @@ export const productionEvidence = [
 
 export const skills: { group: string; icon: IconName; items: string }[] = [
   {
-    group: 'Apps and UX/UI',
+    group: 'Apps',
     icon: 'apps',
     items:
-      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript, web resources and command bars. I also work with wireframes, reusable components, accessibility checks and usability feedback.',
+      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript, web resources and command bars.',
   },
   {
     group: 'Automation',
@@ -164,16 +164,16 @@ export const skills: { group: string; icon: IconName; items: string }[] = [
       'REST APIs, Dataverse Web API, OData, custom connectors, SharePoint, Xero, Copilot Studio, AI Builder, MCP and agent orchestration.',
   },
   {
-    group: 'ALM and security',
+    group: 'ALM, governance and security',
     icon: 'shield',
     items:
-      'Managed solutions, Power Platform Pipelines, Azure DevOps, Power Platform CLI, Git, environment variables, connection references, security roles, owner teams and Entra ID group teams.',
+      'Managed solutions, Power Platform Pipelines, Azure DevOps, Power Platform CLI, Git, environment variables, connection references, solution reviews, security roles, owner teams, Entra ID group teams and least-privilege access.',
   },
   {
-    group: 'Delivery',
+    group: 'UX/UI and delivery',
     icon: 'people',
     items:
-      'Discovery workshops, requirements, process mapping, interactive pre-sales prototypes, solution design, risk-based UAT, regression testing, release documentation, client demonstrations, handover and production support.',
+      'Prototyping, reusable components, responsive design, accessibility checks and usability feedback; discovery workshops, requirements, process mapping, risk-based UAT, release documentation, handover and production support.',
   },
 ];
 
@@ -191,11 +191,6 @@ export const journey: { when: string; what: string; body: string }[] = [
       'Specialised in recruitment data and CRM transformation, including data cleansing, mapping and migration into Dynamics 365.',
   },
   {
-    when: 'Early 2024',
-    what: 'Full Stack Web Development bootcamp, The Growth Company',
-    body: 'MERN stack, January to April. Followed by a Level 4 Software Developer qualification with BPP.',
-  },
-  {
     when: 'Earlier career',
     what: 'Recruitment, talent and commercial roles',
     body: 'Technology recruitment, internal talent acquisition, executive search and sales across consulting, financial services and retail.',
@@ -203,9 +198,19 @@ export const journey: { when: string; what: string; body: string }[] = [
 ];
 
 export const qualifications: { name: string; note: string }[] = [
-  { name: 'Microsoft Power Platform Developer Associate (AB-400)', note: 'In progress' },
-  { name: 'Level 4 Software Developer, BPP', note: '2024 to 2025, Merit' },
-  { name: 'Full Stack Web Development (MERN) bootcamp, The Growth Company', note: '2024' },
+  {
+    name: 'Microsoft Power Platform Developer Associate (AB-400, previously PL-400)',
+    note: 'In progress',
+  },
+  {
+    name: 'Level 4 Software Developer, BPP',
+    note:
+      'Merit, 2024 to 2025. SDLC, Agile and Waterfall, SQL databases, object-oriented C# and cybersecurity essentials.',
+  },
+  {
+    name: 'Full Stack Web Development bootcamp, The Growth Company',
+    note: 'January to April 2024. MongoDB, Express, React and Node.js (MERN).',
+  },
   { name: 'BA Social Sciences (Politics), University of Manchester', note: '2:1' },
   {
     name: 'Mandarin Chinese intensive course, National Taiwan Normal University',
