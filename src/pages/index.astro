@@ -8,7 +8,7 @@ import {
   stages,
   featuredCaseStudies,
   deliveredSystems,
-  practices,
+  productionEvidence,
   skills,
   journey,
   qualifications,
@@ -39,20 +39,20 @@ import {
       </div>
     </div>
 
-    <nav class="lifecycle" aria-label="Delivery stages">
+    <div class="lifecycle">
       <p class="lifecycle-label">From idea to live service</p>
       <ol>
         {
           stages.map((s) => (
             <li>
-              <a href={`#${s.id}`}>
+              <span class="stage-marker">
                 <span class="stage-name">{s.name}</span>
-              </a>
+              </span>
             </li>
           ))
         }
       </ol>
-    </nav>
+    </div>
   </section>
 
   <section class="section section-wash" id="work" aria-labelledby="work-h">
@@ -154,44 +154,11 @@ import {
           ))
         }
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="process" aria-labelledby="process-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="process-h">How I take work from idea to live service</h2>
-      </div>
-      <ol class="process-grid">
-        {
-          stages.map((s) => (
-            <li id={s.id}>
-              <h3>{s.name}</h3>
-              <p>{s.lead}</p>
-            </li>
-          ))
-        }
-      </ol>
-    </div>
-  </section>
-
-  <section class="section section-wash" id="practice" aria-labelledby="practice-h">
-    <div class="wrap">
-      <div class="section-head">
-        <h2 id="practice-h">The work around the build</h2>
-      </div>
-      <div class="practices">
-        {
-          practices.map((practice) => (
-            <article>
-              <h3>
-                <Icon name={practice.icon} />
-                {practice.title}
-              </h3>
-              <p>{practice.body}</p>
-            </article>
-          ))
-        }
+      <div class="production-evidence">
+        <h3>Other production evidence</h3>
+        <ul>
+          {productionEvidence.map((item) => <li>{item}</li>)}
+        </ul>
       </div>
     </div>
   </section>
@@ -200,7 +167,10 @@ import {
     <div class="wrap">
       <div class="section-head">
         <h2 id="background-h">Five years in recruitment came first</h2>
-        <p>It taught me to keep asking until the real requirement shows up.</p>
+        <p>
+          I’ve worked as a Power Platform Developer at a Microsoft consultancy since September
+          2024. Recruitment taught me to keep asking until the real requirement shows up.
+        </p>
       </div>
 
       <ul class="facts">

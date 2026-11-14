@@ -364,15 +364,14 @@ img {
   --stage-colour: var(--stage-end);
 }
 
-.lifecycle a {
+.lifecycle .stage-marker {
   position: relative;
   display: block;
   height: 100%;
   color: var(--ink-soft);
-  text-decoration: none;
 }
 
-.lifecycle a::before {
+.lifecycle .stage-marker::before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -386,7 +385,7 @@ img {
   transform: translate(-50%, -50%);
 }
 
-.lifecycle a::after {
+.lifecycle .stage-marker::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -396,11 +395,11 @@ img {
   transform: translateX(-50%);
 }
 
-.lifecycle li:nth-child(odd) a::after {
+.lifecycle li:nth-child(odd) .stage-marker::after {
   bottom: 50%;
 }
 
-.lifecycle li:nth-child(even) a::after {
+.lifecycle li:nth-child(even) .stage-marker::after {
   top: 50%;
 }
 
@@ -422,12 +421,6 @@ img {
 
 .lifecycle li:nth-child(even) .stage-name {
   top: calc(50% + 0.9rem);
-}
-
-.lifecycle a:hover .stage-name {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.2em;
 }
 
 /* Sections */
@@ -745,46 +738,6 @@ details .plain-list {
   align-items: start;
 }
 
-/* A compact delivery overview. The detailed evidence lives in the case studies above. */
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 2rem clamp(1.5rem, 4vw, 3rem);
-  margin-top: clamp(2rem, 5vw, 3rem);
-}
-
-.process-grid li {
-  padding-top: 0.9rem;
-  border-top: var(--line-w) solid var(--stage-start);
-  scroll-margin-top: calc(var(--header-height, 0px) + 1.5rem);
-}
-
-.process-grid li:nth-child(2) {
-  border-top-color: var(--stage-2);
-}
-
-.process-grid li:nth-child(3) {
-  border-top-color: var(--stage-3);
-}
-
-.process-grid li:nth-child(4) {
-  border-top-color: var(--stage-mid);
-}
-
-.process-grid li:nth-child(5) {
-  border-top-color: var(--stage-5);
-}
-
-.process-grid li:nth-child(6) {
-  border-top-color: var(--stage-end);
-}
-
-.process-grid p {
-  margin-top: 0.65rem;
-  color: var(--ink-soft);
-  font-size: var(--text-s);
-}
-
 .system {
   margin-top: 0;
   border-top: 1px solid var(--ink);
@@ -827,33 +780,22 @@ details .plain-list {
   font-size: var(--text-s);
 }
 
-/* UX/UI, governance and enablement */
-.practices {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.5rem clamp(1.5rem, 4vw, 3rem);
+.production-evidence {
   margin-top: clamp(2.5rem, 6vw, 4rem);
 }
 
-.practices article {
-  padding-top: 1rem;
+.production-evidence ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(2rem, 6vw, 5rem);
+  margin-top: 1.25rem;
+}
+
+.production-evidence li {
+  padding-block: 1rem;
   border-top: 1px solid var(--ink);
-}
-
-.practices p {
-  margin-top: 0.8rem;
-}
-
-.practices h3 {
-  display: flex;
-  gap: 0.65rem;
-  align-items: flex-start;
-}
-
-.practices h3 .icon {
-  flex: none;
-  margin-top: 0.1rem;
-  color: var(--ink-soft);
+  font-size: var(--text-m);
+  line-height: 1.6;
 }
 
 /* Skills */
@@ -1041,7 +983,6 @@ details .plain-list {
 /* Phone */
 @media (max-width: 42rem) {
   .case-study,
-  .stage,
   .journey li,
   .about,
   .lost {
@@ -1049,8 +990,7 @@ details .plain-list {
   }
 
   .systems,
-  .practices,
-  .process-grid {
+  .production-evidence ul {
     grid-template-columns: minmax(0, 1fr);
   }
 
@@ -1408,6 +1348,8 @@ details .plain-list {
 .facts li {
   padding-top: 1rem;
   border-top: var(--line-w) solid var(--stage-start);
+  font-size: var(--text-m);
+  line-height: 1.6;
 }
 
 .facts li:nth-child(2) {

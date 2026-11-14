@@ -13,7 +13,6 @@ export const site = {
   location: 'Manchester, UK',
 };
 
-export type StageId = 'discover' | 'design' | 'build' | 'test' | 'release' | 'support';
 export type IconName =
   | 'apps'
   | 'flow'
@@ -28,111 +27,16 @@ export type IconName =
   | 'windowDatabase';
 
 export interface Stage {
-  id: StageId;
   name: string;
-  summary: string; // one short line under the stage name in the hero
-  lead: string;
-  points: string[];
-  detailTitle: string;
-  detail: string[];
 }
 
 export const stages: Stage[] = [
-  {
-    id: 'discover',
-    name: 'Discover',
-    summary: 'Requirements, process mapping, prototypes',
-    lead: 'I speak with stakeholders, map existing processes and build prototypes to make sure we’re solving the right problem.',
-    points: [
-      'I build demos for prospective clients using their own scenarios, so they can click through something real.',
-      'For a Dynamics 365 rebuild I audited the legacy environment to decide what to keep, redesign, migrate or retire.',
-      'On smaller Canvas apps I take the requirements myself, from the first conversation to user handover.',
-    ],
-    detailTitle: 'What that covers',
-    detail: [
-      'Pre-sales prototypes in Canvas apps, Dataverse, Power Pages, Code Apps and Power Automate.',
-      'Legacy audit across the data model, apps, forms, JavaScript, automations and solution components.',
-    ],
-  },
-  {
-    id: 'design',
-    name: 'Design',
-    summary: 'UX/UI, data, security, architecture',
-    lead: 'I design the UX/UI, data model, security, solution architecture and integration approach before the build begins.',
-    points: [
-      'I designed the security matrix for three user groups, built it in Dataverse, and project-managed its delivery with external teams.',
-      'I designed a reference-allocation process so the same person keeps one reference across related records.',
-      'Designs are written down: solution designs and field mappings that someone else can pick up.',
-    ],
-    detailTitle: 'How it is built',
-    detail: [
-      'Security: Dataverse security roles, owner teams and Entra ID group teams, designed for least-privilege access.',
-      'Reference allocation: Dataverse autonumber values, alternate keys and reuse logic.',
-    ],
-  },
-  {
-    id: 'build',
-    name: 'Build',
-    summary: 'Apps, automation, AI, integrations',
-    lead:
-      'I build Canvas and model-driven apps, automation, integrations and AI agents in Copilot Studio, using custom pages, Power Automate, Azure Functions and APIs where they fit.',
-    points: [
-      'Contact search against a nine-million-row table took about two minutes. I got it under five seconds, a reduction of over 95%.',
-      'Across clients I have built more than 40 Power Automate cloud flows, along with Azure Function Apps and API integrations.',
-      'I also build model-driven custom pages. On one project I recovered and packaged command-bar work that had been left in unmanaged layers.',
-    ],
-    detailTitle: 'How the search was fixed',
-    detail: [
-      'Server-delegated Filter, StartsWith and SortByColumns queries, so Dataverse does the work and the app never pulls the table.',
-      'DelayOutput on the search box and a minimum number of characters before a query runs.',
-      'Model-driven work spans modern and classic commands, JavaScript web resources, RibbonDiffXml and solution dependencies.',
-    ],
-  },
-  {
-    id: 'test',
-    name: 'Test',
-    summary: 'UAT, regression, risk review',
-    lead: 'I plan risk-based UAT and regression tests, then investigate and fix the issues they uncover.',
-    points: [
-      'That review became a prioritised risk register. I delivered the fixes and wrote targeted UAT scenarios for each.',
-      'I design the UAT approach for a release and present progress and demonstrations to stakeholders.',
-    ],
-    detailTitle: 'What the UAT approach includes',
-    detail: [
-      'Role-specific scenarios, regression tests, test data, acceptance evidence and issue tracking.',
-    ],
-  },
-  {
-    id: 'release',
-    name: 'Release',
-    summary: 'ALM, deployments, handover',
-    lead: 'I use ALM to plan deployments and move managed solutions through Dev, UAT and Production, with environment-specific configuration and clear handover.',
-    points: [
-      'Every release goes out as a managed solution, with connection references and environment variables set per environment.',
-      'I set up and project-manage the Azure DevOps projects around the work, using Boards, epics and user stories.',
-      'Each release ships with a deployment checklist, release notes and handover documentation.',
-    ],
-    detailTitle: 'Tooling',
-    detail: [
-      'Power Platform Pipelines and Azure DevOps, with manual solution import and export where a pipeline is not the right fit.',
-      'Power Platform CLI for environment management.',
-    ],
-  },
-  {
-    id: 'support',
-    name: 'Support',
-    summary: 'Production support, fixes, optimisation',
-    lead: 'I provide production support after go-live, diagnosing faults and handling fixes, performance optimisation, data and capacity issues.',
-    points: [
-      'I diagnose faults across Canvas apps, Dataverse, Power Automate and integrations.',
-      'I led one client’s capacity remediation after about 60 GB of growth across database, file and audit storage.',
-    ],
-    detailTitle: 'How the capacity work ran',
-    detail: [
-      'In-depth reporting to agree the bulk-deletion scope with the client before anything was removed.',
-      'Ongoing clean-up jobs set up afterwards, some of them using custom code.',
-    ],
-  },
+  { name: 'Discover' },
+  { name: 'Design' },
+  { name: 'Build' },
+  { name: 'Test' },
+  { name: 'Release' },
+  { name: 'Support' },
 ];
 
 export interface CaseStudy {
@@ -166,7 +70,7 @@ export const featuredCaseStudies: CaseStudy[] = [
     context:
       'A warehouse scanner already wrote daily scan data to a MySQL database. The existing process could not be changed or made dependent on Dataverse being available.',
     role:
-      'I built the C# Azure Function as an hourly, one-way synchronisation so the scanner remained independent of Dataverse availability. It reads new MySQL records without changing the source, validates and transforms them, and uses alternate-key upserts to prevent duplicates.',
+      'I designed and built the hourly, one-way C# Azure Function. The scanner was already part of a working warehouse process, so I kept it independent and pulled new MySQL records into Dataverse instead. The function validates and transforms each record, then uses alternate-key upserts to prevent duplicates.',
     change:
       'About 1,000 warehouse scan records now reach Dataverse each day through the hourly sync, replacing separate imports and giving around 20 users up-to-date operational data.',
     status: 'In production.',
@@ -227,33 +131,19 @@ export const deliveredSystems: DeliveredSystem[] = [
   },
 ];
 
-export const practices = [
-  {
-    icon: 'design' as IconName,
-    title: 'How I approach UX/UI',
-    body:
-      'I use wireframes, reusable components, responsive design, accessibility checks and usability feedback to make systems clearer and easier to adopt.',
-  },
-  {
-    icon: 'shield' as IconName,
-    title: 'Governance and standards',
-    body:
-      'I help maintain practical standards for environments and solutions, covering ALM, naming, deployments, reusable components, backups, data retention, GDPR and least-privilege access.',
-  },
-  {
-    icon: 'peopleChat' as IconName,
-    title: 'Workshops and handover',
-    body:
-      'I run client discovery workshops and produce solution designs, review checklists, release notes, training and handover material. I also coached an apprentice for over six months.',
-  },
+export const productionEvidence = [
+  'Built more than 40 Power Automate cloud flows across client projects.',
+  'Led Dataverse capacity remediation after about 60 GB of database, file and audit growth.',
+  'Set up and managed Azure DevOps project structures for client delivery.',
+  'Designed and implemented a Dataverse security matrix for three user groups.',
 ];
 
 export const skills: { group: string; icon: IconName; items: string }[] = [
   {
-    group: 'Apps',
+    group: 'Apps and UX/UI',
     icon: 'apps',
     items:
-      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript form scripting, web resources and command bars.',
+      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript, web resources and command bars. I also work with wireframes, reusable components, accessibility checks and usability feedback.',
   },
   {
     group: 'Automation',
@@ -283,7 +173,7 @@ export const skills: { group: string; icon: IconName; items: string }[] = [
     group: 'Delivery',
     icon: 'people',
     items:
-      'Requirements, solution design, UAT strategy, regression testing, release management, client demonstrations, production support and Agile delivery.',
+      'Discovery workshops, requirements, process mapping, interactive pre-sales prototypes, solution design, risk-based UAT, regression testing, release documentation, client demonstrations, handover and production support.',
   },
 ];
 
@@ -292,7 +182,7 @@ export const journey: { when: string; what: string; body: string }[] = [
     when: 'September 2024 to now',
     what: 'Power Platform Developer, Microsoft consultancy',
     body:
-      'Client-facing Power Platform and Dynamics 365 work, from pre-sales and requirements through to release and production support. I design and build apps, automation, integrations and Copilot agents, and coordinate delivery through Azure DevOps and our internal Dynamics 365 system.',
+      'Client-facing Power Platform and Dynamics 365 work, from pre-sales and requirements through to release and production support. I design and build apps, automation, integrations and Copilot agents, coordinate delivery through Azure DevOps and our internal Dynamics 365 system, and have coached an apprentice for over six months.',
   },
   {
     when: 'Mid 2024',

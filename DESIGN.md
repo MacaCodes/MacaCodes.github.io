@@ -48,13 +48,12 @@ Sentence case everywhere. Line height 1.6 for body, 1.15 for headings.
 - Page width 70rem, gutter `clamp(1.25rem, 5vw, 3rem)`.
 - Section padding `clamp(2.5rem, 5.5vw, 3.875rem)` for a compact but unhurried rhythm.
 - Breakpoints: 60rem (tablet), 42rem (phone). Multi-column grids collapse to one column on phones.
-- The hero line keeps all six clickable stages visible across breakpoints, alternating labels above
-  and below the line to stay compact.
+- The hero line keeps all six delivery stages visible across breakpoints, alternating labels above
+  and below the line to stay compact without acting as navigation.
 
 ## Components
 
-- **Lifecycle line**: 3px, horizontal in the hero (also the stage navigation), vertical beside the walk-through.
-- **Stage**: name on the left, lead sentence, short list, one `<details>` for technical depth.
+- **Lifecycle line**: 3px and horizontal in the hero as a compact visual summary.
 - **Case study**: title followed by Context, My role, What changed, Status and Built with. The three strongest case studies appear before the delivery process.
 - **Delivered system**: concise title, delivery summary, status or outcome and technologies. No stage-coverage bars.
 - **Links**: ink, underlined, thicker underline on hover. No buttons.
@@ -96,11 +95,10 @@ and documentation.
 
 ### Text density
 
-- Each stage shows one sentence. Everything else sits behind its disclosure.
 - The page is evidence-led: three featured case studies first, then supporting systems, then
-  the delivery lifecycle. Outcomes distinguish production work from work still in testing.
-- UX/UI, governance and enablement sit together under "The work around the build" so those strengths
-  support the engineering story without taking over the site.
+  concise production evidence. Outcomes distinguish production work from work still in testing.
+- UX/UI and delivery practices sit within the skills overview so they support the engineering story
+  without creating another generic section.
 - The background section is three short facts and a timeline, not paragraphs.
 
 ### Data visuals
@@ -113,7 +111,6 @@ and documentation.
 - The transparent line-drawn portrait sits beside the hero and follows the active theme.
 - The favicon is a compact custom M with the lifecycle line. It stays legible at small sizes and
   uses the dark theme colours for consistent contrast.
-- A sticky stage bar inside the walk-through highlights the stage being read.
 - Header reads "Macauley - Power Platform Developer" and stays on one line.
 
 ### Portrait
