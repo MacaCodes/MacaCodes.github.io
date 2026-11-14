@@ -1513,3 +1513,17 @@ details .plain-list {
   width: 100%;
   height: auto;
 }
+
+.dark-mode-glasses {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .dark-mode-glasses {
+    display: inline;
+  }
+}
+
+:root[data-theme='dark'] .dark-mode-glasses {
+  display: inline;
+}
