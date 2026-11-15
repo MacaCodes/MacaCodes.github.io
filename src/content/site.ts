@@ -5,7 +5,7 @@
 export const site = {
   name: 'Macauley',
   role: 'Power Platform Developer',
-  url: 'https://macacodes.github.io',
+  url: 'https://macacodes.dev',
   linkedin: 'https://www.linkedin.com/in/Macauley-Gibson',
   title: 'Macauley | Power Platform Developer in Manchester',
   description:

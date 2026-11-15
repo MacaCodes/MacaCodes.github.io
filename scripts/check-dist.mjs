@@ -46,7 +46,7 @@ for (const f of ['index.html', '404.html', 'robots.txt', 'sitemap-index.xml', 'f
 for (const page of ['index.html', '404.html']) {
   const html = readFileSync(join(dist, page), 'utf8');
   const need = [/<html lang="en-GB"/, /<title>[^<]+<\/title>/, /name="description"/, /property="og:image"/, /name="viewport"/];
-  if (page === 'index.html') need.push(/rel="canonical" href="https:\/\/macacodes\.github\.io\/"/);
+  if (page === 'index.html') need.push(/rel="canonical" href="https:\/\/macacodes\.dev\/"/);
   for (const re of need) if (!re.test(html)) fail(`${page}: missing ${re}`);
   if ((html.match(/<h1[\s>]/g) || []).length !== 1) fail(`${page}: expected exactly one h1`);
   for (const m of html.matchAll(/<img\b[^>]*>/g)) if (!/\balt="/.test(m[0])) fail(`${page}: img without alt`);

@@ -1,6 +1,6 @@
 # Macauley Gibson's Power Platform portfolio
 
-Source for [macacodes.github.io](https://macacodes.github.io/). A one-page portfolio showing
+Source for [macacodes.dev](https://macacodes.dev/). A one-page portfolio showing
 anonymised Power Platform and Dynamics 365 work, built with [Astro](https://astro.build) and
 deployed to GitHub Pages by GitHub Actions.
 
