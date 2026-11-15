@@ -118,6 +118,21 @@ const icons = [
           </div>
         </article>
         <article>
+          <h3>Plant illustration</h3>
+          <div class="brand-mark">
+            <svg class="plant-mark" viewBox="0 0 120 150" role="img" aria-label="A line drawing of a small plant in a pot">
+              <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M60 112V44"></path>
+                <path d="M60 92c-24-2-34-15-36-32 19 0 32 11 36 32z"></path>
+                <path d="M60 74c24-2 34-15 36-32-19 0-32 11-36 32z"></path>
+                <path d="M60 52c-13-7-17-20-13-35 13 7 17 20 13 35z"></path>
+                <path d="M38 112h44l-5 30H43z"></path>
+              </g>
+            </svg>
+            <p>The quiet supporting illustration used on the page-not-found screen.</p>
+          </div>
+        </article>
+        <article>
           <h3>Fluent icons</h3>
           <ul class="icon-list">
             {icons.map(([name, label]) => <li><Icon name={name} /><span>{label}</span></li>)}
@@ -315,6 +330,12 @@ const icons = [
   .brand-mark img {
     width: 4rem;
     height: 4rem;
+    flex: none;
+  }
+
+  .plant-mark {
+    width: 4rem;
+    height: 5rem;
     flex: none;
   }
 
