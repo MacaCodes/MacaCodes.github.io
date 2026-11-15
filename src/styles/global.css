@@ -1390,10 +1390,6 @@ details .plain-list {
     font-size: 0.84rem;
   }
 
-  .theme-toggle span:not(.sr-only) {
-    display: none;
-  }
-
   .hero-top {
     grid-template-columns: minmax(0, 1fr);
   }

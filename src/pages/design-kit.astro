@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
+import packageMetadata from '../../package.json';
 
 const colours = [
   { name: 'Paper', token: '--paper', value: '#FFFFFF', className: 'paper' },
@@ -109,6 +110,13 @@ const icons = [
         <h2 id="components-h">Components</h2>
       </div>
       <div class="component-grid">
+        <article>
+          <h3>Portrait mark</h3>
+          <div class="brand-mark">
+            <img src={`/favicon.svg?v=${packageMetadata.version}`} alt="Macauley portrait favicon" />
+            <p>Original portrait crop on the light brand wash. Fixed colours keep it clear in browser tabs.</p>
+          </div>
+        </article>
         <article>
           <h3>Fluent icons</h3>
           <ul class="icon-list">
@@ -295,6 +303,24 @@ const icons = [
 
   .component-grid article > p {
     margin-top: 0.8rem;
+  }
+
+  .brand-mark {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1.25rem;
+  }
+
+  .brand-mark img {
+    width: 4rem;
+    height: 4rem;
+    flex: none;
+  }
+
+  .brand-mark p {
+    color: var(--ink-soft);
+    font-size: var(--text-s);
   }
 
   .icon-list {
