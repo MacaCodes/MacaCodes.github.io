@@ -5,13 +5,6 @@
       --mark: #0f2a24;
       --paper: #ffffff;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --background: #0f1f1b;
-        --mark: #e8efec;
-        --paper: #0f1f1b;
-      }
-    }
   </style>
   <rect x="45" y="55" width="150" height="150" rx="30" fill="var(--background)"/>
   <g stroke="var(--mark)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
