@@ -140,40 +140,40 @@ export const productionEvidence = [
 
 export const skills: { group: string; icon: IconName; items: string }[] = [
   {
-    group: 'Apps',
+    group: 'Apps and Dynamics 365',
     icon: 'apps',
     items:
-      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript form scripting, web resources and command-bar customisation.',
+      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript form scripting, web resources, command bars and business process flows.',
   },
   {
-    group: 'Automation',
+    group: 'Automation and integration',
     icon: 'flow',
     items:
-      'Power Automate cloud flows, Azure Functions in C#/.NET, business rules and business process flows.',
+      'Power Automate cloud flows, Azure Functions in C#/.NET, REST APIs, OData, custom connectors and SharePoint integrations.',
   },
   {
-    group: 'Data',
+    group: 'Dataverse and data',
     icon: 'database',
     items:
-      'Dataverse data modelling, alternate keys and autonumbering, SQL Server, MySQL, FetchXML, SQL 4 CDS, migration, bulk operations, capacity and retention management.',
+      'Dataverse data modelling, alternate keys, SQL Server, MySQL, FetchXML, data migration, bulk operations and capacity management.',
   },
   {
-    group: 'Integrations and AI',
+    group: 'Copilot and AI',
     icon: 'plug',
     items:
-      'REST APIs, Dataverse Web API, OData, custom connectors, SharePoint, Xero, Copilot Studio, AI Builder, MCP and agent orchestration.',
+      'Copilot Studio, Dataverse MCP, agent flows, AI Builder, grounded retrieval, human confirmation and deterministic writes.',
   },
   {
     group: 'ALM, governance and security',
     icon: 'shield',
     items:
-      'Managed solutions, Power Platform Pipelines, Azure DevOps, Power Platform CLI, Git, environment variables, connection references, solution reviews, environment backup and recovery, security roles, Entra ID group teams and least-privilege access.',
+      'Managed solutions, Power Platform Pipelines, Azure DevOps, Git, environment configuration, backup and recovery, solution reviews, security roles and least-privilege access.',
   },
   {
     group: 'UX/UI and delivery',
     icon: 'people',
     items:
-      'Prototyping, reusable components, responsive design, accessibility checks and usability feedback; discovery workshops, process mapping, risk-based UAT, release documentation, handover and production support.',
+      'Prototypes, reusable components, responsive design, accessibility and usability feedback; discovery workshops, risk-based UAT, handover and production support.',
   },
 ];
 
