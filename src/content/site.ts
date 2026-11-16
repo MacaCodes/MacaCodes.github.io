@@ -143,19 +143,19 @@ export const skills: { group: string; icon: IconName; items: string }[] = [
     group: 'Apps and Dynamics 365',
     icon: 'apps',
     items:
-      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript form scripting, web resources, command bars and business process flows.',
+      'Canvas and model-driven apps, Power Fx, custom pages, Code Apps, Power Pages prototypes, Dynamics 365 CE, JavaScript client scripting, web resources, command bars and business process flows.',
   },
   {
     group: 'Automation and integration',
     icon: 'flow',
     items:
-      'Power Automate cloud flows, Azure Functions in C#/.NET, REST APIs, OData, custom connectors and SharePoint integrations.',
+      'Power Automate cloud flows, Azure Functions in C#/.NET, REST APIs, Dataverse Web API, OData, custom connectors and SharePoint integrations.',
   },
   {
     group: 'Dataverse and data',
     icon: 'database',
     items:
-      'Dataverse data modelling, alternate keys, SQL Server, MySQL, FetchXML, data migration, bulk operations and capacity management.',
+      'Dataverse data modelling, alternate keys, SQL Server, MySQL, FetchXML, XrmToolBox, data migration, bulk operations and capacity management.',
   },
   {
     group: 'Copilot and AI',
@@ -167,13 +167,13 @@ export const skills: { group: string; icon: IconName; items: string }[] = [
     group: 'ALM, governance and security',
     icon: 'shield',
     items:
-      'Managed solutions, Power Platform Pipelines, Azure DevOps, Git, environment configuration, backup and recovery, solution reviews, security roles and least-privilege access.',
+      'Managed solutions, Power Platform Pipelines, Azure DevOps, Git, Power Platform CLI, environment configuration, backup and recovery, solution reviews, security roles and least-privilege access.',
   },
   {
     group: 'UX/UI and delivery',
     icon: 'people',
     items:
-      'Prototypes, reusable components, responsive design, accessibility and usability feedback; discovery workshops, risk-based UAT, handover and production support.',
+      'Prototypes, reusable components, responsive design, accessibility and usability feedback; discovery workshops, UAT planning, test tracking, risk-based prioritisation, handover and production support.',
   },
 ];
 
